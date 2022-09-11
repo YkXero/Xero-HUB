@@ -4,16 +4,21 @@ local MapList = Window:NewTab("Map List")
 local VisualTab = Window:NewTab("Visuals")
 local SettingsTab = Window:NewTab("Settings")
 local CreditsTab = Window:NewTab("Credits")
+local InformationTab = Window:NewTab("Information")
 local SpeedrunMapList = MapList:NewSection("Speedrun Map List")
 local VisualSection = VisualTab:NewSection("Visuals Section")
 local SettingSection = SettingsTab:NewSection("Change Settings")
-local CreditsSection = CreditsTab:NewSection("Developers || Xero&Mds")
+local CreditsSection = CreditsTab:NewSection("Developers || Xero & Mds")
+local InformationSection = InformationTab:NewSection("Do not use this GUI to get advantage")
+local InformationSection = InformationTab:NewSection("Of any kind, this script is intended to be")
+local InformationSection = InformationTab:NewSection("for ONLY showcase.")
+local InformationSection = InformationTab:NewSection("Use C to start, L to stop")
 
 
 
 --MapSpeedrunSection
 
-SpeedrunMapList:NewButton("Click this when game is loaded", "Click this before pressing any map", function()
+SpeedrunMapList:NewButton("Click this before picking any map", "Click this before pressing any map", function()
 	local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
 
 	Mouse.KeyDown:connect(function(NameOfYourFunction)
@@ -46,6 +51,7 @@ SpeedrunMapList:NewButton("Click this when game is loaded", "Click this before p
 	end)
 	setreadonly(mt,true)
 end)
+
 SpeedrunMapList:NewButton("Arctic", "Click for Arctic map", function() --Done check
 	_G.Arc1 = {
 		[1] = 1.5707963705062866,
@@ -2790,15 +2796,19 @@ VisualSection:NewButton("Remove Scored GUI", "Removes Scored GUI", function()
 		end
 	end
 end)
-VisualSection:NewButton("Remove Dimension sky", "Removes Dimension Skybox", function()
+VisualSection:NewButton("Remove Dimension sky", "Removes Dimension Sky", function(v)
 	while true do
+			if game:GetService("Lighting"):WaitForChild("Sky") then
+				game:GetService("Lighting").Sky:Destroy()
+				wait(.4)
+			end
+		end  
+end)
+VisualSection:NewButton("Remove Dimension SkyBox", "Removes Dimension SkyBox", function(v)
 	game:GetService("Workspace").Dimension.Extra.Skybox:Destroy()
-	wait(.4)
-	game:GetService("Lighting").Sky:Destroy()
-	end
 end)
 --Settings Section
 
 SettingSection:NewKeybind("Toggle UI", "Toggle key to enable/off gui", Enum.KeyCode.Z, function()
 	Library:ToggleUI()
-	end)
+end)
