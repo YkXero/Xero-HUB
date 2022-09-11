@@ -630,7 +630,7 @@ SpeedrunMapList:NewButton("Candyland", "Click for Candyland map", function() --D
 		[1] = 2.5179343223571777,
 		[2] = 100
 	}
-	_G.Can 14 = {
+	_G.Can14 = {
   		[1] = 1.7973401546478271,
    		[2] = 99.28869882609521
 	}
