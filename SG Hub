@@ -658,10 +658,6 @@ SpeedrunMapList:NewButton("Candyland", "Click for Candyland map", function() --D
  		[1] = 3.1415927410125732,
   		[2] = 92.8378336468235
 	}
-	_G.Can181 = {
-		[1] = 4.838055610656738,
-		[2] = 80.98137310142923
-	}
 	while true do
 		local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
 		wait(0.001)
