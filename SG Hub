@@ -1,5 +1,3 @@
-if game.PlaceID == 4468711919 then	
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("X&M SG GUI", "GrapeTheme")
 local MapList = Window:NewTab("Map List")
@@ -2804,4 +2802,3 @@ end)
 SettingSection:NewKeybind("Toggle UI", "Toggle key to enable/off gui", Enum.KeyCode.Z, function()
 	Library:ToggleUI()
 	end)
-end
