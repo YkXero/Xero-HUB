@@ -3082,6 +3082,18 @@ VisualSection:AddButton({ --Loop delete chat button
 		end
 	end
 })
+VisualSection:AddButton({ --Break Loop delete chat button
+	Name = "Break delete chat loop",
+	Callback = function()
+		Library:MakeNotification({
+			Name = "Clicked successfully",
+			Content = "Loop chat delete is successfully breaked",
+			Image = "rbxassetid://4483345998",
+			Time = 4
+		})
+		_G.r2 = false
+	end
+})
 VisualSection:AddButton({ --Remove score button
 	Name = "Remove Score",
 	Callback = function()
