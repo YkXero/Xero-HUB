@@ -3155,7 +3155,7 @@ VisualSection:AddButton({ --Remove Dimension Skybox button
 })
 VisualSection:AddDropdown({ --DropDown Skyboxes
 	Name = "SkyBoxes",
-	Options = {"OriginalSky", "GalaxySky", "BreakingBad", "Dog", "GreenSky", "THEONEPIECE", "RUSH", "Speed"},
+	Options = {"OriginalSky", "GalaxySky", "BreakingBad", "Dog", "GreenSky", "THEONEPIECE", "RUSH", "Speed", "Rickroll"},
 	Callback = function(Id)
 		if Id == "OriginalSky" then
 			Library:MakeNotification({
@@ -3172,6 +3172,8 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk6 = false
 			_G.sk7 = false
 			_G.sk8 = false
+			_G.sk9 = false
+			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk1 == true then
 					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=133184290"
@@ -3198,6 +3200,8 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk6 = false
 			_G.sk7 = false
 			_G.sk8 = false
+			_G.sk9 = false
+			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk2 == true then
 					game:GetService("Lighting"):WaitForChild("Sky").MoonTextureId = "rbxassetid://1075087760"
@@ -3225,6 +3229,8 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk6 = false
 			_G.sk7 = false
 			_G.sk8 = false
+			_G.sk9 = false
+			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk3 == true then
 					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=5222776243"
@@ -3251,6 +3257,8 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk6 = false
 			_G.sk7 = false
 			_G.sk8 = false
+			_G.sk9 = false
+			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk4 == true then
 					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10209912640"
@@ -3277,6 +3285,8 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk6 = false
 			_G.sk7 = false
 			_G.sk8 = false
+			_G.sk9 = false
+			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk5 == true then
 					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=9835676490"
@@ -3303,6 +3313,8 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk6 = true
 			_G.sk7 = false
 			_G.sk8 = false
+			_G.sk9 = false
+			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk6 == true then
 					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10465994035"
@@ -3329,6 +3341,8 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk6 = false
 			_G.sk7 = true
 			_G.sk8 = false
+			_G.sk9 = false
+			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk7 == true then
 					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10716387808"
@@ -3355,6 +3369,8 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk6 = false
 			_G.sk7 = false
 			_G.sk8 = true
+			_G.sk9 = false
+			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk8 == true then
 					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10383043357"
@@ -3366,6 +3382,34 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 				end
 			end
 		end		
+		if Id == "Rickroll" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Rickroll sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = false
+			_G.sk9 = true
+			_G.cuss = false
+			while wait(0.4) do
+				if _G.sk9 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=6403436054"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=6403436054"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=6403436054"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=6403436054"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=6403436054"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=6403436054"
+				end
+			end
+		end		
 	end	
 })
 VisualSection:AddTextbox({ --CustomSkybox
@@ -3373,6 +3417,14 @@ VisualSection:AddTextbox({ --CustomSkybox
 	Default = "",
 	TextDisappear = true,
 	Callback = function(cus)
+		_G.sk1 = false
+		_G.sk2 = false
+		_G.sk3 = false
+		_G.sk4 = false
+		_G.sk5 = false
+		_G.sk6 = false
+		_G.sk7 = false
+		_G.sk8 = false
 		_G.cuss = true
 		for count = 1, 1000000 do
 			if 	_G.cuss == true then
@@ -3385,18 +3437,6 @@ VisualSection:AddTextbox({ --CustomSkybox
 				wait(0.4)
 			end
 		end
-	end
-})
-VisualSection:AddButton({ --Break custom skybox
-	Name = "Break custom skybox",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Breaked Custom skybox loop successfully",
-			Image = "http://www.roblox.com/asset/?id=4458805208",
-			Time = 4
-		})
-		_G.cuss = false
 	end
 })
 
