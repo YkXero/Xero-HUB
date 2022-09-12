@@ -30,7 +30,7 @@ local VisualSection = VisualTab:AddSection({
 	Name = "Visuals Section"
 })
 --Paragraphs
-InformationTab:AddParagraph("Important", "Do not use this GUI to get advantage of any kind, this script is intended to be for ONLY showcase, if you do not follow this is you got a big chance of getting banned ingame.")
+InformationTab:AddParagraph("Important", "Do not use this GUI to get advantage of any kind, this script is intended to be for ONLY showcase, if you do not follow this rules you got a big chance of getting banned ingame, apart from we do not support  the use of this GUI for get advantage ingame.")
 InformationTab:AddParagraph("How to use", "Use C to start, L to stop")
 CreditsTab:AddParagraph("Developers", "Xero & Mds")
 
