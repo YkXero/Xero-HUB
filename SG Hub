@@ -23,18 +23,29 @@ local InformationTab = Window:MakeTab({
 	Icon = "http://www.roblox.com/asset/?id=4871684504",
 	PremiumOnly = false
 })
+local ConvertTab = Window:MakeTab({
+	Name = "Convert",
+	Icon = "http://www.roblox.com/asset/?id=5267823426",
+	PremiumOnly = false
+})
+
+--Sections
 local SpeedrunMapList = MapList:AddSection({
 	Name = "Speedrun Map List"
 })
 local VisualSection = VisualTab:AddSection({
 	Name = "Visuals Section"
 })
+local ConvertSection = ConvertTab:AddSection({
+	Name = "Convert Section"
+})
 --Paragraphs
+
 InformationTab:AddParagraph("Important", "Do not use this GUI to get advantage of any kind, this script is intended to be for ONLY showcase, if you do not follow this rules you got a big chance of getting banned ingame, apart from we do not support  the use of this GUI for get advantage ingame.")
 InformationTab:AddParagraph("How to use", "Use C to start, L to stop")
 CreditsTab:AddParagraph("Developers", "Xero & Mds")
 
-
+--Loaded GUI notification
 Library:MakeNotification({ --Gui Loading notify
 	Name = "GUI Loaded!",
 	Content = "Thanks for using X&M SG GUI.",
@@ -44,6 +55,7 @@ Library:MakeNotification({ --Gui Loading notify
 
 
 --MapSpeedrunSection
+
 SpeedrunMapList:AddButton({ --Activate map button
 	Name = "Activate maps button",
 	Callback = function()
@@ -2966,6 +2978,7 @@ SpeedrunMapList:AddButton({ --Oasis button
 })
 
 --Visuals Section
+
 VisualSection:AddTextbox({ --FakeTime button
 	Name = "FakeTime",
 	Default = "Put anything here",
@@ -3307,6 +3320,83 @@ VisualSection:AddButton({ --Change sky (THE ONE PIECE) button
 				game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=10465994035"
 			end
 		end
+	end
+})
+--Convert Section
+
+ConvertSection:AddTextbox({ --Pc to mobile button
+	Name = "Pc To Mobile",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(txt1)
+		Library:MakeNotification({
+			Name = "Converted successfully",
+			Content = "Copied to your clipboard",
+			Image = "rbxassetid://4483345998",
+			Time = 4
+		})
+		local a = (( txt1 * txt1 ) * 2)
+		setclipboard(tostring(a))
+	end
+})
+ConvertSection:AddTextbox({ --Mobile to Pc button
+	Name = "Mobile to Pc",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(txt2)
+		Library:MakeNotification({
+			Name = "Converted successfully",
+			Content = "Copied to your clipboard",
+			Image = "rbxassetid://4483345998",
+			Time = 4
+		})
+		local b = math.sqrt( txt2 / 2 )
+		setclipboard(tostring(b))
+	end
+})
+ConvertSection:AddTextbox({ --Mobile to Pc button
+	Name = "2 pixels to 1 pixel",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(txt3)
+		Library:MakeNotification({
+			Name = "Converted successfully",
+			Content = "Copied to your clipboard",
+			Image = "rbxassetid://4483345998",
+			Time = 4
+		})
+		local c = math.sqrt(2) * txt3
+		setclipboard(tostring(c))
+	end
+})
+ConvertSection:AddTextbox({ --Mobile to Pc button
+	Name = "3 pixels to 1 pixel",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(txt4)
+		Library:MakeNotification({
+			Name = "Converted successfully",
+			Content = "Copied to your clipboard",
+			Image = "rbxassetid://4483345998",
+			Time = 4
+		})
+		local d = math.sqrt(3) * txt4
+		setclipboard(tostring(d))
+	end
+})
+ConvertSection:AddTextbox({ --Mobile to Pc button
+	Name = "4 pixels to 1 pixel",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(txt5)
+		Library:MakeNotification({
+			Name = "Converted successfully",
+			Content = "Copied to your clipboard",
+			Image = "rbxassetid://4483345998",
+			Time = 4
+		})
+		local e = 2 * txt5
+		setclipboard(tostring(e))
 	end
 })
 Library:Init()
