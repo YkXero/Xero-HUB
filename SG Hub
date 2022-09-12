@@ -1,6 +1,6 @@
 --Local Lib/Window
 local Library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = Library:MakeWindow({Name = "X&M SG GUI", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroText = "Xero & Mds SG GUI", IntroIcon = "http://www.roblox.com/asset/?id=3019710362"})
+local Window = Library:MakeWindow({Name = "X&M SG GUI", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest", IntroText = "Xero & Mds SG GUI", IntroIcon = "http://www.roblox.com/asset/?id=3019710362"})
 
 --Local Tabs
 local MapList = Window:MakeTab({
@@ -41,7 +41,7 @@ local ConvertSection = ConvertTab:AddSection({
 })
 --Paragraphs
 
-InformationTab:AddParagraph("Important", "Do not use this GUI to get advantage of any kind, this script is intended to be for ONLY showcase, if you do not follow this rules you got a big chance of getting banned ingame, apart from we do not support  the use of this GUI for get advantage ingame.")
+InformationTab:AddParagraph("Important", "Do not use this GUI to get advantage of any kind, this script is intended to be for ONLY showcase, if you do not follow this rules you got a big chance of getting banned ingame, apart from we do not support the use of this GUI for get advantage ingame.")
 InformationTab:AddParagraph("How to use", "Use C to start, L to stop")
 CreditsTab:AddParagraph("Developers", "Xero & Mds")
 
@@ -63,7 +63,7 @@ SpeedrunMapList:AddButton({ --Activate map button
 		Library:MakeNotification({ 
 			Name = "Clicked successfully",
 			Content = "Now you can pick any map you want",
-			Image = "rbxassetid://4483345998",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})
 		local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
@@ -106,16 +106,16 @@ SpeedrunMapList:AddButton({ --Arctic button
 			Library:MakeNotification({ 
 				Name = "Warning",
 				Content = "You forgot to click activate map button!",
-				Image = "rbxassetid://4483345998",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
 				Time = 4
 			})
 		elseif _G.noti == true then
-		Library:MakeNotification({ 
-			Name = "Map chosen",
-			Content = "Arctic map chosen successfully",
-			Image = "rbxassetid://4483345998",
-			Time = 4
-				})
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Arctic map chosen successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
 		end
 		_G.Arc1 = {
 			[1] = 1.5707963705062866,
@@ -378,17 +378,17 @@ SpeedrunMapList:AddButton({ --Atlantis button
 			Library:MakeNotification({ 
 				Name = "Warning",
 				Content = "You forgot to click activate map button!",
-				Image = "rbxassetid://4483345998",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
 				Time = 4
 			})
-			elseif _G.noti == true then
-				Library:MakeNotification({ 
-					Name = "Map chosen",
-					Content = "Atlantis map chosen successfully",
-					Image = "rbxassetid://4483345998",
-					Time = 4
-				})
-			end
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Atlantis map chosen successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
 		_G.atl1 = {
 			[1] = 3.344092845916748,
 			[2] = 100
@@ -655,17 +655,17 @@ SpeedrunMapList:AddButton({ --Candyland button
 			Library:MakeNotification({ 
 				Name = "Warning",
 				Content = "You forgot to click activate map button!",
-				Image = "rbxassetid://4483345998",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
 				Time = 4
 			})
-			elseif _G.noti == true then
-				Library:MakeNotification({ 
-					Name = "Map chosen",
-					Content = "Candyland map chosen successfully",
-					Image = "rbxassetid://4483345998",
-					Time = 4
-				})
-			end
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Candyland map chosen successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
 		_G.Can1 = {
 			[1] = -1.827338695526123,
 			[2] = 100
@@ -909,17 +909,17 @@ SpeedrunMapList:AddButton({ --Dimension button
 			Library:MakeNotification({ 
 				Name = "Warning",
 				Content = "You forgot to click activate map button!",
-				Image = "rbxassetid://4483345998",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
 				Time = 4
 			})
-			elseif _G.noti == true then
-				Library:MakeNotification({ 
-					Name = "Map chosen",
-					Content = "Dimension map chosen successfully",
-					Image = "rbxassetid://4483345998",
-					Time = 4
-				})
-			end
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Dimension map chosen successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
 		_G.dim1 = {
 			[1] = -2.6099653244018555,
 			[2] = 48.4999988202692
@@ -1205,17 +1205,17 @@ SpeedrunMapList:AddButton({ --Forest button
 			Library:MakeNotification({ 
 				Name = "Warning",
 				Content = "You forgot to click activate map button!",
-				Image = "rbxassetid://4483345998",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
 				Time = 4
 			})
-			elseif _G.noti == true then
-				Library:MakeNotification({ 
-					Name = "Map chosen",
-					Content = "Forest map chosen successfully",
-					Image = "rbxassetid://4483345998",
-					Time = 4
-				})
-			end
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Forest map chosen successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
 		_G.For1 = {
 			[1] = 0.8329153656959534,
 			[2] = 100
@@ -1450,17 +1450,17 @@ SpeedrunMapList:AddButton({ --Facility button
 			Library:MakeNotification({ 
 				Name = "Warning",
 				Content = "You forgot to click activate map button!",
-				Image = "rbxassetid://4483345998",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
 				Time = 4
 			})
-			elseif _G.noti == true then
-				Library:MakeNotification({ 
-					Name = "Map chosen",
-					Content = "Facility map chosen successfully",
-					Image = "rbxassetid://4483345998",
-					Time = 4
-				})
-			end
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Facility map chosen successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
 		_G.Fac1 = {
 			[1] = -2.1453604698181152,
 			[2] = 100
@@ -1739,268 +1739,268 @@ SpeedrunMapList:AddButton({ --Graveyard button
 			Library:MakeNotification({ 
 				Name = "Warning",
 				Content = "You forgot to click activate map button!",
-				Image = "rbxassetid://4483345998",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
 				Time = 4
 			})
-			elseif _G.noti == true then
-				Library:MakeNotification({ 
-					Name = "Map chosen",
-					Content = "Graveyard map chosen successfully",
-					Image = "rbxassetid://4483345998",
-					Time = 4
-				})
-		_G.gra1 = {
-			[1] = -2.7689647674560547,
-			[2] = 100
-		}
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Graveyard map chosen successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.gra1 = {
+				[1] = -2.7689647674560547,
+				[2] = 100
+			}
 
-		_G.gra2 = {
-			[1] = -1.0667451620101929,
-			[2] = 53.58654407307279
-		}
+			_G.gra2 = {
+				[1] = -1.0667451620101929,
+				[2] = 53.58654407307279
+			}
 
-		_G.gra3 = {
-			[1] = -1.9388861656188965,
-			[2] = 84.64626154425576
-		}
+			_G.gra3 = {
+				[1] = -1.9388861656188965,
+				[2] = 84.64626154425576
+			}
 
-		_G.gra4 = {
-			[1] = -3.1016247272491455,
-			[2] = 100
-		}
+			_G.gra4 = {
+				[1] = -3.1016247272491455,
+				[2] = 100
+			}
 
-		_G.gra5 = {
-			[1] = 1.5798720121383667,
-			[2] = 47.784178830074225
-		}
+			_G.gra5 = {
+				[1] = 1.5798720121383667,
+				[2] = 47.784178830074225
+			}
 
-		_G.gra6 = {
-			[1] = -0.7335618734359741,
-			[2] = 100
-		}
+			_G.gra6 = {
+				[1] = -0.7335618734359741,
+				[2] = 100
+			}
 
-		_G.gra7 = {
-			[1] = -1.5707963705062866,
-			[2] = 48.125494339563964
-		}
+			_G.gra7 = {
+				[1] = -1.5707963705062866,
+				[2] = 48.125494339563964
+			}
 
-		_G.gra71 = {
-			[1] = -1.5707963705062866,
-			[2] = 61.095486832223564
-		}
+			_G.gra71 = {
+				[1] = -1.5707963705062866,
+				[2] = 61.095486832223564
+			}
 
-		_G.gra8 = {
-			[1] = 1.839402437210083,
-			[2] = 98.98151933210997
-		}
+			_G.gra8 = {
+				[1] = 1.839402437210083,
+				[2] = 98.98151933210997
+			}
 
-		_G.gra9 = {
-			[1] = -2.9216811656951904,
-			[2] = 67.58048303160874
-		}
+			_G.gra9 = {
+				[1] = -2.9216811656951904,
+				[2] = 67.58048303160874
+			}
 
-		_G.gra10 = {
-			[1] = -1.7643532752990723,
-			[2] = 100
-		}
+			_G.gra10 = {
+				[1] = -1.7643532752990723,
+				[2] = 100
+			}
 
-		_G.gra101 = {
-			[1] = -3.1173760890960693,
-			[2] = 73.72416542836308
-		}
+			_G.gra101 = {
+				[1] = -3.1173760890960693,
+				[2] = 73.72416542836308
+			}
 
-		_G.gra11 = {
-			[1] = 1.9551178216934204,
-			[2] = 100
-		}
-		_G.gra12 = {
-			[1] = 3.378761053085327,
-			[2] = 91.31671908781134
-		}
-		_G.gra13 = {
-			[1] = -1.9220128059387207,
-			[2] = 88.28179192982688
-		}
-		_G.gra14 = {
-			[1] = -2.053903579711914,
-			[2] = 100
-		}
+			_G.gra11 = {
+				[1] = 1.9551178216934204,
+				[2] = 100
+			}
+			_G.gra12 = {
+				[1] = 3.378761053085327,
+				[2] = 91.31671908781134
+			}
+			_G.gra13 = {
+				[1] = -1.9220128059387207,
+				[2] = 88.28179192982688
+			}
+			_G.gra14 = {
+				[1] = -2.053903579711914,
+				[2] = 100
+			}
 
-		_G.gra15 = {
-			[1] = 0.8147196769714355,
-			[2] = 53.41929713748168
-		}
+			_G.gra15 = {
+				[1] = 0.8147196769714355,
+				[2] = 53.41929713748168
+			}
 
-		_G.gra151 = {
-			[1] = 1.5707498788833618,
-			[2] = 85.02853503641069
-		}
+			_G.gra151 = {
+				[1] = 1.5707498788833618,
+				[2] = 85.02853503641069
+			}
 
-		_G.gra16 = {
-			[1] = 2.8825857639312744,
-			[2] = 95.0905163007532
-		}
+			_G.gra16 = {
+				[1] = 2.8825857639312744,
+				[2] = 95.0905163007532
+			}
 
-		_G.gra17 = {
-			[1] = -3.0909781455993652,
-			[2] = 100
-		}
+			_G.gra17 = {
+				[1] = -3.0909781455993652,
+				[2] = 100
+			}
 
-		_G.gra18 = {
-			[1] = 0.039968039840459824,
-			[2] = 100
-		}
+			_G.gra18 = {
+				[1] = 0.039968039840459824,
+				[2] = 100
+			}
 
-		_G.gra181 = {
-			[1] = -2.9876317977905273,
-			[2] = 100
-		}
+			_G.gra181 = {
+				[1] = -2.9876317977905273,
+				[2] = 100
+			}
 
 
 
-		while true do
-			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
-			wait(0.001)
-			if pos.X < -586.056 and pos.X > -626.056 then
-				if pos.Y < 116 and pos.Y > 114 then
-					if pos.Z < 706.167 and pos.Z > 666.167 then
-						_G.args = _G.gra1
+			while true do
+				local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+				wait(0.001)
+				if pos.X < -586.056 and pos.X > -626.056 then
+					if pos.Y < 116 and pos.Y > 114 then
+						if pos.Z < 706.167 and pos.Z > 666.167 then
+							_G.args = _G.gra1
+						end
 					end
 				end
-			end
-			if pos.X < -404.647 and pos.X > -444.647 then
-				if pos.Y < 124 and pos.Y > 122 then
-					if pos.Z < 804.996 and pos.Z > 764.996 then
-						_G.args = _G.gra2
+				if pos.X < -404.647 and pos.X > -444.647 then
+					if pos.Y < 124 and pos.Y > 122 then
+						if pos.Z < 804.996 and pos.Z > 764.996 then
+							_G.args = _G.gra2
+						end
 					end
 				end
-			end
-			if pos.X < -222.207 and pos.X > -262.207 then
-				if pos.Y < 121 and pos.Y > 120 then
-					if pos.Z < 709.01 and pos.Z > 669.01 then
-						_G.args = _G.gra3
+				if pos.X < -222.207 and pos.X > -262.207 then
+					if pos.Y < 121 and pos.Y > 120 then
+						if pos.Z < 709.01 and pos.Z > 669.01 then
+							_G.args = _G.gra3
+						end
 					end
 				end
-			end
-			if pos.X < -152.831 and pos.X > -192.831 then
-				if pos.Y < 134 and pos.Y > 132 then
-					if pos.Z < 976.733 and pos.Z > 936.733 then
-						_G.args = _G.gra4
+				if pos.X < -152.831 and pos.X > -192.831 then
+					if pos.Y < 134 and pos.Y > 132 then
+						if pos.Z < 976.733 and pos.Z > 936.733 then
+							_G.args = _G.gra4
+						end
 					end
 				end
-			end
-			if pos.X < -364.266 and pos.X > -404.266 then
-				if pos.Y < 146 and pos.Y > 144 then
-					if pos.Z < 1085.44 and pos.Z > 1045.44 then
-						_G.args = _G.gra5
+				if pos.X < -364.266 and pos.X > -404.266 then
+					if pos.Y < 146 and pos.Y > 144 then
+						if pos.Z < 1085.44 and pos.Z > 1045.44 then
+							_G.args = _G.gra5
+						end
 					end
 				end
-			end
-			if pos.X < -662.351 and pos.X > -702.351 then
-				if pos.Y < 150 and pos.Y > 148 then
-					if pos.Z < 1153.2 and pos.Z > 1113.2 then
-						_G.args = _G.gra6
+				if pos.X < -662.351 and pos.X > -702.351 then
+					if pos.Y < 150 and pos.Y > 148 then
+						if pos.Z < 1153.2 and pos.Z > 1113.2 then
+							_G.args = _G.gra6
+						end
 					end
 				end
-			end
-			if pos.X < -694.745 and pos.X > -734.745 then
-				if pos.Y < 150 and pos.Y > 148 then
-					if pos.Z < 1349.36 and pos.Z > 1309.36 then
-						_G.args = _G.gra7
-						wait(0.7) 
-						_G.args = _G.gra71
+				if pos.X < -694.745 and pos.X > -734.745 then
+					if pos.Y < 150 and pos.Y > 148 then
+						if pos.Z < 1349.36 and pos.Z > 1309.36 then
+							_G.args = _G.gra7
+							wait(0.7) 
+							_G.args = _G.gra71
+						end
 					end
-				end
 
-			end
-			if pos.X < -450.591 and pos.X > -490.591 then
-				if pos.Y < 152 and pos.Y > 150 then
-					if pos.Z < 1335.55 and pos.Z > 1295.55 then
-						_G.args = _G.gra8
+				end
+				if pos.X < -450.591 and pos.X > -490.591 then
+					if pos.Y < 152 and pos.Y > 150 then
+						if pos.Z < 1335.55 and pos.Z > 1295.55 then
+							_G.args = _G.gra8
+						end
 					end
 				end
-			end
-			if pos.X < -164.878 and pos.X > -204.878 then
-				if pos.Y < 151 and pos.Y > 149 then
-					if pos.Z < 1365.25 and pos.Z > 1325.25 then
-						_G.args = _G.gra9
+				if pos.X < -164.878 and pos.X > -204.878 then
+					if pos.Y < 151 and pos.Y > 149 then
+						if pos.Z < 1365.25 and pos.Z > 1325.25 then
+							_G.args = _G.gra9
+						end
 					end
 				end
-			end
-			if pos.X < -381.137 and pos.X > -421.137 then
-				if pos.Y < 128 and pos.Y > 126 then
-					if pos.Z < 1559.41 and pos.Z > 1519.41 then
-						_G.args = _G.gra10
-						wait(1) 
-						_G.args = _G.gra101
+				if pos.X < -381.137 and pos.X > -421.137 then
+					if pos.Y < 128 and pos.Y > 126 then
+						if pos.Z < 1559.41 and pos.Z > 1519.41 then
+							_G.args = _G.gra10
+							wait(1) 
+							_G.args = _G.gra101
+						end
 					end
-				end
 
-			end 
-			if pos.X < -469.939 and pos.X > -509.939 then
-				if pos.Y < 121 and pos.Y > 119 then
-					if pos.Z < 1622.11 and pos.Z > 1582.11 then
-						_G.args = _G.gra11
+				end 
+				if pos.X < -469.939 and pos.X > -509.939 then
+					if pos.Y < 121 and pos.Y > 119 then
+						if pos.Z < 1622.11 and pos.Z > 1582.11 then
+							_G.args = _G.gra11
+						end
 					end
 				end
-			end
-			if pos.X < -520.911 and pos.X > -560.11 then
-				if pos.Y < 121 and pos.Y > 119 then
-					if pos.Z < 1735.43 and pos.Z > 1695.43 then
-						_G.args = _G.gra12
+				if pos.X < -520.911 and pos.X > -560.11 then
+					if pos.Y < 121 and pos.Y > 119 then
+						if pos.Z < 1735.43 and pos.Z > 1695.43 then
+							_G.args = _G.gra12
+						end
 					end
 				end
-			end
-			if pos.X < -627.182 and pos.X > -667.182 then
-				if pos.Y < 148 and pos.Y > 146 then
-					if pos.Z < 2077 and pos.Z > 2037 then
-						_G.args = _G.gra13
+				if pos.X < -627.182 and pos.X > -667.182 then
+					if pos.Y < 148 and pos.Y > 146 then
+						if pos.Z < 2077 and pos.Z > 2037 then
+							_G.args = _G.gra13
+						end
 					end
 				end
-			end
-			if pos.X < -405.561 and pos.X > -445.561 then
-				if pos.Y < 149.647 and pos.Y > 147.647 then
-					if pos.Z < 2124.81 and pos.Z > 2084.81 then
-						_G.args = _G.gra14
+				if pos.X < -405.561 and pos.X > -445.561 then
+					if pos.Y < 149.647 and pos.Y > 147.647 then
+						if pos.Z < 2124.81 and pos.Z > 2084.81 then
+							_G.args = _G.gra14
+						end
 					end
 				end
-			end
-			if pos.X < -183.461 and pos.X > -223.461 then
-				if pos.Y < 134 and pos.Y > 132 then
-					if pos.Z < 2309.45 and pos.Z > 2269.45 then
-						_G.args = _G.gra15
-						wait(0.8)
-						_G.args = _G.gra151
+				if pos.X < -183.461 and pos.X > -223.461 then
+					if pos.Y < 134 and pos.Y > 132 then
+						if pos.Z < 2309.45 and pos.Z > 2269.45 then
+							_G.args = _G.gra15
+							wait(0.8)
+							_G.args = _G.gra151
+						end
 					end
-				end
 
-			end
-			if pos.X < -556.01 and pos.X > -596.01 then
-				if pos.Y < 121 and pos.Y > 119 then
-					if pos.Z < 2370.78 and pos.Z > 2330.78 then
-						_G.args = _G.gra16
+				end
+				if pos.X < -556.01 and pos.X > -596.01 then
+					if pos.Y < 121 and pos.Y > 119 then
+						if pos.Z < 2370.78 and pos.Z > 2330.78 then
+							_G.args = _G.gra16
+						end
 					end
 				end
-			end
-			if pos.X < -394.688 and pos.X > -434.688 then
-				if pos.Y < 117 and pos.Y > 115 then
-					if pos.Z < 2521.02 and pos.Z > 2481.02 then
-						_G.args = _G.gra17
+				if pos.X < -394.688 and pos.X > -434.688 then
+					if pos.Y < 117 and pos.Y > 115 then
+						if pos.Z < 2521.02 and pos.Z > 2481.02 then
+							_G.args = _G.gra17
+						end
 					end
 				end
-			end
-			if pos.X < -464.955 and pos.X > -504.955 then
-				if pos.Y < 118 and pos.Y > 116 then
-					if pos.Z < 2796.49 and pos.Z > 2756.49 then
-						_G.args = _G.gra18
-						wait(2)
-						_G.args = _G.gra181
+				if pos.X < -464.955 and pos.X > -504.955 then
+					if pos.Y < 118 and pos.Y > 116 then
+						if pos.Z < 2796.49 and pos.Z > 2756.49 then
+							_G.args = _G.gra18
+							wait(2)
+							_G.args = _G.gra181
+						end
 					end
 				end
-			end
-		end	
+			end	
+		end
 	end
-end
 })
 SpeedrunMapList:AddButton({ --Grove button
 	Name = "Grove",
@@ -2009,17 +2009,17 @@ SpeedrunMapList:AddButton({ --Grove button
 			Library:MakeNotification({ 
 				Name = "Warning",
 				Content = "You forgot to click activate map button!",
-				Image = "rbxassetid://4483345998",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
 				Time = 4
 			})
-			elseif _G.noti == true then
-				Library:MakeNotification({ 
-					Name = "Map chosen",
-					Content = "Grove map chosen successfully",
-					Image = "rbxassetid://4483345998",
-					Time = 4
-				})
-			end
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Grove map chosen successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
 		_G.gro1 = {
 			[1] = 0,
 			[2] = 91.7
@@ -2159,17 +2159,17 @@ SpeedrunMapList:AddButton({ --Island button
 			Library:MakeNotification({ 
 				Name = "Warning",
 				Content = "You forgot to click activate map button!",
-				Image = "rbxassetid://4483345998",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
 				Time = 4
 			})
-			elseif _G.noti == true then
-				Library:MakeNotification({ 
-					Name = "Map chosen",
-					Content = "Island map chosen successfully",
-					Image = "rbxassetid://4483345998",
-					Time = 4
-				})
-			end
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Island map chosen successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
 		_G.Isl1 = {
 			[1] = 2.4477038383483887,
 			[2] = 100
@@ -2283,17 +2283,17 @@ SpeedrunMapList:AddButton({ --Mineshaft button
 			Library:MakeNotification({ 
 				Name = "Warning",
 				Content = "You forgot to click activate map button!",
-				Image = "rbxassetid://4483345998",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
 				Time = 4
 			})
-			elseif _G.noti == true then
-				Library:MakeNotification({ 
-					Name = "Map chosen",
-					Content = "Mineshaft map chosen successfully",
-					Image = "rbxassetid://4483345998",
-					Time = 4
-				})
-			end
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Mineshaft map chosen successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
 		_G.min1 = {
 			[1] = 0,
 			[2] = 58.706278297091906
@@ -2432,17 +2432,17 @@ SpeedrunMapList:AddButton({ --Redwood button
 			Library:MakeNotification({ 
 				Name = "Warning",
 				Content = "You forgot to click activate map button!",
-				Image = "rbxassetid://4483345998",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
 				Time = 4
 			})
-			elseif _G.noti == true then
-				Library:MakeNotification({ 
-					Name = "Map chosen",
-					Content = "Redwood map chosen successfully",
-					Image = "rbxassetid://4483345998",
-					Time = 4
-				})
-			end
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Redwood map chosen successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
 		_G.Red1 = {
 			[1] = -2.699326276779175,
 			[2] = 39.592605083240436
@@ -2690,17 +2690,17 @@ SpeedrunMapList:AddButton({ --Oasis button
 			Library:MakeNotification({ 
 				Name = "Warning",
 				Content = "You forgot to click activate map button!",
-				Image = "rbxassetid://4483345998",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
 				Time = 4
 			})
-			elseif _G.noti == true then
-				Library:MakeNotification({ 
-					Name = "Map chosen",
-					Content = "Oasis map chosen successfully",
-					Image = "rbxassetid://4483345998",
-					Time = 4
-				})
-			end
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Oasis map chosen successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
 		_G.Oas1 = {
 			[1] = 1.9595962762832642,
 			[2] = 62.33546451237443
@@ -2987,7 +2987,7 @@ VisualSection:AddTextbox({ --FakeTime button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "FakeTime worked successfully",
-			Image = "rbxassetid://4483345998",
+			Image = "http://www.roblox.com/asset/?id=4458805208",
 			Time = 4
 		})
 		_G.e2 = true
@@ -3005,7 +3005,7 @@ VisualSection:AddButton({ --Break FakeTime button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "FakeTime successfully removed",
-			Image = "rbxassetid://4483345998",
+			Image = "http://www.roblox.com/asset/?id=4458805208",
 			Time = 4
 		})	
 		_G.e2 = false
@@ -3017,7 +3017,7 @@ VisualSection:AddButton({ --Destroy Atlantis Ink button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Removed Atlantis ink successfully",
-			Image = "rbxassetid://4483345998",
+			Image = "http://www.roblox.com/asset/?id=4458805208",
 			Time = 4
 		})
 		game:GetService("Players").LocalPlayer.PlayerScripts.Modules.Functions.InkAnimation:Destroy()
@@ -3029,7 +3029,7 @@ VisualSection:AddButton({ --Destroy scoreboard DisplayName button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Removed scoreboard Display Name successfully",
-			Image = "rbxassetid://4483345998",
+			Image = "http://www.roblox.com/asset/?id=4458805208",
 			Time = 4
 		})
 		_G.r = "true"
@@ -3046,7 +3046,7 @@ VisualSection:AddButton({ --Destroy scoreboard Name button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Scoreboard Name removed successfully",
-			Image = "rbxassetid://4483345998",
+			Image = "http://www.roblox.com/asset/?id=4458805208",
 			Time = 4
 		})
 		_G.r = "true"
@@ -3063,7 +3063,7 @@ VisualSection:AddButton({ --Destroy PFP in scoreboard button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Scoreboard PFP removed successfully",
-			Image = "rbxassetid://4483345998",
+			Image = "http://www.roblox.com/asset/?id=4458805208",
 			Time = 4
 		})
 		_G.r1 = "true"
@@ -3080,7 +3080,7 @@ VisualSection:AddButton({ --Loop delete chat button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Loop chat delete is successfully working",
-			Image = "rbxassetid://4483345998",
+			Image = "http://www.roblox.com/asset/?id=4458805208",
 			Time = 4
 		})
 		_G.r2 = "true"
@@ -3101,7 +3101,7 @@ VisualSection:AddButton({ --Break Loop delete chat button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Loop chat delete is successfully breaked",
-			Image = "rbxassetid://4483345998",
+			Image = "http://www.roblox.com/asset/?id=4458805208",
 			Time = 4
 		})
 		_G.r2 = false
@@ -3113,7 +3113,7 @@ VisualSection:AddButton({ --Remove score button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Score removed successfully",
-			Image = "rbxassetid://4483345998",
+			Image = "http://www.roblox.com/asset/?id=4458805208",
 			Time = 4
 		})
 		_G.r3 = "true"
@@ -3130,7 +3130,7 @@ VisualSection:AddButton({ --Remove Scored GUI button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Scored GUI removed successfully",
-			Image = "rbxassetid://4483345998",
+			Image = "http://www.roblox.com/asset/?id=4458805208",
 			Time = 4
 		})
 		_G.r4 = "true"
@@ -3147,181 +3147,259 @@ VisualSection:AddButton({ --Remove Dimension Skybox button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Dimension Skybox removed successfully",
-			Image = "rbxassetid://4483345998",
+			Image = "http://www.roblox.com/asset/?id=4458805208",
 			Time = 4
 		})
 		game:GetService("Workspace").Dimension.Extra.Skybox:Destroy()
 	end
 })
-VisualSection:AddButton({ --Change sky (Galaxy sky) button
-	Name = "Change sky (Galaxy sky)",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Galaxy sky changed successfully",
-			Image = "rbxassetid://4483345998",
-			Time = 4
-		})
-		_G.sk1 = true
-		_G.sk2 = false
-		_G.sk3 = false
-		_G.sk4 = false
-		_G.sk5 = false
-		_G.sk6 = false
-		_G.sk7 = false
-		while wait(0.4) do
-			if 		_G.sk1 == true then
-				game:GetService("Lighting"):WaitForChild("Sky").MoonTextureId = "rbxassetid://1075087760"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "rbxassetid://2670643994"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "rbxassetid://2670643365"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "rbxassetid://2670643214"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "rbxassetid://2670643070"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "rbxassetid://2670644173"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "rbxassetid://2670644331"
+VisualSection:AddDropdown({ --DropDown Skyboxes
+	Name = "SkyBoxes",
+	Options = {"OriginalSky", "GalaxySky", "BreakingBad", "Dog", "GreenSky", "THEONEPIECE", "RUSH", "Speed"},
+	Callback = function(Id)
+		if Id == "OriginalSky" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Original sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+			_G.sk1 = true
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = false
+			while wait(0.4) do
+				if _G.sk1 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=133184290"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=133184311"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=133184318"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=133184299"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=133184333"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=133184341"
+				end			
+			end
+		end
+		if Id == "GalaxySky" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Galaxy sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = true
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = false
+			while wait(0.4) do
+				if _G.sk2 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").MoonTextureId = "rbxassetid://1075087760"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "rbxassetid://2670643994"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "rbxassetid://2670643365"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "rbxassetid://2670643214"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "rbxassetid://2670643070"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "rbxassetid://2670644173"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "rbxassetid://2670644331"
+				end		
+			end
+		end
+		if Id == "GreenSky" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Green sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = true
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = false
+			while wait(0.4) do
+				if _G.sk3 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=5222776243"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=5222776243"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=5222776243"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=5222776243"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=5222776243"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=5222776243"
+				end
+			end
+		end
+		if Id == "BreakingBad" then	
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "BreakingBad sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = true
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = false
+			while wait(0.4) do
+				if _G.sk4 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10209912640"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=10209912640"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=10209912640"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=10209912640"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=10209912640"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=10209912640"
+				end
+			end
+		end
+		if Id == "Dog" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Dog sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = true
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = false
+			while wait(0.4) do
+				if _G.sk5 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=9835676490"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=9835676490"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=9835676490"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=9835676490"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=9835676490"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=9835676490"
+				end		
+			end	
+		end
+		if Id == "THEONEPIECE" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "THEONEPIECE sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = true
+			_G.sk7 = false
+			_G.sk8 = false
+			while wait(0.4) do
+				if _G.sk6 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10465994035"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=10465994035"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=10465994035"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=10465994035"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=10465994035"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=10465994035"
+				end
+			end
+		end
+		if Id == "RUSH" then			
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "RUSH sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = true
+			_G.sk8 = false
+			while wait(0.4) do
+				if _G.sk7 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10716387808"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=10716387808"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=10716387808"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=10716387808"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=10716387808"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=10716387808"	
+				end		
+			end	
+		end
+		if Id == "Speed" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Speed sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = true
+			while wait(0.4) do
+				if _G.sk8 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10383043357"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=10383043357"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=10383043357"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=10383043357"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=10383043357"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=10383043357"
+				end
+			end
+		end		
+	end	
+})
+VisualSection:AddTextbox({ --CustomSkybox
+	Name = "Custom Skybox (rbxassetid | roblox.com/asset link)",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(cus)
+		_G.cuss = true
+		for count = 1, 1000000 do
+			if 	_G.cuss == true then
+				game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = cus
+				game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = cus
+				game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = cus
+				game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = cus
+				game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = cus
+				game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = cus
+				wait(0.4)
 			end
 		end
 	end
 })
-VisualSection:AddButton({ --Change sky (BreakingBad) button
-	Name = "Change sky (BreakingBad)",
+VisualSection:AddButton({ --Break custom skybox
+	Name = "Break custom skybox",
 	Callback = function()
 		Library:MakeNotification({
 			Name = "Clicked successfully",
-			Content = "BreakingBad sky changed successfully",
-			Image = "rbxassetid://4483345998",
+			Content = "Breaked Custom skybox loop successfully",
+			Image = "http://www.roblox.com/asset/?id=4458805208",
 			Time = 4
 		})
-		_G.sk1 = false
-		_G.sk2 = true
-		_G.sk3 = false
-		_G.sk4 = false
-		_G.sk5 = false
-		_G.sk6 = false
-		_G.sk7 = false
-		while wait(0.4) do
-			if 	_G.sk2 == true then
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10209912640"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=10209912640"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=10209912640"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=10209912640"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=10209912640"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=10209912640"
-			end
-		end
+		_G.cuss = false
 	end
 })
-VisualSection:AddButton({ --Change sky (Dog) button
-	Name = "Change sky (Dog)",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Dog sky changed successfully",
-			Image = "rbxassetid://4483345998",
-			Time = 4
-		})
-		_G.sk1 = false
-		_G.sk2 = false
-		_G.sk3 = true
-		_G.sk4 = false
-		_G.sk5 = false
-		_G.sk6 = false
-		_G.sk7 = false
-		while wait(0.4) do
-			if 	_G.sk3 == true then
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=9835676490"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=9835676490"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=9835676490"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=9835676490"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=9835676490"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=9835676490"
-			end
-		end
-	end
-})
-VisualSection:AddButton({ --Change sky (GreenSky) button
-	Name = "Change sky (GreenSky)",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "GreenSky changed successfully",
-			Image = "rbxassetid://4483345998",
-			Time = 4
-		})
-		_G.sk1 = false
-		_G.sk2 = false
-		_G.sk3 = false
-		_G.sk4 = true
-		_G.sk5 = false
-		_G.sk6 = false
-		_G.sk7 = false
-		while wait(0.4) do
-			if 	_G.sk4 == true then
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=5222776243"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=5222776243"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=5222776243"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=5222776243"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=5222776243"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=5222776243"
-			end
-		end
-	end
-})
-VisualSection:AddButton({ --Change sky (Default) button
-	Name = "Change sky (Default)",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Default sky changed successfully",
-			Image = "rbxassetid://4483345998",
-			Time = 4
-		})
-		_G.sk1 = false
-		_G.sk2 = false
-		_G.sk3 = false
-		_G.sk4 = false
-		_G.sk5 = true
-		_G.sk6 = false
-		_G.sk7 = false
-		while wait(0.4) do
-			if 	_G.sk5 == true then
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=133184290"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=133184311"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=133184318"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=133184299"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=133184333"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=133184341"
-			end
-		end
-	end
-})
-VisualSection:AddButton({ --Change sky (THE ONE PIECE) button
-	Name = "Change sky (THE ONE PIECE)",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "THE ONE PIECE changed successfully",
-			Image = "rbxassetid://4483345998",
-			Time = 4
-		})
-		_G.sk1 = false
-		_G.sk2 = false
-		_G.sk3 = false
-		_G.sk4 = false
-		_G.sk5 = false
-		_G.sk6 = true
-		_G.sk7 = false
-		while wait(0.4) do
-			if 	_G.sk6 == true then
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10465994035"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=10465994035"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=10465994035"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=10465994035"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=10465994035"
-				game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=10465994035"
-			end
-		end
-	end
-})
+
 --Convert Section
 
 ConvertSection:AddTextbox({ --Pc to mobile button
@@ -3329,65 +3407,65 @@ ConvertSection:AddTextbox({ --Pc to mobile button
 	Default = "",
 	TextDisappear = true,
 	Callback = function(txt1)
-if tonumber(txt1) then
-		Library:MakeNotification({
-			Name = "Converted successfully",
-			Content = "Copied to your clipboard",
-			Image = "rbxassetid://4483345998",
-			Time = 4
-		})
-		local a = (( txt1 * txt1 ) * 2)
-		setclipboard(tostring(a))
+		if tonumber(txt1) then
+			Library:MakeNotification({
+				Name = "Converted successfully",
+				Content = "Copied to your clipboard",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+			local a = (( txt1 * txt1 ) * 2)
+			setclipboard(tostring(a))
+		end
 	end
-end
 })
 ConvertSection:AddTextbox({ --Mobile to Pc button
 	Name = "Mobile to Pc",
 	Default = "",
 	TextDisappear = true,
 	Callback = function(txt2)
-if tonumber(txt2) then
-		Library:MakeNotification({
-			Name = "Converted successfully",
-			Content = "Copied to your clipboard",
-			Image = "rbxassetid://4483345998",
-			Time = 4
-		})
-		local b = math.sqrt( txt2 / 2 )
-		setclipboard(tostring(b))
+		if tonumber(txt2) then
+			Library:MakeNotification({
+				Name = "Converted successfully",
+				Content = "Copied to your clipboard",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+			local b = math.sqrt( txt2 / 2 )
+			setclipboard(tostring(b))
+		end
 	end
-end
 })
 ConvertSection:AddTextbox({ --Mobile to Pc button
 	Name = "2 pixels to 1 pixel",
 	Default = "",
 	TextDisappear = true,
 	Callback = function(txt3)
-if tonumber(txt3) then
-		Library:MakeNotification({
-			Name = "Converted successfully",
-			Content = "Copied to your clipboard",
-			Image = "rbxassetid://4483345998",
-			Time = 4
-		})
-		local c = math.sqrt(2) * txt3
-		setclipboard(tostring(c))
+		if tonumber(txt3) then
+			Library:MakeNotification({
+				Name = "Converted successfully",
+				Content = "Copied to your clipboard",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+			local c = math.sqrt(2) * txt3
+			setclipboard(tostring(c))
+		end
 	end
-end
 })
 ConvertSection:AddTextbox({ --Mobile to Pc button
 	Name = "3 pixels to 1 pixel",
 	Default = "",
 	TextDisappear = true,
 	Callback = function(txt4)
-if tonumber(txt4) then
-		Library:MakeNotification({
-			Name = "Converted successfully",
-			Content = "Copied to your clipboard",
-			Image = "rbxassetid://4483345998",
-			Time = 4
-		})
-end
+		if tonumber(txt4) then
+			Library:MakeNotification({
+				Name = "Converted successfully",
+				Content = "Copied to your clipboard",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		end
 		local d = math.sqrt(3) * txt4
 		setclipboard(tostring(d))
 	end
@@ -3397,16 +3475,16 @@ ConvertSection:AddTextbox({ --Mobile to Pc button
 	Default = "",
 	TextDisappear = true,
 	Callback = function(txt5)
-if tonumber(txt5) then
-		Library:MakeNotification({
-			Name = "Converted successfully",
-			Content = "Copied to your clipboard",
-			Image = "rbxassetid://4483345998",
-			Time = 4
-		})
-		local e = 2 * txt5
-		setclipboard(tostring(e))
+		if tonumber(txt5) then
+			Library:MakeNotification({
+				Name = "Converted successfully",
+				Content = "Copied to your clipboard",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+			local e = 2 * txt5
+			setclipboard(tostring(e))
+		end
 	end
-end
 })
 Library:Init()
