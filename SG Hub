@@ -2718,16 +2718,16 @@ end)
 --Visuals Section
 
 VisualSection:NewTextBox("FakeTime", "Put the time you want in", function(txt1)
-	_G.e2 = true
-	for count = 1, 100000 do
-		if _G.e2 == true then
-			game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.Scored.Time.Text = (txt1)
-			wait(0.01)
+		_G.e2 = true
+		for count = 1, 100000 do
+			if _G.e2 == true then
+				game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.Scored.Time.Text = (txt1)
+				wait(0.01)
+			end
 		end
-	end
 end)
 VisualSection:NewButton("Delete fake time", "Click for delete fake time", function()
-	_G.e2 = false
+_G.e2 = false
 end)
 VisualSection:NewButton("Disable Ink", "Disables Atlantis Ink", function()
 	game:GetService("Players").LocalPlayer.PlayerScripts.Modules.Functions.InkAnimation:Destroy()
@@ -2785,14 +2785,14 @@ VisualSection:NewButton("Remove Scoreboard", "Removes Scoreboard", function()
 	end
 end)
 VisualSection:NewButton("Remove Scored GUI", "Removes Scored GUI", function()
-	_G.r3 = "true"
+	_G.r4 = "true"
 	while wait(0) do
-		if _G.r3 == "true" then
+		if _G.r4 == "true" then
 			game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.Scored:Destroy()
 		end
 	end
 end)
-VisualSection:NewButton("Remove Dimension sky", "Removes Dimension Sky", function()
+VisualSection:NewButton("Remove sky", "Removes Dimension Sky", function()
 	while true do
 		if game:GetService("Lighting"):WaitForChild("Sky") then
 			game:GetService("Lighting").Sky:Destroy()
@@ -2803,42 +2803,94 @@ end)
 VisualSection:NewButton("Remove Dimension SkyBox", "Removes Dimension SkyBox", function()
 	game:GetService("Workspace").Dimension.Extra.Skybox:Destroy()
 end)
-VisualSection:NewButton("Change Sky 1", "Changes sky", function()
-	while true do
-	wait(.4)
-	game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=7149187631"
-	game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=7149187631"
-	game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=7149187631"
-	game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=7149187631"
-	game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=7149187631"
-		game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=7149187631"
-		wait(.4)
+VisualSection:NewButton("Change Sky (GalaxySky)",  "Changes sky", function() --a
+	_G.sk1 = true
+		_G.sk2 = false
+		_G.sk3 = false
+		_G.sk4 = false
+		_G.sk5 = false
+while wait(0.4) do
+          if 		_G.sk1 == true then
+			game:GetService("Lighting"):WaitForChild("Sky").MoonTextureId = "rbxassetid://1075087760"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "rbxassetid://2670643994"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "rbxassetid://2670643365"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "rbxassetid://2670643214"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "rbxassetid://2670643070"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "rbxassetid://2670644173"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "rbxassetid://2670644331"
 		end
-end)
-VisualSection:NewButton("Change Sky (GreenSky)", "Changes sky", function()
-	while true do
-		wait(.4)
-		game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=5222776243"
-		game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=5222776243"
-		game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=5222776243"
-		game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=5222776243"
-		game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=5222776243"
-		game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=5222776243"
-		wait(.4)
 	end
 end)
-VisualSection:NewButton("Change Sky (funny dog) ", "Changes sky", function()
-	while true do
-		wait(.4)
-		game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=9835676490"
-		game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=9835676490"
-		game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=9835676490"
-		game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=9835676490"
-		game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=9835676490"
-		game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=9835676490"
-		wait(.4)
+VisualSection:NewButton("Change Sky (BreakingBad)",  "Changes sky", function() --a
+	_G.sk2 = true
+		_G.sk1 = false
+		_G.sk3 = false
+		_G.sk4 = false
+		_G.sk5 = false
+while wait(0.4) do
+          if 		_G.sk2 == true then
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10209912640"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=10209912640"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=10209912640"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=10209912640"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=10209912640"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=10209912640"
+        end
 	end
 end)
+VisualSection:NewButton("Change Sky (funny dog)", "Changes sky", function() --a
+_G.sk3 = true
+		_G.sk1 = false
+		_G.sk2 = false
+
+		_G.sk4 = false
+		_G.sk5 = false
+while wait(0.4) do
+          if 		_G.sk3 == true then
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=9835676490"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=9835676490"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=9835676490"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=9835676490"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=9835676490"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=9835676490"
+		end
+	end
+end)
+VisualSection:NewButton("Change Sky (GreenSky)",  "Changes sky", function() --a
+_G.sk4 = true
+		_G.sk1 = false
+		_G.sk2 = false
+		_G.sk3 = false
+		_G.sk5 = false
+while wait(0.4) do
+          if 		_G.sk4 == true then
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=5222776243"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=5222776243"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=5222776243"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=5222776243"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=5222776243"
+			game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=5222776243"
+		end	
+	end
+end)
+VisualSection:NewButton("Change Sky (GameDefault)",  "Changes sky", function() --a
+_G.sk5 = true
+		_G.sk1 = false
+		_G.sk2 = false
+		_G.sk3 = false
+		_G.sk4 = false
+while wait(0.4) do
+          if 		_G.sk5 == true then
+		game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=133184290"
+		game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=133184311"
+		game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=133184318"
+		game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=133184299"
+		game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=133184333"
+		game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=133184341"
+		end
+	end
+end)
+
 --Settings Section
 
 SettingSection:NewKeybind("Toggle UI", "Toggle key to enable/off gui", Enum.KeyCode.Z, function()
