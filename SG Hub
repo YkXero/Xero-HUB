@@ -3329,6 +3329,7 @@ ConvertSection:AddTextbox({ --Pc to mobile button
 	Default = "",
 	TextDisappear = true,
 	Callback = function(txt1)
+if tonumber(txt1) then
 		Library:MakeNotification({
 			Name = "Converted successfully",
 			Content = "Copied to your clipboard",
@@ -3338,12 +3339,14 @@ ConvertSection:AddTextbox({ --Pc to mobile button
 		local a = (( txt1 * txt1 ) * 2)
 		setclipboard(tostring(a))
 	end
+end
 })
 ConvertSection:AddTextbox({ --Mobile to Pc button
 	Name = "Mobile to Pc",
 	Default = "",
 	TextDisappear = true,
 	Callback = function(txt2)
+if tonumber(txt2) then
 		Library:MakeNotification({
 			Name = "Converted successfully",
 			Content = "Copied to your clipboard",
@@ -3353,12 +3356,14 @@ ConvertSection:AddTextbox({ --Mobile to Pc button
 		local b = math.sqrt( txt2 / 2 )
 		setclipboard(tostring(b))
 	end
+end
 })
 ConvertSection:AddTextbox({ --Mobile to Pc button
 	Name = "2 pixels to 1 pixel",
 	Default = "",
 	TextDisappear = true,
 	Callback = function(txt3)
+if tonumber(txt3) then
 		Library:MakeNotification({
 			Name = "Converted successfully",
 			Content = "Copied to your clipboard",
@@ -3368,18 +3373,21 @@ ConvertSection:AddTextbox({ --Mobile to Pc button
 		local c = math.sqrt(2) * txt3
 		setclipboard(tostring(c))
 	end
+end
 })
 ConvertSection:AddTextbox({ --Mobile to Pc button
 	Name = "3 pixels to 1 pixel",
 	Default = "",
 	TextDisappear = true,
 	Callback = function(txt4)
+if tonumber(txt4) then
 		Library:MakeNotification({
 			Name = "Converted successfully",
 			Content = "Copied to your clipboard",
 			Image = "rbxassetid://4483345998",
 			Time = 4
 		})
+end
 		local d = math.sqrt(3) * txt4
 		setclipboard(tostring(d))
 	end
@@ -3389,6 +3397,7 @@ ConvertSection:AddTextbox({ --Mobile to Pc button
 	Default = "",
 	TextDisappear = true,
 	Callback = function(txt5)
+if tonumber(txt5) then
 		Library:MakeNotification({
 			Name = "Converted successfully",
 			Content = "Copied to your clipboard",
@@ -3398,5 +3407,6 @@ ConvertSection:AddTextbox({ --Mobile to Pc button
 		local e = 2 * txt5
 		setclipboard(tostring(e))
 	end
+end
 })
 Library:Init()
