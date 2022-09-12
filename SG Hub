@@ -97,7 +97,7 @@ SpeedrunMapList:AddButton({ --Arctic button
 				Image = "rbxassetid://4483345998",
 				Time = 4
 			})
-		if _G.noti == true then
+		elseif _G.noti == true then
 		Library:MakeNotification({ 
 			Name = "Map chosen",
 			Content = "Arctic map chosen successfully",
@@ -358,7 +358,6 @@ SpeedrunMapList:AddButton({ --Arctic button
 			end
 		end	
 	end    
-end
 })
 SpeedrunMapList:AddButton({ --Atlantis button
 	Name = "Atlantis",
@@ -370,10 +369,10 @@ SpeedrunMapList:AddButton({ --Atlantis button
 				Image = "rbxassetid://4483345998",
 				Time = 4
 			})
-			if _G.noti == true then
+			elseif _G.noti == true then
 				Library:MakeNotification({ 
 					Name = "Map chosen",
-					Content = "Arctic map chosen successfully",
+					Content = "Atlantis map chosen successfully",
 					Image = "rbxassetid://4483345998",
 					Time = 4
 				})
@@ -636,7 +635,6 @@ SpeedrunMapList:AddButton({ --Atlantis button
 			end
 		end
 	end	
-end
 })
 SpeedrunMapList:AddButton({ --Candyland button
 	Name = "Candyland",
@@ -648,10 +646,10 @@ SpeedrunMapList:AddButton({ --Candyland button
 				Image = "rbxassetid://4483345998",
 				Time = 4
 			})
-			if _G.noti == true then
+			elseif _G.noti == true then
 				Library:MakeNotification({ 
 					Name = "Map chosen",
-					Content = "Arctic map chosen successfully",
+					Content = "Candyland map chosen successfully",
 					Image = "rbxassetid://4483345998",
 					Time = 4
 				})
@@ -891,7 +889,6 @@ SpeedrunMapList:AddButton({ --Candyland button
 			end
 		end
 	end
-end
 })
 SpeedrunMapList:AddButton({ --Dimension button
 	Name = "Dimension",
@@ -903,10 +900,10 @@ SpeedrunMapList:AddButton({ --Dimension button
 				Image = "rbxassetid://4483345998",
 				Time = 4
 			})
-			if _G.noti == true then
+			elseif _G.noti == true then
 				Library:MakeNotification({ 
 					Name = "Map chosen",
-					Content = "Arctic map chosen successfully",
+					Content = "Dimension map chosen successfully",
 					Image = "rbxassetid://4483345998",
 					Time = 4
 				})
@@ -1188,7 +1185,6 @@ SpeedrunMapList:AddButton({ --Dimension button
 			end
 		end
 	end		
-end
 })
 SpeedrunMapList:AddButton({ --Forest button
 	Name = "Forest",
@@ -1200,10 +1196,10 @@ SpeedrunMapList:AddButton({ --Forest button
 				Image = "rbxassetid://4483345998",
 				Time = 4
 			})
-			if _G.noti == true then
+			elseif _G.noti == true then
 				Library:MakeNotification({ 
 					Name = "Map chosen",
-					Content = "Arctic map chosen successfully",
+					Content = "Forest map chosen successfully",
 					Image = "rbxassetid://4483345998",
 					Time = 4
 				})
@@ -1433,8 +1429,7 @@ SpeedrunMapList:AddButton({ --Forest button
 				end
 			end
 		end
-	end	
-end
+	end
 })
 SpeedrunMapList:AddButton({ --Facility button
 	Name = "Facility",
@@ -1446,10 +1441,10 @@ SpeedrunMapList:AddButton({ --Facility button
 				Image = "rbxassetid://4483345998",
 				Time = 4
 			})
-			if _G.noti == true then
+			elseif _G.noti == true then
 				Library:MakeNotification({ 
 					Name = "Map chosen",
-					Content = "Arctic map chosen successfully",
+					Content = "Facility map chosen successfully",
 					Image = "rbxassetid://4483345998",
 					Time = 4
 				})
@@ -1724,7 +1719,6 @@ SpeedrunMapList:AddButton({ --Facility button
 			end
 		end
 	end		
-end
 })
 SpeedrunMapList:AddButton({ --Graveyard button
 	Name = "Graveyard",
@@ -1736,14 +1730,13 @@ SpeedrunMapList:AddButton({ --Graveyard button
 				Image = "rbxassetid://4483345998",
 				Time = 4
 			})
-			if _G.noti == true then
+			elseif _G.noti == true then
 				Library:MakeNotification({ 
 					Name = "Map chosen",
-					Content = "Arctic map chosen successfully",
+					Content = "Graveyard map chosen successfully",
 					Image = "rbxassetid://4483345998",
 					Time = 4
 				})
-			end
 		_G.gra1 = {
 			[1] = -2.7689647674560547,
 			[2] = 100
@@ -2007,10 +2000,10 @@ SpeedrunMapList:AddButton({ --Grove button
 				Image = "rbxassetid://4483345998",
 				Time = 4
 			})
-			if _G.noti == true then
+			elseif _G.noti == true then
 				Library:MakeNotification({ 
 					Name = "Map chosen",
-					Content = "Arctic map chosen successfully",
+					Content = "Grove map chosen successfully",
 					Image = "rbxassetid://4483345998",
 					Time = 4
 				})
@@ -2145,8 +2138,7 @@ SpeedrunMapList:AddButton({ --Grove button
 				end
 			end
 		end
-	end
-end		
+	end	
 })
 SpeedrunMapList:AddButton({ --Island button
 	Name = "Island",
@@ -2158,10 +2150,10 @@ SpeedrunMapList:AddButton({ --Island button
 				Image = "rbxassetid://4483345998",
 				Time = 4
 			})
-			if _G.noti == true then
+			elseif _G.noti == true then
 				Library:MakeNotification({ 
 					Name = "Map chosen",
-					Content = "Arctic map chosen successfully",
+					Content = "Island map chosen successfully",
 					Image = "rbxassetid://4483345998",
 					Time = 4
 				})
@@ -2271,7 +2263,6 @@ SpeedrunMapList:AddButton({ --Island button
 			end
 		end
 	end
-end
 })
 SpeedrunMapList:AddButton({ --Mineshaft button
 	Name = "Mineshaft",
@@ -2283,10 +2274,10 @@ SpeedrunMapList:AddButton({ --Mineshaft button
 				Image = "rbxassetid://4483345998",
 				Time = 4
 			})
-			if _G.noti == true then
+			elseif _G.noti == true then
 				Library:MakeNotification({ 
 					Name = "Map chosen",
-					Content = "Arctic map chosen successfully",
+					Content = "Mineshaft map chosen successfully",
 					Image = "rbxassetid://4483345998",
 					Time = 4
 				})
@@ -2421,7 +2412,6 @@ SpeedrunMapList:AddButton({ --Mineshaft button
 			end
 		end
 	end		
-end
 })
 SpeedrunMapList:AddButton({ --Redwood button
 	Name = "Redwood",
@@ -2433,10 +2423,10 @@ SpeedrunMapList:AddButton({ --Redwood button
 				Image = "rbxassetid://4483345998",
 				Time = 4
 			})
-			if _G.noti == true then
+			elseif _G.noti == true then
 				Library:MakeNotification({ 
 					Name = "Map chosen",
-					Content = "Arctic map chosen successfully",
+					Content = "Redwood map chosen successfully",
 					Image = "rbxassetid://4483345998",
 					Time = 4
 				})
@@ -2680,7 +2670,6 @@ SpeedrunMapList:AddButton({ --Redwood button
 			end
 		end
 	end		
-end
 })
 SpeedrunMapList:AddButton({ --Oasis button
 	Name = "Oasis",
@@ -2692,10 +2681,10 @@ SpeedrunMapList:AddButton({ --Oasis button
 				Image = "rbxassetid://4483345998",
 				Time = 4
 			})
-			if _G.noti == true then
+			elseif _G.noti == true then
 				Library:MakeNotification({ 
 					Name = "Map chosen",
-					Content = "Arctic map chosen successfully",
+					Content = "Oasis map chosen successfully",
 					Image = "rbxassetid://4483345998",
 					Time = 4
 				})
@@ -2974,7 +2963,6 @@ SpeedrunMapList:AddButton({ --Oasis button
 			end
 		end	
 	end
-end
 })
 
 --Visuals Section
