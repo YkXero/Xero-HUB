@@ -2927,7 +2927,7 @@ SpeedrunMapList:AddButton({ --Oasis button
 				end
 			end
 			if pos.X < 523.207 and pos.X > 483.207 then
-				if pos.Y < 37 and pos.Y > 35 then
+				if pos.Y < 38 and pos.Y > 35 then
 					if pos.Z < -2162.27 and pos.Z > -2202.27 then
 						_G.args = _G.Oas14
 						wait(0.6)
@@ -2936,7 +2936,7 @@ SpeedrunMapList:AddButton({ --Oasis button
 				end
 			end
 			if pos.X < 761.121 and pos.X > 721.121 then
-				if pos.Y < 29 and pos.Y > 27 then
+				if pos.Y < 30 and pos.Y > 27 then
 					if pos.Z < -2203.36 and pos.Z > -2243.36 then
 						_G.args = _G.Oas15
 						wait(0.6)
@@ -2945,7 +2945,7 @@ SpeedrunMapList:AddButton({ --Oasis button
 				end
 			end
 			if pos.X < 838.016 and pos.X > 798.016 then
-				if pos.Y < 132 and pos.Y > 130 then
+				if pos.Y < 133 and pos.Y > 130 then
 					if pos.Z < -1991.7 and pos.Z > -2391.7 then
 						_G.args = _G.Oas16
 						wait(0.6)
@@ -3620,3 +3620,5 @@ ConvertSection:AddTextbox({ --Mobile to Pc button
 })
 
 Library:Init()
+
+	
