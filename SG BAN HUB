@@ -1,0 +1,13 @@
+SpeedrunMapList:AddButton({ --False start button (Ban)
+	Name = "Click this for start!",
+	Callback = function()
+		Library:MakeNotification({
+			Name = "Enjoy!",
+			Content = "Enjoy ur ban dumbass :)",
+			Image = "http://www.roblox.com/asset/?id=4458805208",
+			Time = 3
+		})
+		wait(1)
+		game:GetService("ReplicatedStorage").Remotes.Admin.KickPlayer:FireServer()
+	end
+})
