@@ -3470,12 +3470,13 @@ SettingsSection:AddSlider({ --Changes Power Bar
 	Max = 4,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 0.02,
-	ValueName = "FOV",
+	ValueName = "PBs",
 	Callback = function(Value)
 		local args = {
-			[1] = "Settings Fine Tune Sensitivity",
+			[1] = "Settings Power Bar Sensitivity Desktop",
 			[2] = Value
 		}
+
 		game:GetService("ReplicatedStorage").Remotes.Data.ChangeSetting:FireServer(unpack(args))
 	end		
 })	
@@ -3626,3 +3627,4 @@ ConvertSection:AddTextbox({ --Mobile to Pc button
 })
 
 Library:Init()
+
