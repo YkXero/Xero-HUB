@@ -18,9 +18,9 @@ local CreditsTab = Window:MakeTab({
 	Icon = "http://www.roblox.com/asset/?id=2795572800",
 	PremiumOnly = false
 })
-local InformationTab = Window:MakeTab({
-	Name = "Information",
-	Icon = "http://www.roblox.com/asset/?id=4871684504",
+local SettingsTab = Window:MakeTab({
+	Name = "Settings",
+	Icon = "http://www.roblox.com/asset/?id=9753762469",
 	PremiumOnly = false
 })
 local ConvertTab = Window:MakeTab({
@@ -28,7 +28,11 @@ local ConvertTab = Window:MakeTab({
 	Icon = "http://www.roblox.com/asset/?id=5267823426",
 	PremiumOnly = false
 })
-
+local InformationTab = Window:MakeTab({
+	Name = "Information",
+	Icon = "http://www.roblox.com/asset/?id=4871684504",
+	PremiumOnly = false
+})
 --Sections
 local SpeedrunMapList = MapList:AddSection({
 	Name = "Speedrun Map List"
@@ -38,6 +42,9 @@ local VisualSection = VisualTab:AddSection({
 })
 local ConvertSection = ConvertTab:AddSection({
 	Name = "Convert Section"
+})
+local SettingsSection = SettingsTab:AddSection({
+	Name = "Settings Section"
 })
 --Paragraphs
 
@@ -122,28 +129,28 @@ SpeedrunMapList:AddButton({ --Arctic button
 			[2] = 33.591625678724064
 		}
 		_G.Arc2 = {
-			[1] = 3.006808280944824,
-			[2] = 73.79291373357076
+			[1] = 2.9990322589874268,
+			[2] = 81.38668471026197
 		}
 		_G.Arc21 = {
-			[1] = 7.903096675872803,
-			[2] = 86.52941223324025
+			[1] = 7.860328197479248,
+			[2] = 86.28404463367261
 		}
 		_G.Arc3 = {
 			[1] = 0.6920644044876099,
 			[2] = 100
 		}
 		_G.Arc4 = {
-			[1] = -2.743675470352173,
-			[2] = 22.049705526047795
+			[1] = -0.3395960330963135,
+			[2] = 22.20578671566991
 		}
 		_G.Arc41 = {
-			[1] = -1.5124753713607788,
+			[1] = 4.655364513397217,
 			[2] = 100
 		}
 		_G.Arc5 = {
-			[1] = 4.569828510284424,
-			[2] = 49.34940510829347
+			[1] = 4.56723690032959,
+			[2] = 47.795831551669544
 		}
 		_G.Arc6 = {
 			[1] = 1.5707963705062866,
@@ -166,10 +173,9 @@ SpeedrunMapList:AddButton({ --Arctic button
 			[2] = 100
 		}
 		_G.Arc9 = {
-			[1] = 0.028512017801404,
-			[2] = 61.763166883297295
+			[1] = 5.775153636932373,
+			[2] = 100
 		}
-
 		_G.Arc10= {
 			[1] = 2.016619920730591,
 			[2] = 24.709265325734712
@@ -196,12 +202,16 @@ SpeedrunMapList:AddButton({ --Arctic button
 			[2] = 100
 		}
 		_G.Arc15 = {
-			[1] = 0.08035199344158173,
-			[2] = 100
+			[1] = 0.1451520174741745,
+			[2] = 99.05124447181669
 		}
-		_G.Arc16= {
-			[1] = 0,
-			[2] = 39.38781877478122
+		_G.Arc16 = {
+			[1] = 0.3110400438308716,
+			[2] = 48.46377725398249
+		}
+		_G.Arc161 = {
+			[1] = 2.7138240337371826,
+			[2] = 98.41874078636116
 		}
 		_G.Arc17= {
 			[1] = 0.760796308517456,
@@ -346,6 +356,8 @@ SpeedrunMapList:AddButton({ --Arctic button
 				if pos.Y < 238 and pos.Y > 236 then
 					if pos.Z < -5222.44 and pos.Z > -5262.44 then
 						_G.args = _G.Arc16
+						wait(0.6)
+						_G.args = _G.Arc161
 					end
 				end
 			end
@@ -1750,10 +1762,9 @@ SpeedrunMapList:AddButton({ --Graveyard button
 				Time = 4
 			})
 			_G.gra1 = {
-				[1] = -2.7689647674560547,
-				[2] = 100
+				[1] = 2.9277539253234863,
+				[2] = 88.70944570675334
 			}
-
 			_G.gra2 = {
 				[1] = -1.0667451620101929,
 				[2] = 53.58654407307279
@@ -1768,27 +1779,22 @@ SpeedrunMapList:AddButton({ --Graveyard button
 				[1] = -3.1016247272491455,
 				[2] = 100
 			}
-
 			_G.gra5 = {
-				[1] = 1.5798720121383667,
-				[2] = 47.784178830074225
+				[1] = 1.3971318006515503,
+				[2] = 100
 			}
-
 			_G.gra6 = {
 				[1] = -0.7335618734359741,
 				[2] = 100
 			}
-
 			_G.gra7 = {
-				[1] = -1.5707963705062866,
-				[2] = 48.125494339563964
+				[1] = -1.695212721824646,
+				[2] = 76.8292048463505
 			}
-
 			_G.gra71 = {
-				[1] = -1.5707963705062866,
-				[2] = 61.095486832223564
+				[1] = -1.6291162967681885,
+				[2] = 69.63811020051389
 			}
-
 			_G.gra8 = {
 				[1] = 1.839402437210083,
 				[2] = 98.98151933210997
@@ -3438,7 +3444,98 @@ VisualSection:AddTextbox({ --CustomSkybox
 			end
 		end
 	end
+})	
+
+--Settings Section	
+
+SettingsSection:AddSlider({ --Changes FOV
+	Name = "Fov Changer",
+	Default = 60,
+	Min = 30,
+	Max = 120,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 0.5,
+	ValueName = "FOV",
+	Callback = function(Value)
+		local args = {
+			[1] = "Settings FOV",
+			[2] = Value
+		}
+		game:GetService("ReplicatedStorage").Remotes.Data.ChangeSetting:FireServer(unpack(args))
+	end    
+})	
+SettingsSection:AddSlider({ --Changes Power Bar
+	Name = "Power Bar Changer",
+	Min = 0,
+	Max = 4,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 0.02,
+	ValueName = "FOV",
+	Callback = function(Value)
+		local args = {
+			[1] = "Settings Fine Tune Sensitivity",
+			[2] = Value
+		}
+		game:GetService("ReplicatedStorage").Remotes.Data.ChangeSetting:FireServer(unpack(args))
+	end		
+})	
+SettingsSection:AddToggle({ --Hide Players Button
+	Name = "Hide Players",
+	Default = false,
+	Callback = function(Value)	
+		local args = {
+			[1] = "Settings Hide Other Players",
+			[2] = Value
+		}
+		game:GetService("ReplicatedStorage").Remotes.Data.ChangeSetting:FireServer(unpack(args))
+	end   
+
 })
+SettingsSection:AddToggle({ --Hide Time Leaderboard Button
+	Name = "Hide Leaderboard Time Tag",
+	Default = false,
+	Callback = function(Value)
+		local args = {
+			[1] = "Settings Chat Tag Leaderboard",
+			[2] = Value
+		}
+
+		game:GetService("ReplicatedStorage").Remotes.Data.ChangeSetting:FireServer(unpack(args))
+	end    
+})  
+SettingsSection:AddToggle({ --Hide Wins Leaderboard Button
+	Name = "Hide Wins Tag",
+	Default = false,
+	Callback = function(Value)
+		local args = {
+			[1] = "Settings Chat Tag Wins",
+			[2] = Value
+		}
+		game:GetService("ReplicatedStorage").Remotes.Data.ChangeSetting:FireServer(unpack(args))
+	end	 
+})  
+SettingsSection:AddToggle({ --Hide VIP tag Button
+	Name = "Hide VIP Tag",
+	Default = false,
+	Callback = function(Value)
+		local args = {
+			[1] = "Settings Chat Tag VIP",
+			[2] = Value
+		}
+		game:GetService("ReplicatedStorage").Remotes.Data.ChangeSetting:FireServer(unpack(args))
+	end	
+})  
+SettingsSection:AddToggle({ --Hide Group tag Button
+	Name = "Hide Group Tag",
+	Default = false,
+	Callback = function(Value)
+		local args = {
+			[1] = "Settings Chat Tag Group",
+			[2] = Value
+		}
+		game:GetService("ReplicatedStorage").Remotes.Data.ChangeSetting:FireServer(unpack(args))
+	end	
+})  
 
 --Convert Section
 
@@ -3527,4 +3624,5 @@ ConvertSection:AddTextbox({ --Mobile to Pc button
 		end
 	end
 })
+
 Library:Init()
