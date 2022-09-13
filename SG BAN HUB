@@ -1,3 +1,21 @@
+local Library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = Library:MakeWindow({Name = "SG Destroyer GUI", HidePremium = false, SaveConfig = false	, ConfigFolder = "OrionTest", IntroText = "Xero & Mds SG GUI", IntroIcon = "http://www.roblox.com/asset/?id=3019710362"})
+local MapList = Window:MakeTab({
+	Name = "MapList",
+	Icon = "http://www.roblox.com/asset/?id=10893855041",
+	PremiumOnly = false
+})
+local SpeedrunMapList = MapList:AddSection({
+	Name = "Speedrun Map List"
+})
+
+Library:MakeNotification({
+	Name = "Thanks for using this GUI!",
+	Content = "Enjoy Destroy SG leaderboard :)",
+	Image = "http://www.roblox.com/asset/?id=4458805208",
+	Time = 3
+})
+
 SpeedrunMapList:AddButton({ --False start button (Ban)
 	Name = "Click this for start!",
 	Callback = function()
