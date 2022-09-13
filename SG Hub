@@ -2313,12 +2313,10 @@ SpeedrunMapList:AddButton({ --Mineshaft button
 			[1] = -1.0553452968597412,
 			[2] = 100
 		}
-
 		_G.min5 = {
-			[1] = -2.3172924518585205,
-			[2] = 100
+			[1] = 4.134356498718262,
+			[2] = 89.88948311417289
 		}
-
 		_G.min6 = {
 			[1] = -0.9592723250389099,
 			[2] = 96.08716337310196
@@ -2332,22 +2330,22 @@ SpeedrunMapList:AddButton({ --Mineshaft button
 			[1] = 4.711092472076416,
 			[2] = 87.30313843849201
 		}
-
+		_G.min8 = {
+			[1] = 1.5733884572982788,
+			[2] = 71.17506758039863
+		}
 		_G.min9 = {
 			[1] = 0,
 			[2] = 24.57472025394175
 		}
-
 		_G.min92 = {
 			[1] = 1.5750250816345215,
 			[2] = 85.67020974202816
 		}
-
 		_G.min93 = {
-			[1] = 7.9708662033081055,
+			[1] = 1.6925790309906006,
 			[2] = 100
 		}
-
 		while true do
 			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
 			wait(0.001)
@@ -2402,6 +2400,13 @@ SpeedrunMapList:AddButton({ --Mineshaft button
 						_G.args = _G.min7
 						wait(0.7)
 						_G.args = _G.min71
+					end
+				end
+			end
+			if pos.X < 1964.99 and pos.X > 1924.99 then
+				if pos.Y < 162 and pos.Y > 160 then
+					if pos.Z < -2913.06 and pos.Z > -2953.06 then
+						_G.args = _G.min8
 					end
 				end
 			end
@@ -2701,8 +2706,8 @@ SpeedrunMapList:AddButton({ --Oasis button
 			[2] = 62.33546451237443
 		}
 		_G.Oas2 = {
-			[1] = 5.600193500518799,
-			[2] = 75.5922788565142
+			[1] = 5.504286766052246,
+			[2] = 100
 		}
 		_G.Oas3 = {
 			[1] = 4.724053382873535,
@@ -2717,8 +2722,8 @@ SpeedrunMapList:AddButton({ --Oasis button
 			[2] = 78.232343731782
 		}
 		_G.Oas6 = {
-			[1] = 1.621410846710205,
-			[2] = 88.74204430700752
+			[1] = 1.5707963705062866,
+			[2] = 82.69622168993791
 		}
 		_G.Oas7 = {
 			[1] = -0.0480002760887146,
@@ -2855,8 +2860,6 @@ SpeedrunMapList:AddButton({ --Oasis button
 				if pos.Y < 132 and pos.Y > 130 then
 					if pos.Z < -1281.49 and pos.Z > -1321.49 then
 						_G.args = _G.Oas6
-						wait(0.6)
-						_G.args = _G.Oas61
 					end
 				end
 			end
@@ -3455,6 +3458,7 @@ SettingsSection:AddSlider({ --Changes FOV
 })	
 SettingsSection:AddSlider({ --Changes Power Bar
 	Name = "Power Bar Changer",
+	Default = 3,
 	Min = 0,
 	Max = 4,
 	Color = Color3.fromRGB(255,255,255),
