@@ -1,6 +1,6 @@
 --Local Lib/Window
 local Library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = Library:MakeWindow({Name = "X&M SG GUI", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest", IntroText = "Xero & Mds SG GUI", IntroIcon = "http://www.roblox.com/asset/?id=3019710362"})
+local Window = Library:MakeWindow({Name = "X&M SG GUI", HidePremium = false, SaveConfig = true	, ConfigFolder = "OrionTest", IntroText = "Xero & Mds SG GUI", IntroIcon = "http://www.roblox.com/asset/?id=3019710362"})
 
 --Local Tabs
 local MapList = Window:MakeTab({
@@ -2710,8 +2710,8 @@ SpeedrunMapList:AddButton({ --Oasis button
 			[2] = 100
 		}
 		_G.Oas3 = {
-			[1] = 4.724053382873535,
-			[2] = 67.47414761577666
+			[1] = -1.5682042837142944,
+			[2] = 82.29636314293573
 		}
 		_G.Oas4 = {
 			[1] = -1.9723966121673584,
@@ -3620,4 +3620,3 @@ ConvertSection:AddTextbox({ --Mobile to Pc button
 })
 
 Library:Init()
-
