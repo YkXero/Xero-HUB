@@ -3517,7 +3517,7 @@ VisualSection:AddButton({ --Remove DarkFog button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Dark fog removed successfully",
-			Image = "http://www.roblox.com/asset/?id=4458805208",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})
 		_G.sky10 = false
@@ -3905,3 +3905,4 @@ OptimizeSection:AddButton({ --Break optimize Lighthing
 		end
 	end
 })
+Library:Init()
