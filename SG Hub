@@ -13,6 +13,11 @@ local VisualTab = Window:MakeTab({
 	Icon = "http://www.roblox.com/asset/?id=6523858394",
 	PremiumOnly = false
 })
+local OptimizeTab = Window:MakeTab({
+	Name = "Optimize",
+	Icon = "http://www.roblox.com/asset/?id=4728059490",
+	PremiumOnly = false
+})
 local CreditsTab = Window:MakeTab({
 	Name = "Credits",
 	Icon = "http://www.roblox.com/asset/?id=2795572800",
@@ -34,6 +39,7 @@ local InformationTab = Window:MakeTab({
 	PremiumOnly = false
 })
 --Sections
+
 local SpeedrunMapList = MapList:AddSection({
 	Name = "Speedrun Map List"
 })
@@ -45,6 +51,9 @@ local ConvertSection = ConvertTab:AddSection({
 })
 local SettingsSection = SettingsTab:AddSection({
 	Name = "Settings Section"
+})
+local OptimizeSection = OptimizeTab:AddSection({
+	Name = "Optimize Section"
 })
 --Paragraphs
 
@@ -2972,6 +2981,33 @@ SpeedrunMapList:AddButton({ --Oasis button
 
 --Visuals Section
 
+VisualSection:AddDropdown({ --Balls dropdown
+	Name = "Types of Golf balls (Unstable/Broken)",
+	Default = "1",
+	Options = {"Break Invisible Loop (Will Stop after tespawning)", "Invisible", "CubeBall", "Break CubeBall loop"},
+	Callback = function(ball)
+		if ball == "Break Invisible Loop (need to respawn)" then
+			_G.Invisball = false
+		end
+		if ball == "Invisible" then
+		_G.Invisball = true
+		while true do
+		game:GetService("Workspace").GolfBallsHighlighted.BallVisual["Golf Ball"].Color.Ball:Destroy()	
+		wait(.1)
+		end
+		end	
+		if ball == "CubeBall" then
+			_G.CubeBall = true
+			while true do
+			game:GetService("Workspace").GolfBallsHighlighted.BallVisual["Golf Ball"].Primary.Transparency = 0
+			wait(.1)
+		end	
+		end
+		if ball == "Break CubeBall loop" then
+		_G.CubeBall = false
+		end
+	end    
+}) 
 VisualSection:AddTextbox({ --FakeTime button
 	Name = "FakeTime",
 	Default = "Put anything here",
@@ -3614,4 +3650,160 @@ ConvertSection:AddTextbox({ --Mobile to Pc button
 	end
 })
 
+--Optimize Section
+
+OptimizeSection:AddDropdown({ --OptimizeSection Skyboxes
+	Name = "OptimizeMaps",
+	Options = {"Arctic", "Atlantis", "Candyland", "Dimension", "Facility", "Forest", "Graveyard", "Grove", "Island", "Mineshaft", "Oasis", "Redwood", "LobbyExtra"},
+	Callback = function(Map)
+		if Map == "Arctic" then	
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Arctic successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Arctic.Extra:Destroy()
+		end		
+		if Map == "Atlantis" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Atlantis successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		game:GetService("Workspace").Atlantis.Extra:Destroy()
+		end
+		if Map == "Candyland" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Candyland successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Candyland.Extra:Destroy()
+		end	
+		if Map == "Dimension" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Dimension successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Dimension.Extra:Destroy()
+		end
+		if Map == "Facility" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Facility successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Facility.Extra:Destroy()
+		end
+		if Map == "Forest" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Forest successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Forest.Extra:Destroy()
+		end
+		if Map == "Graveyard" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Graveyard successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		game:GetService("Workspace").Graveyard.Extra:Destroy()
+		end
+		if Map == "Grove" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Grove successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		game:GetService("Workspace").Grove.Extra:Destroy()
+		end
+		if Map == "Island" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Island successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		game:GetService("Workspace").Island.Extra:Destroy()
+		end
+		if Map == "Mineshaft" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Mineshaft successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Mineshaft.Extra:Destroy()
+		end
+		if Map == "Oasis" then
+		Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Oasis successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+		})
+		game:GetService("Workspace").Oasis.Extra:Destroy()
+		end
+		if Map == "Redwood" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Redwood successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Redwood.Extra:Destroy()	
+		end
+		if Map == "LobbyExtra" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Lobby successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		game:GetService("Workspace").Extra:Destroy()
+		end
+	end
+})
+OptimizeSection:AddButton({ --Optimize Lighthing
+	Name = "Optimize Lighthing",
+	Callback = function()
+		_G.OPTLighthing = true
+		Library:MakeNotification({
+			Name = "Clicked successfully",
+			Content = "Optimized Lighthings successfully",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
+			Time = 4
+		})	
+		if _G.OPTLighthing == true then		
+			while wait(.1) do
+				for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do
+					v:Destroy()
+				end	
+			end
+		end
+	end
+})
+OptimizeSection:AddButton({ --Break optimize Lighthing
+	Name = "Break Lighthing Optimization (broke rn)",
+	Callback = function()
+		Library:MakeNotification({
+			Name = "Clicked successfully",
+			Content = "Breaked Lighthing Optimization successfully",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
+			Time = 4
+		})
+		_G.OPTLighthing = false
+	end
+})
 Library:Init()
