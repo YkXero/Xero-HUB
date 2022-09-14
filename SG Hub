@@ -2980,34 +2980,28 @@ SpeedrunMapList:AddButton({ --Oasis button
 })
 
 --Visuals Section
-
-VisualSection:AddDropdown({ --Balls dropdown
-	Name = "Types of Golf balls (Unstable/Broken)",
-	Default = "1",
-	Options = {"Break Invisible Loop (Will Stop after tespawning)", "Invisible", "CubeBall", "Break CubeBall loop"},
-	Callback = function(ball)
-		if ball == "Break Invisible Loop (need to respawn)" then
-			_G.Invisball = false
+  
+VisualSection:AddButton({ --Dark button
+	Name = "Dark Gamemode",
+	Callback = function()
+		Library:MakeNotification({
+			Name = "Clicked successfully",
+			Content = "Dark Gamemode Successfully added",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
+			Time = 4
+		})	
+		_G.Fog = true
+		_G.disfog = false
+		if _G.Fog == true then
+			while wait(.1) do
+				game:GetService("Lighting").FogEnd = 20
+				game:GetService("Lighting").FogColor = Color3.new(0, 0, 0)	
+			if _G.disfog == true then break					
+			end		
 		end
-		if ball == "Invisible" then
-		_G.Invisball = true
-		while true do
-		game:GetService("Workspace").GolfBallsHighlighted.BallVisual["Golf Ball"].Color.Ball:Destroy()	
-		wait(.1)
-		end
-		end	
-		if ball == "CubeBall" then
-			_G.CubeBall = true
-			while true do
-			game:GetService("Workspace").GolfBallsHighlighted.BallVisual["Golf Ball"].Primary.Transparency = 0
-			wait(.1)
-		end	
-		end
-		if ball == "Break CubeBall loop" then
-		_G.CubeBall = false
-		end
-	end    
-}) 
+	end			
+end
+})
 VisualSection:AddTextbox({ --FakeTime button
 	Name = "FakeTime",
 	Default = "Put anything here",
@@ -3016,7 +3010,7 @@ VisualSection:AddTextbox({ --FakeTime button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "FakeTime worked successfully",
-			Image = "http://www.roblox.com/asset/?id=4458805208",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})
 		_G.e2 = true
@@ -3034,7 +3028,7 @@ VisualSection:AddButton({ --Break FakeTime button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "FakeTime successfully removed",
-			Image = "http://www.roblox.com/asset/?id=4458805208",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})	
 		_G.e2 = false
@@ -3046,7 +3040,7 @@ VisualSection:AddButton({ --Destroy Atlantis Ink button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Removed Atlantis ink successfully",
-			Image = "http://www.roblox.com/asset/?id=4458805208",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})
 		game:GetService("Players").LocalPlayer.PlayerScripts.Modules.Functions.InkAnimation:Destroy()
@@ -3058,7 +3052,7 @@ VisualSection:AddButton({ --Destroy scoreboard DisplayName button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Removed scoreboard Display Name successfully",
-			Image = "http://www.roblox.com/asset/?id=4458805208",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})
 		_G.r = "true"
@@ -3075,7 +3069,7 @@ VisualSection:AddButton({ --Destroy scoreboard Name button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Scoreboard Name removed successfully",
-			Image = "http://www.roblox.com/asset/?id=4458805208",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})
 		_G.r = "true"
@@ -3086,13 +3080,37 @@ VisualSection:AddButton({ --Destroy scoreboard Name button
 		end
 	end
 })
+VisualSection:AddButton({ --Destroy TopRight GUI button
+	Name = "Remove TopRight GUI",
+	Callback = function()
+		Library:MakeNotification({
+			Name = "Clicked successfully",
+			Content = "TopRightGUI removed successfully",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
+			Time = 4
+		})
+	game:GetService("Players").Xeeeeerrrooooo.PlayerGui.MainGui.MainFrame.Playing.TopRight:Destroy()
+end
+})
+VisualSection:AddButton({ --Destroy Gamemode GUI button
+	Name = "Remove Gamemode GUI",
+	Callback = function()
+		Library:MakeNotification({
+			Name = "Clicked successfully",
+			Content = "Gamemode GUI removed successfully",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
+			Time = 4
+		})
+		game:GetService("Players").Xeeeeerrrooooo.PlayerGui.MainGui.MainFrame.Playing.Gamemode:Destroy()
+	end
+})
 VisualSection:AddButton({ --Destroy PFP in scoreboard button
 	Name = "Remove PFP in scoreboard",
 	Callback = function()
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Scoreboard PFP removed successfully",
-			Image = "http://www.roblox.com/asset/?id=4458805208",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})
 		_G.r1 = "true"
@@ -3109,7 +3127,7 @@ VisualSection:AddButton({ --Loop delete chat button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Loop chat delete is successfully working",
-			Image = "http://www.roblox.com/asset/?id=4458805208",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})
 		_G.r2 = "true"
@@ -3130,7 +3148,7 @@ VisualSection:AddButton({ --Break Loop delete chat button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Loop chat delete is successfully breaked",
-			Image = "http://www.roblox.com/asset/?id=4458805208",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})
 		_G.r2 = false
@@ -3142,7 +3160,7 @@ VisualSection:AddButton({ --Remove score button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Score removed successfully",
-			Image = "http://www.roblox.com/asset/?id=4458805208",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})
 		_G.r3 = "true"
@@ -3153,13 +3171,25 @@ VisualSection:AddButton({ --Remove score button
 		end
 	end
 })
+VisualSection:AddButton({ --Remove Shoot Container button
+	Name = "Remove Shoot Container",
+	Callback = function()
+		Library:MakeNotification({
+			Name = "Clicked successfully",
+			Content = "Shoot container removed successfully",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
+			Time = 4
+		})
+		game:GetService("Players").Xeeeeerrrooooo.PlayerGui.MainGui.MainFrame.Mechanics.Power:Destroy()
+	end
+})
 VisualSection:AddButton({ --Remove Scored GUI button
 	Name = "Remove Scored GUI",
 	Callback = function()
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Scored GUI removed successfully",
-			Image = "http://www.roblox.com/asset/?id=4458805208",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})
 		_G.r4 = "true"
@@ -3176,7 +3206,7 @@ VisualSection:AddButton({ --Remove Dimension Skybox button
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Dimension Skybox removed successfully",
-			Image = "http://www.roblox.com/asset/?id=4458805208",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})
 		game:GetService("Workspace").Dimension.Extra.Skybox:Destroy()
@@ -3184,13 +3214,13 @@ VisualSection:AddButton({ --Remove Dimension Skybox button
 })
 VisualSection:AddDropdown({ --DropDown Skyboxes
 	Name = "SkyBoxes",
-	Options = {"OriginalSky", "GalaxySky", "BreakingBad", "Dog", "GreenSky", "THEONEPIECE", "RUSH", "Speed", "Rickroll"},
+	Options = {"OriginalSky", "GalaxySky", "BreakingBad", "Dog", "GreenSky", "THEONEPIECE", "RUSH", "Speed", "Rickroll", "DarkSky"},
 	Callback = function(Id)
 		if Id == "OriginalSky" then
 			Library:MakeNotification({
 				Name = "Clicked successfully",
 				Content = "Original sky selected successfully",
-				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
 			_G.sk1 = true
@@ -3202,6 +3232,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk7 = false
 			_G.sk8 = false
 			_G.sk9 = false
+			_G.sk10 = false
 			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk1 == true then
@@ -3218,7 +3249,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			Library:MakeNotification({
 				Name = "Clicked successfully",
 				Content = "Galaxy sky selected successfully",
-				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
 			_G.sk1 = false
@@ -3230,6 +3261,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk7 = false
 			_G.sk8 = false
 			_G.sk9 = false
+			_G.sk10 = false
 			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk2 == true then
@@ -3247,7 +3279,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			Library:MakeNotification({
 				Name = "Clicked successfully",
 				Content = "Green sky selected successfully",
-				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
 			_G.sk1 = false
@@ -3259,6 +3291,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk7 = false
 			_G.sk8 = false
 			_G.sk9 = false
+			_G.sk10 = false
 			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk3 == true then
@@ -3275,7 +3308,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			Library:MakeNotification({
 				Name = "Clicked successfully",
 				Content = "BreakingBad sky selected successfully",
-				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
 			_G.sk1 = false
@@ -3287,6 +3320,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk7 = false
 			_G.sk8 = false
 			_G.sk9 = false
+			_G.sk10 = false
 			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk4 == true then
@@ -3303,7 +3337,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			Library:MakeNotification({
 				Name = "Clicked successfully",
 				Content = "Dog sky selected successfully",
-				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
 			_G.sk1 = false
@@ -3315,6 +3349,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk7 = false
 			_G.sk8 = false
 			_G.sk9 = false
+			_G.sk10 = false
 			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk5 == true then
@@ -3331,7 +3366,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			Library:MakeNotification({
 				Name = "Clicked successfully",
 				Content = "THEONEPIECE sky selected successfully",
-				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
 			_G.sk1 = false
@@ -3343,6 +3378,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk7 = false
 			_G.sk8 = false
 			_G.sk9 = false
+			_G.sk10 = false
 			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk6 == true then
@@ -3359,7 +3395,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			Library:MakeNotification({
 				Name = "Clicked successfully",
 				Content = "RUSH sky selected successfully",
-				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
 			_G.sk1 = false
@@ -3371,6 +3407,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk7 = true
 			_G.sk8 = false
 			_G.sk9 = false
+			_G.sk10 = false
 			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk7 == true then
@@ -3387,7 +3424,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			Library:MakeNotification({
 				Name = "Clicked successfully",
 				Content = "Speed sky selected successfully",
-				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
 			_G.sk1 = false
@@ -3399,6 +3436,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk7 = false
 			_G.sk8 = true
 			_G.sk9 = false
+			_G.sk10 = false
 			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk8 == true then
@@ -3415,7 +3453,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			Library:MakeNotification({
 				Name = "Clicked successfully",
 				Content = "Rickroll sky selected successfully",
-				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
 			_G.sk1 = false
@@ -3427,6 +3465,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 			_G.sk7 = false
 			_G.sk8 = false
 			_G.sk9 = true
+			_G.sk10 = false
 			_G.cuss = false
 			while wait(0.4) do
 				if _G.sk9 == true then
@@ -3439,7 +3478,59 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 				end
 			end
 		end		
+		if Id == "DarkSky" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Dark sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = false
+			_G.sk9 = false
+			_G.sk10 = true
+			_G.cuss = false
+			while wait(0.4) do
+				if _G.sk10 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").MoonTextureId = "rbxasset://sky/moon.jpg"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=48020371"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=48020144"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=48020234"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=48020211"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=48020254"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=48020383"
+					game:GetService("Lighting").FogEnd = 50
+				end
+			end
+		end		
 	end	
+})
+VisualSection:AddButton({ --Remove DarkFog button
+	Name = "Remove Fog",
+	Callback = function()
+		Library:MakeNotification({
+			Name = "Clicked successfully",
+			Content = "Dark fog removed successfully",
+			Image = "http://www.roblox.com/asset/?id=4458805208",
+			Time = 4
+		})
+		_G.sky10 = false
+		_G.fog = false
+		_G.disfog = true
+		while wait(0.1) do
+			if _G.disfog == true then
+				game:GetService("Lighting").FogEnd = 10000
+				if _G.Fog == true then break		
+				end
+			end
+		end
+	end
 })
 VisualSection:AddTextbox({ --CustomSkybox
 	Name = "Custom Skybox (rbxassetid | roblox.com/asset link)",
@@ -3784,12 +3875,14 @@ OptimizeSection:AddButton({ --Optimize Lighthing
 			Content = "Optimized Lighthings successfully",
 			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
-		})	
-		if _G.OPTLighthing == true then		
-			while wait(.1) do
+		})    
+
+		while wait(.1) do
+			if _G.OPTLighthing == true then
 				for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do
 					v:Destroy()
-				end	
+					game:GetService("Lighting").FogEnd = 10000
+				end    
 			end
 		end
 	end
@@ -3806,4 +3899,3 @@ OptimizeSection:AddButton({ --Break optimize Lighthing
 		_G.OPTLighthing = false
 	end
 })
-Library:Init()
