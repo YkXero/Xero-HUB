@@ -3882,13 +3882,15 @@ OptimizeSection:AddButton({ --Optimize Lighthing
 				for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do
 					v:Destroy()
 					game:GetService("Lighting").FogEnd = 10000
+					if _G.OPTLighting == false then break												
+					end
 				end    
 			end
 		end
 	end
 })
 OptimizeSection:AddButton({ --Break optimize Lighthing
-	Name = "Break Lighthing Optimization (broke rn)",
+	Name = "Break Lighthing Optimization",
 	Callback = function()
 		Library:MakeNotification({
 			Name = "Clicked successfully",
@@ -3896,6 +3898,10 @@ OptimizeSection:AddButton({ --Break optimize Lighthing
 			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})
+		while wait(.1) do
 		_G.OPTLighthing = false
+			if _G.OPTLighting == true then break				
+			end		
+		end
 	end
 })
