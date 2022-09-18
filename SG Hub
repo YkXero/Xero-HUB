@@ -606,11 +606,11 @@ SpeedrunMapList:AddButton({ --Atlantis button
 					end
 				end
 			end
-			if pos.X < -604.129 and pos.X > -644.129 then
+			if pos.X < -614.129 and pos.X > -634.129 then
 				if pos.Y < 128 and pos.Y > 126 then
-					if pos.Z < -1205.97 and pos.Z > -1245.97 then
+					if pos.Z < -1205.97 and pos.Z > -1230.97 then
 						_G.args = _G.atl12
-						wait(0.6)
+						wait(0.5)
 						_G.args = _G.atl121
 					end
 				end
@@ -2735,8 +2735,8 @@ SpeedrunMapList:AddButton({ --Oasis button
 			[2] = 78.232343731782
 		}
 		_G.Oas6 = {
-			[1] = 1.5707963705062866,
-			[2] = 82.69622168993791
+			[1] = 1.621410846710205,
+			[2] = 88.74204430700752
 		}
 		_G.Oas7 = {
 			[1] = -0.0480002760887146,
@@ -2991,7 +2991,7 @@ SpeedrunMapList:AddButton({ --Oasis button
 --Visuals Section
 
 VisualSection:AddDropdown({ -- General Visuals
-	Name = "General Visuals",
+	Name = "Misc visuals",
 	Options = {"Destroy atlantis ink", "Remove DisplayName in Scoreboard", "Remove Username in Scoreboard", "Remove profile icon in Scoreboard", "Destroy TopRight GUI", "Destroy Gamemode GUI", "Remove BottomLeft GUI", "Destroy Scored GUI", "Loop delete chat", "Break delete chat loop", "Remove Dimension Skybox"},
 	Callback = function(Visual) 
 		if Visual == "Destroy atlantis ink" then
@@ -3132,6 +3132,7 @@ VisualSection:AddButton({  --Dark Gamemode Button
 			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})	
+		_G.DarkFognoti = true
 		_G.Fog = true
 		_G.disfog = false
 		if _G.Fog == true then
@@ -3147,12 +3148,21 @@ end
 VisualSection:AddButton({ --Remove DarkFog button
 	Name = "Remove Fog",
 	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Dark fog removed successfully",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})
+		if _G.DarkFognoti ~= true then
+			Library:MakeNotification({ 
+				Name = "Error",
+				Content = "There isn't any dark fog at the moment",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.DarkFognoti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Dark fog removed successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
 		_G.sky10 = false
 		_G.fog = false
 		_G.disfog = true
@@ -3470,6 +3480,7 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
+			_G.DarkFognoti = true
 			_G.sk1 = false
 			_G.sk2 = false
 			_G.sk3 = false
@@ -3868,7 +3879,7 @@ OptimizeSection:AddButton({ --Break optimize Lighthing
 		Library:MakeNotification({
 				Name = "Error",
 				Content = "Cant stop optimazing if theres nothing optimazing.",
-				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
 				Time = 4
 			})
 		end
