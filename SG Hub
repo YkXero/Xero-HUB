@@ -182,8 +182,8 @@ SpeedrunMapList:AddButton({ --Arctic button
 			[2] = 100
 		}
 		_G.Arc9 = {
-			[1] = 5.775153636932373,
-			[2] = 100
+			[1] = 6.28188943862915,
+			[2] = 60.15532626575537
 		}
 		_G.Arc10= {
 			[1] = 2.016619920730591,
@@ -516,6 +516,10 @@ SpeedrunMapList:AddButton({ --Atlantis button
 			[1] = 0.7167333960533142,
 			[2] = 100
 		}
+		_G.atl183 = {
+			[1] = 1.633001685142517,
+			[2] = 100
+		}
 
 		while true do
 			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
@@ -658,6 +662,8 @@ SpeedrunMapList:AddButton({ --Atlantis button
 						_G.args = _G.atl181
 						wait(0.85)
 						_G.args = _G.atl182
+						wait(1)
+						_G.args = _G.atl183
 					end
 				end
 			end
@@ -2040,7 +2046,10 @@ SpeedrunMapList:AddButton({ --Grove button
 			[1] = 0.9701713919639587,
 			[2] = 100
 		}
-
+		_G.gro31 = {
+			[1] = 0.1076119914650917,
+			[2] = 35.73168718750749
+		}
 		_G.gro4 = {
 			[1] = 0.8051204085350037,
 			[2] = 76.11337228793224
@@ -2050,16 +2059,14 @@ SpeedrunMapList:AddButton({ --Grove button
 			[1] = 0.27925267815589905,
 			[2] = 66.89785201262927
 		}
-
 		_G.gro52 = {
 			[1] = 2.176208019256592,
 			[2] = 97.95756451971762
 		}
 		_G.gro6 = {
-			[1] = 1.57254159450531,
-			[2] = 86.35284073597046
+			[1] = 1.5707963705062866,
+			[2] = 87.05207703383732
 		}
-
 		_G.gro7 = {
 			[1] = 0.7963937520980835,
 			[2] = 100
@@ -2098,6 +2105,8 @@ SpeedrunMapList:AddButton({ --Grove button
 				if pos.Y < 153.102 and pos.Y > 150.102 then
 					if pos.Z < -6.0693 and pos.Z > -19.0693 then
 						_G.args = _G.gro3
+						wait(1)
+						_G.args = _G.gro31
 					end
 				end
 			end
@@ -2980,8 +2989,141 @@ SpeedrunMapList:AddButton({ --Oasis button
 })
 
 --Visuals Section
-  
-VisualSection:AddButton({ --Dark button
+
+VisualSection:AddDropdown({ -- General Visuals
+	Name = "General Visuals",
+	Options = {"Destroy atlantis ink", "Remove DisplayName in Scoreboard", "Remove Username in Scoreboard", "Remove profile icon in Scoreboard", "Destroy TopRight GUI", "Destroy Gamemode GUI", "Remove BottomLeft GUI", "Destroy Scored GUI", "Loop delete chat", "Break delete chat loop", "Remove Dimension Skybox"},
+	Callback = function(Visual) 
+		if Visual == "Destroy atlantis ink" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Removed Atlantis ink successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Players").LocalPlayer.PlayerScripts.Modules.Functions.InkAnimation:Destroy()
+		end    
+		if Visual == "Remove DisplayName in Scoreboard" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Removed scoreboard Display Name successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.r = "true"
+			while wait(0) do
+				if _G.r == "true" then
+					game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.Scoreboard.Container.Players.ScoreboardSlot.DisplayName:Destroy()
+				end
+			end
+		end    
+		if Visual == "Remove Username in Scoreboard" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Removed username in scoreboard successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.r2 = "true"
+			while wait(0) do
+				if _G.r2 == "true" then
+					game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.Scoreboard.Container.Players.ScoreboardSlot.Username:Destroy()
+				end
+			end
+		end
+		if Visual == "Remove profile icon in Scoreboard" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Removed username in scoreboard successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.r3 = "true"
+			while wait(0) do
+				if _G.r3 == "true" then
+					game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.Scoreboard.Container.Players.ScoreboardSlot.Picture:Destroy()
+				end
+			end
+		end
+		if Visual == "Destroy TopRight GUI" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "TopRight GUI removed successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Players").Xeeeeerrrooooo.PlayerGui.MainGui.MainFrame.Playing.TopRight:Destroy()
+		end
+		if Visual == "Destroy Gamemode GUI" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Gamemode GUI removed successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Players").Xeeeeerrrooooo.PlayerGui.MainGui.MainFrame.Playing.Gamemode:Destroy()
+		end
+		if Visual == "Remove BottomLeft GUI" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Score GUI removed successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			while wait(0.1) do
+					game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.BottomLeft:Destroy()
+				end
+		end
+		if Visual == "Destroy Scored GUI" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Scored GUI removed successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			while wait(0.1) do
+					game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.Scored:Destroy()
+				end
+		end
+		if Visual == "Loop delete chat" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Loop chat delete is successfully working",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.r4 = "true"
+			while wait(0) do
+				if _G.r4 == "true" then
+					for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame.ChatChannelParentFrame["Frame_MessageLogDisplay"].Scroller:GetChildren(Frame)) do
+						if v.Name == "Frame" then
+							v:Destroy()
+						end
+					end
+				end
+			end
+		end
+		if Visual == "Break delete chat loop" then
+				Library:MakeNotification({
+					Name = "Clicked successfully",
+					Content = "Deleting chat loop is successfully breaked",
+					Image = "http://www.roblox.com/asset/?id=5959696880",
+					Time = 4
+				})
+				_G.r4 = false
+		end	
+		if Visual == "Remove Dimension Skybox" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Dimension Skybox removed successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Dimension.Extra.Skybox:Destroy()
+		end
+end
+})
+VisualSection:AddButton({  --Dark Gamemode Button
 	Name = "Dark Gamemode",
 	Callback = function()
 		Library:MakeNotification({
@@ -3002,7 +3144,28 @@ VisualSection:AddButton({ --Dark button
 	end			
 end
 })
-VisualSection:AddTextbox({ --FakeTime button
+VisualSection:AddButton({ --Remove DarkFog button
+	Name = "Remove Fog",
+	Callback = function()
+		Library:MakeNotification({
+			Name = "Clicked successfully",
+			Content = "Dark fog removed successfully",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
+			Time = 4
+		})
+		_G.sky10 = false
+		_G.fog = false
+		_G.disfog = true
+		while wait(0.1) do
+			if _G.disfog == true then
+				game:GetService("Lighting").FogEnd = 10000
+				if _G.Fog == true then break		
+				end
+			end
+		end
+	end
+})
+VisualSection:AddTextbox({ --FakeTime button a
 	Name = "FakeTime",
 	Default = "Put anything here",
 	TextDisappear = true,
@@ -3022,7 +3185,7 @@ VisualSection:AddTextbox({ --FakeTime button
 		end
 	end
 })
-VisualSection:AddButton({ --Break FakeTime button
+VisualSection:AddButton({ --Break FakeTime button a
 	Name = "Delete fake time",
 	Callback = function()
 		Library:MakeNotification({
@@ -3033,184 +3196,6 @@ VisualSection:AddButton({ --Break FakeTime button
 		})	
 		_G.e2 = false
 	end    
-})
-VisualSection:AddButton({ --Destroy Atlantis Ink button
-	Name = "Destroy Atlantis Ink",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Removed Atlantis ink successfully",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})
-		game:GetService("Players").LocalPlayer.PlayerScripts.Modules.Functions.InkAnimation:Destroy()
-	end    
-})
-VisualSection:AddButton({ --Destroy scoreboard DisplayName button
-	Name = "Remove scoreboard DisplayName",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Removed scoreboard Display Name successfully",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})
-		_G.r = "true"
-		while wait(0) do
-			if _G.r == "true" then
-				game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.Scoreboard.Container.Players.ScoreboardSlot.DisplayName:Destroy()
-			end
-		end
-	end    
-})
-VisualSection:AddButton({ --Destroy scoreboard Name button
-	Name = "Remove scoreboard Name",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Scoreboard Name removed successfully",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})
-		_G.r = "true"
-		while wait(0) do
-			if _G.r == "true" then
-				game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.Scoreboard.Container.Players.ScoreboardSlot.Username:Destroy()
-			end
-		end
-	end
-})
-VisualSection:AddButton({ --Destroy TopRight GUI button
-	Name = "Remove TopRight GUI",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "TopRightGUI removed successfully",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})
-	game:GetService("Players").Xeeeeerrrooooo.PlayerGui.MainGui.MainFrame.Playing.TopRight:Destroy()
-end
-})
-VisualSection:AddButton({ --Destroy Gamemode GUI button
-	Name = "Remove Gamemode GUI",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Gamemode GUI removed successfully",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})
-		game:GetService("Players").Xeeeeerrrooooo.PlayerGui.MainGui.MainFrame.Playing.Gamemode:Destroy()
-	end
-})
-VisualSection:AddButton({ --Destroy PFP in scoreboard button
-	Name = "Remove PFP in scoreboard",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Scoreboard PFP removed successfully",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})
-		_G.r1 = "true"
-		while wait(0) do
-			if _G.r1 == "true" then
-				game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.Scoreboard.Container.Players.ScoreboardSlot.Picture:Destroy()
-			end
-		end
-	end
-})
-VisualSection:AddButton({ --Loop delete chat button
-	Name = "Loops delete chat",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Loop chat delete is successfully working",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})
-		_G.r2 = "true"
-		while wait(0) do
-			if _G.r2 == "true" then
-				for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame.ChatChannelParentFrame["Frame_MessageLogDisplay"].Scroller:GetChildren(Frame)) do
-					if v.Name == "Frame" then
-						v:Destroy()
-					end
-				end
-			end
-		end
-	end
-})
-VisualSection:AddButton({ --Break Loop delete chat button
-	Name = "Break delete chat loop",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Loop chat delete is successfully breaked",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})
-		_G.r2 = false
-	end
-})
-VisualSection:AddButton({ --Remove score button
-	Name = "Remove Score",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Score removed successfully",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})
-		_G.r3 = "true"
-		while wait(0) do
-			if _G.r3 == "true" then
-				game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.BottomLeft:Destroy()
-			end
-		end
-	end
-})
-VisualSection:AddButton({ --Remove Shoot Container button
-	Name = "Remove Shoot Container",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Shoot container removed successfully",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})
-		game:GetService("Players").Xeeeeerrrooooo.PlayerGui.MainGui.MainFrame.Mechanics.Power:Destroy()
-	end
-})
-VisualSection:AddButton({ --Remove Scored GUI button
-	Name = "Remove Scored GUI",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Scored GUI removed successfully",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})
-		_G.r4 = "true"
-		while wait(0) do
-			if _G.r4 == "true" then
-				game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.Scored:Destroy()
-			end
-		end
-	end
-})
-VisualSection:AddButton({ --Remove Dimension Skybox button
-	Name = "Remove Dimension SkyBox",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Dimension Skybox removed successfully",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})
-		game:GetService("Workspace").Dimension.Extra.Skybox:Destroy()
-	end
 })
 VisualSection:AddDropdown({ --DropDown Skyboxes
 	Name = "SkyBoxes",
@@ -3511,27 +3496,6 @@ VisualSection:AddDropdown({ --DropDown Skyboxes
 		end		
 	end	
 })
-VisualSection:AddButton({ --Remove DarkFog button
-	Name = "Remove Fog",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Dark fog removed successfully",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})
-		_G.sky10 = false
-		_G.fog = false
-		_G.disfog = true
-		while wait(0.1) do
-			if _G.disfog == true then
-				game:GetService("Lighting").FogEnd = 10000
-				if _G.Fog == true then break		
-				end
-			end
-		end
-	end
-})
 VisualSection:AddTextbox({ --CustomSkybox
 	Name = "Custom Skybox (rbxassetid | roblox.com/asset link)",
 	Default = "",
@@ -3743,7 +3707,7 @@ ConvertSection:AddTextbox({ --Mobile to Pc button
 
 --Optimize Section
 
-OptimizeSection:AddDropdown({ --OptimizeSection Skyboxes
+OptimizeSection:AddDropdown({ --Optimize Maps
 	Name = "OptimizeMaps",
 	Options = {"Arctic", "Atlantis", "Candyland", "Dimension", "Facility", "Forest", "Graveyard", "Grove", "Island", "Mineshaft", "Oasis", "Redwood", "LobbyExtra"},
 	Callback = function(Map)
@@ -3868,7 +3832,8 @@ OptimizeSection:AddDropdown({ --OptimizeSection Skyboxes
 })
 OptimizeSection:AddButton({ --Optimize Lighthing
 	Name = "Optimize Lighthing",
-	Callback = function()
+	Callback = function()	
+		_G.OPTLNoti = true
 		_G.OPTLighthing = true
 		Library:MakeNotification({
 			Name = "Clicked successfully",
@@ -3890,16 +3855,26 @@ OptimizeSection:AddButton({ --Optimize Lighthing
 	end
 })
 OptimizeSection:AddButton({ --Break optimize Lighthing
-	Name = "Break Lighthing Optimization",
+	Name = "Stop Optimizating Lighthing",
 	Callback = function()
+		if _G.OPTLNoti == true then
 		Library:MakeNotification({
 			Name = "Clicked successfully",
 			Content = "Breaked Lighthing Optimization successfully",
 			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
-		})
+			})
+		elseif _G.OPTLNoti ~= true then
+		Library:MakeNotification({
+				Name = "Error",
+				Content = "Cant stop optimazing if theres nothing optimazing.",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.OPTLNoti = false
 		while wait(.1) do
-		_G.OPTLighthing = false
+			_G.OPTLighthing = false			
 			if _G.OPTLighting == true then break				
 			end		
 		end
