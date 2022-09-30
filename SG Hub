@@ -1262,6 +1262,10 @@ SpeedrunMapList:AddButton({ --Forest button
 			[1] = -2.1051573753356934,
 			[2] = 100
 		}
+        _G.For71 = {
+            [1] = 0.032286643981933594,
+            [2] = 100
+        }
 		_G.For8 = {
 			[1] = 1.3637713193893433,
 			[2] = 83.86123988660526
@@ -1370,6 +1374,8 @@ SpeedrunMapList:AddButton({ --Forest button
 				if pos.Y < 111 and pos.Y > 109 then
 					if pos.Z < 215.92 and pos.Z > 175.92 then
 						_G.args = _G.For7
+				wait(0.6)
+				_G.args = _G.For71
 					end
 				end
 			end
@@ -1397,11 +1403,12 @@ SpeedrunMapList:AddButton({ --Forest button
 			if pos.X < 598.571 and pos.X > 558.571 then
 				if pos.Y < 111 and pos.Y > 109 then
 					if pos.Z < -192.212 and pos.Z > -232.212 then
-						_G.args = _G.For11					
+						_G.args = _G.For11	
+                       				wait(0.6)
+				_G.args = _G.For111				
 					end
 				end
-				wait(0.6)
-				_G.args = _G.For111
+
 			end
 			if pos.X < 690.01 and pos.X > 650.01 then
 				if pos.Y < 112 and pos.Y > 110 then
