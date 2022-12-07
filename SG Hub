@@ -57,7 +57,7 @@ local OptimizeSection = OptimizeTab:AddSection({
 })
 --Paragraphs
 
-InformationTab:AddParagraph("Important", "Do not use this GUI to get advantage of any kind, this script is intended to be for ONLY showcase, if you do not follow this rules you got a big chance of getting banned ingame, apart from we do not support the use of this GUI for get advantage ingame.")
+InformationTab:AddParagraph("Important", "Do not use this GUI to get advantage of any kind, this script is intended to be for ONLY showcase, if you do not follow this you got a big chance of getting banned ingame, apart that we do not support the use of this GUI for any advantage ingame.")
 InformationTab:AddParagraph("How to use", "Use C to start, L to stop")
 CreditsTab:AddParagraph("Developers", "Xero & Mds")
 
@@ -1262,10 +1262,6 @@ SpeedrunMapList:AddButton({ --Forest button
 			[1] = -2.1051573753356934,
 			[2] = 100
 		}
-        _G.For71 = {
-            [1] = 0.032286643981933594,
-            [2] = 100
-        }
 		_G.For8 = {
 			[1] = 1.3637713193893433,
 			[2] = 83.86123988660526
@@ -1374,8 +1370,6 @@ SpeedrunMapList:AddButton({ --Forest button
 				if pos.Y < 111 and pos.Y > 109 then
 					if pos.Z < 215.92 and pos.Z > 175.92 then
 						_G.args = _G.For7
-				wait(0.6)
-				_G.args = _G.For71
 					end
 				end
 			end
@@ -1403,12 +1397,11 @@ SpeedrunMapList:AddButton({ --Forest button
 			if pos.X < 598.571 and pos.X > 558.571 then
 				if pos.Y < 111 and pos.Y > 109 then
 					if pos.Z < -192.212 and pos.Z > -232.212 then
-						_G.args = _G.For11	
-                       				wait(0.6)
-				_G.args = _G.For111				
+						_G.args = _G.For11					
 					end
 				end
-
+				wait(0.6)
+				_G.args = _G.For111
 			end
 			if pos.X < 690.01 and pos.X > 650.01 then
 				if pos.Y < 112 and pos.Y > 110 then
@@ -2334,8 +2327,12 @@ SpeedrunMapList:AddButton({ --Mineshaft button
 			[2] = 100
 		}
 		_G.min5 = {
-			[1] = 4.134356498718262,
-			[2] = 89.88948311417289
+			[1] = -2.1159818172454834,
+			[2] = 74.63750238323382
+		}
+		_G.min51 = {
+			[1] = 1.1715418100357056,
+			[2] = 23.416667597161407
 		}
 		_G.min6 = {
 			[1] = -0.9592723250389099,
@@ -2404,6 +2401,8 @@ SpeedrunMapList:AddButton({ --Mineshaft button
 				if pos.Y < 122.135 and pos.Y > 120.135 then
 					if pos.Z < -2430.52 and pos.Z > -2470.52 then
 						_G.args = _G.min5
+						wait(0.7)
+						_G.args = _G.min51
 					end
 				end
 			end
