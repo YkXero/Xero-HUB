@@ -2993,7 +2993,307 @@ SpeedrunMapList:AddButton({ --Oasis button
 		end	
 	end
 })
+SpeedrunMapList:AddButton({ --Cyber button
+	Name = "Cyber",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Cyber map chosen successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.cyb1 = {
+			[1] = 6.279297351837158,
+			[2] = 61.66348829266325
+		}
+		_G.cyb2 = {
+			[1] = 3.2854485511779785,
+			[2] = 54.96925465423498
+		}
+		_G.cyb21 = {
+			[1] = 0.2100406140089035,
+			[2] = 71.6918036590644
+		}
+		_G.cyb3 = {
+			[1] = 0.009072000160813332,
+			[2] = 57.55261430101738
+		}
+		_G.cyb4 = {
+			[1] = -1.5707963705062866,
+			[2] = 95.21635887518211
+		}
+		_G.cyb5 = {
+			[1] = 0.4691515564918518,
+			[2] = 86.93427264403508
+		}
+		_G.cyb51 = {
+			[1] = 1.5914883613586426,
+			[2] = 46.200001171686615
+		}
+		_G.cyb6 = {
+			[1] = 1.8364766836166382,
+			[2] = 79.31436516503824
+		}
+		_G.cyb61 = {
+			[1] = 1.9863808155059814,
+			[2] = 32.10416777680319
+		}
+		_G.cyb7 = {
+			[1] = 1.5707963705062866,
+			[2] = 98.20375748338724
+		}
+		_G.cyb71 = {
+			[1] = 1.509278416633606,
+			[2] = 29.281250492980085
+		}
+		_G.cyb8 = {
+			[1] = 0.5715360045433044,
+			[2] = 100
+		}
+		_G.cyb81 = {
+			[1] = 1.884384036064148,
+			[2] = 57.44166755241653
+		}
+		_G.cyb9 = {
+			[1] = 1.6096763610839844,
+			[2] = 100
+		}
+		_G.cyb10 = {
+			[1] = 1.378987431526184,
+			[2] = 100
+		}
+		_G.cyb101 = {
+			[1] = 2.7579336166381836,
+			[2] = 100
+		}
+		_G.cyb102 = {
+			[1] = 0.8631824254989624,
+			[2] = 36.95208438672126
+		}
+		_G.cyb11 = {
+			[1] = 3.3619353771209717,
+			[2] = 100
+		}
+		_G.cyb111 = {
+			[1] = 2.30310320854187,
+			[2] = 100
+		}
+		_G.cyb112 = {
+			[1] = -2.9696338176727295,
+			[2] = 24.985417408040846
+		}
+		_G.cyb12 = {
+			[1] = 3.875084638595581,
+			[2] = 56.268687187263694
+		}
+		_G.cyb121 = {
+			[1] = 1.5535165071487427,
+			[2] = 95.64166649348205
+		}
+		_G.cyb13 = {
+			[1] = 1.7755645513534546,
+			[2] = 100
+		}
+		_G.cyb131 = {
+			[1] = 1.7816137075424194,
+			[2] = 40.45416752393874
+		}
+		_G.cyb14 = {
+			[1] = 4.71238899230957,
+			[2] = 82.63835408483097
+		}
+		_G.cyb141 = {
+			[1] = 5.929765701293945,
+			[2] = 66.0979187105679
+		}
+		_G.cyb15 = {
+			[1] = -1.6831161975860596,
+			[2] = 100
+		}
+		_G.cyb151 = {
+			[1] = 1.5517877340316772,
+			[2] = 86.05000108894374
+		}
+		_G.cyb16 = {
+			[1] = 1.5500600337982178,
+			[2] = 86.6859297970496
+		}
+		_G.cyb17 = {
+			[1] = 0.16199998557567596,
+			[2] = 100
+		}
+		_G.cyb18 = {
+			[1] = 4.782372951507568,
+			[2] = 100
+		}
 
+		while true do
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < -233.686 and pos.X > -273.686 then
+				if pos.Y < 126.635 and pos.Y > 124.635 then
+					if pos.Z < -2552.2 and pos.Z > -2592.2 then
+						_G.args = _G.cyb1
+					end
+				end
+			end
+			if pos.X < -538.731 and pos.X > -578.731 then
+				if pos.Y < 132 and pos.Y > 130 then
+					if pos.Z < -2701.82 and pos.Z > -2741.82 then
+						_G.args = _G.cyb2
+						wait(0.8)
+						_G.args = _G.cyb21
+					end
+				end
+			end
+			if pos.X < -520.668 and pos.X > -560.668 then
+				if pos.Y < 138 and pos.Y > 136 then
+					if pos.Z < -2859.59 and pos.Z > -2899.59 then
+						_G.args = _G.cyb3
+					end
+				end
+			end
+			if pos.X < -503.446 and pos.X > -543.446 then
+				if pos.Y < 147 and pos.Y > 145 then
+					if pos.Z < -3059.48 and pos.Z > -3099.48 then
+						_G.args = _G.cyb4
+					end
+				end
+			end
+			if pos.X < -269.943 and pos.X > -311.801 then
+				if pos.Y < 113 and pos.Y > 111 then
+					if pos.Z < -3164.24 and pos.Z > -3204.24 then
+						_G.args = _G.cyb5
+						wait(0.8)
+						_G.args = _G.cyb51
+					end
+				end
+			end
+			if pos.X < -434.533 and pos.X > -474.533 then
+				if pos.Y < 136 and pos.Y > 134 then
+					if pos.Z < -3442.22 and pos.Z > -3482.22 then
+						_G.args = _G.cyb6
+						wait(0.8)
+						_G.args = _G.cyb61
+					end
+				end
+			end
+			if pos.X < -508.772 and pos.X > -548.772 then
+				if pos.Y < 131 and pos.Y > 129 then
+					if pos.Z < -3691.2 and pos.Z > -3731.2 then
+						_G.args = _G.cyb7
+						wait(0.8)
+						_G.args = _G.cyb71
+					end
+				end
+			end
+			if pos.X < -399.266 and pos.X > -439.266 then
+				if pos.Y < 148 and pos.Y > 146 then
+					if pos.Z < -3716.5 and pos.Z > -3756.5 then
+						_G.args = _G.cyb8
+						wait(0.8)
+						_G.args = _G.cyb81
+					end
+				end
+			end
+			if pos.X < -438.211 and pos.X > -478.211 then
+				if pos.Y < 115 and pos.Y > 113 then
+					if pos.Z < -4010.81 and pos.Z > -4050.81 then
+						_G.args = _G.cyb9
+					end
+				end
+			end
+			if pos.X < -630.375 and pos.X > -670.375 then
+				if pos.Y < 134 and pos.Y > 132 then
+					if pos.Z < -4097.82 and pos.Z > -4137.82 then
+						_G.args = _G.cyb10
+						wait(0.8)
+						_G.args = _G.cyb101
+						wait(7)
+						_G.args = _G.cyb102
+					end
+				end
+			end
+			if pos.X < -506.692 and pos.X > -546.692 then
+				if pos.Y < 129 and pos.Y > 127 then
+					if pos.Z < -4387.1 and pos.Z > -4427.1 then
+						_G.args = _G.cyb11
+						wait(0.8)
+						_G.args = _G.cyb111
+						wait(6)
+						_G.args = _G.cyb112
+					end
+				end
+			end
+			if pos.X < -180.336 and pos.X > -220.336 then
+				if pos.Y < 137 and pos.Y > 135 then
+					if pos.Z < -4548.8 and pos.Z > -4588.8 then
+						_G.args = _G.cyb12
+						wait(0.8)
+						_G.args = _G.cyb121
+					end
+				end
+			end
+			if pos.X < -439.379 and pos.X > -479.379 then
+				if pos.Y < 126 and pos.Y > 124 then
+					if pos.Z < -4740.92 and pos.Z > -4780.92 then
+						_G.args = _G.cyb13
+						wait(0.8)
+						_G.args = _G.cyb131
+					end
+				end
+			end
+			if pos.X < -561.121 and pos.X > -601.121 then
+				if pos.Y < 126 and pos.Y > 124 then
+					if pos.Z < -4885.8 and pos.Z > -4925.8 then
+						_G.args = _G.cyb14
+						wait(0.8)
+						_G.args = _G.cyb141
+					end
+				end
+			end
+			if pos.X < -258.352 and pos.X > -298.352 then
+				if pos.Y < 120 and pos.Y > 118 then
+					if pos.Z < -4918.6 and pos.Z > -4958.6 then
+						_G.args = _G.cyb15
+						wait(0.8)
+						_G.args = _G.cyb151
+					end
+				end
+			end
+			if pos.X < -234.785 and pos.X > -274.785 then
+				if pos.Y < 125 and pos.Y > 123 then
+					if pos.Z < -5120.15 and pos.Z > -5160.15 then
+						_G.args = _G.cyb16
+					end
+				end
+			end
+			if pos.X < -615.781 and pos.X > -655.781 then
+				if pos.Y < 138 and pos.Y > 136 then
+					if pos.Z < -5176.39 and pos.Z > -5216.39 then
+						_G.args = _G.cyb17
+					end
+				end
+			end
+			if pos.X < -675.086 and pos.X > -715.086 then
+				if pos.Y < 132 and pos.Y > 130 then
+					if pos.Z < -5594.57 and pos.Z > -5634.57 then
+						_G.args = _G.cyb18
+					end
+				end
+			end
+		end
+	end
+})
 --Visuals Section
 
 VisualSection:AddDropdown({ -- General Visuals
@@ -3077,8 +3377,8 @@ VisualSection:AddDropdown({ -- General Visuals
 				Time = 4
 			})
 			while wait(0.1) do
-					game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.BottomLeft:Destroy()
-				end
+				game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.BottomLeft:Destroy()
+			end
 		end
 		if Visual == "Destroy Scored GUI" then
 			Library:MakeNotification({
@@ -3088,8 +3388,8 @@ VisualSection:AddDropdown({ -- General Visuals
 				Time = 4
 			})
 			while wait(0.1) do
-					game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.Scored:Destroy()
-				end
+				game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MainFrame.Playing.Scored:Destroy()
+			end
 		end
 		if Visual == "Loop delete chat" then
 			Library:MakeNotification({
@@ -3110,13 +3410,13 @@ VisualSection:AddDropdown({ -- General Visuals
 			end
 		end
 		if Visual == "Break delete chat loop" then
-				Library:MakeNotification({
-					Name = "Clicked successfully",
-					Content = "Deleting chat loop is successfully breaked",
-					Image = "http://www.roblox.com/asset/?id=5959696880",
-					Time = 4
-				})
-				_G.r4 = false
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Deleting chat loop is successfully breaked",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.r4 = false
 		end	
 		if Visual == "Remove Dimension Skybox" then
 			Library:MakeNotification({
@@ -3127,7 +3427,7 @@ VisualSection:AddDropdown({ -- General Visuals
 			})
 			game:GetService("Workspace").Dimension.Extra.Skybox:Destroy()
 		end
-end
+	end
 })
 VisualSection:AddButton({  --Dark Gamemode Button
 	Name = "Dark Gamemode",
@@ -3145,11 +3445,11 @@ VisualSection:AddButton({  --Dark Gamemode Button
 			while wait(.1) do
 				game:GetService("Lighting").FogEnd = 20
 				game:GetService("Lighting").FogColor = Color3.new(0, 0, 0)	
-			if _G.disfog == true then break					
-			end		
-		end
-	end			
-end
+				if _G.disfog == true then break					
+				end		
+			end
+		end			
+	end
 })
 VisualSection:AddButton({ --Remove DarkFog button
 	Name = "Remove Fog",
@@ -3744,7 +4044,7 @@ OptimizeSection:AddDropdown({ --Optimize Maps
 				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
-		game:GetService("Workspace").Atlantis.Extra:Destroy()
+			game:GetService("Workspace").Atlantis.Extra:Destroy()
 		end
 		if Map == "Candyland" then
 			Library:MakeNotification({
@@ -3789,7 +4089,7 @@ OptimizeSection:AddDropdown({ --Optimize Maps
 				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
-		game:GetService("Workspace").Graveyard.Extra:Destroy()
+			game:GetService("Workspace").Graveyard.Extra:Destroy()
 		end
 		if Map == "Grove" then
 			Library:MakeNotification({
@@ -3798,7 +4098,7 @@ OptimizeSection:AddDropdown({ --Optimize Maps
 				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
-		game:GetService("Workspace").Grove.Extra:Destroy()
+			game:GetService("Workspace").Grove.Extra:Destroy()
 		end
 		if Map == "Island" then
 			Library:MakeNotification({
@@ -3807,7 +4107,7 @@ OptimizeSection:AddDropdown({ --Optimize Maps
 				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
-		game:GetService("Workspace").Island.Extra:Destroy()
+			game:GetService("Workspace").Island.Extra:Destroy()
 		end
 		if Map == "Mineshaft" then
 			Library:MakeNotification({
@@ -3819,13 +4119,13 @@ OptimizeSection:AddDropdown({ --Optimize Maps
 			game:GetService("Workspace").Mineshaft.Extra:Destroy()
 		end
 		if Map == "Oasis" then
-		Library:MakeNotification({
+			Library:MakeNotification({
 				Name = "Clicked successfully",
 				Content = "Optimized Oasis successfully",
 				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
-		})
-		game:GetService("Workspace").Oasis.Extra:Destroy()
+			})
+			game:GetService("Workspace").Oasis.Extra:Destroy()
 		end
 		if Map == "Redwood" then
 			Library:MakeNotification({
@@ -3836,6 +4136,15 @@ OptimizeSection:AddDropdown({ --Optimize Maps
 			})
 			game:GetService("Workspace").Redwood.Extra:Destroy()	
 		end
+		if Map == "Cyber" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Redwood successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Cyber.Extra:Destroy()
+		end
 		if Map == "LobbyExtra" then
 			Library:MakeNotification({
 				Name = "Clicked successfully",
@@ -3843,7 +4152,7 @@ OptimizeSection:AddDropdown({ --Optimize Maps
 				Image = "http://www.roblox.com/asset/?id=5959696880",
 				Time = 4
 			})
-		game:GetService("Workspace").Extra:Destroy()
+			game:GetService("Workspace").Extra:Destroy()
 		end
 	end
 })
@@ -3875,14 +4184,14 @@ OptimizeSection:AddButton({ --Break optimize Lighthing
 	Name = "Stop Optimizating Lighthing",
 	Callback = function()
 		if _G.OPTLNoti == true then
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Breaked Lighthing Optimization successfully",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Breaked Lighthing Optimization successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
 			})
 		elseif _G.OPTLNoti ~= true then
-		Library:MakeNotification({
+			Library:MakeNotification({
 				Name = "Error",
 				Content = "Cant stop optimazing if theres nothing optimazing.",
 				Image = "http://www.roblox.com/asset/?id=4458805208",
