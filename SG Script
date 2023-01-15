@@ -59,6 +59,7 @@ local OptimizeSection = OptimizeTab:AddSection({
 
 InformationTab:AddParagraph("Important", "Do not use this GUI to get advantage of any kind, this script is intended to be for ONLY showcase, if you do not follow this you got a big chance of getting banned ingame, apart that we do not support the use of this GUI for any advantage ingame.")
 InformationTab:AddParagraph("How to use", "Use C to start, L to stop")
+InformationTab:AddParagraph("NOTE:", "For the auto shoot if you want to turn off, rejoin the game")
 CreditsTab:AddParagraph("Developers", "Xero & Mds")
 
 --Loaded GUI notification
@@ -115,6 +116,33 @@ SpeedrunMapList:AddButton({ --Activate map button
 		setreadonly(mt,true)
 	end    
 })
+SpeedrunMapList:AddButton({ --Activate map button
+	Name = "Auto Shoot",
+	Callback = function()
+		_G.noti = true
+		Library:MakeNotification({ 
+			Name = "Clicked successfully",
+			Content = "Auto Shoot is Active",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
+			Time = 4
+		})
+local lp = game:FindService("Players").LocalPlayer
+local remote = getupvalue(require(lp:WaitForChild("PlayerScripts"):WaitForChild("Controllers"):WaitForChild("MechanicsController")).Shoot,3)
+
+function script()
+remote.Parent = game:GetService("ReplicatedStorage")
+remote:FireServer(1,100)
+end
+
+while wait(0) do
+if _G.cfg == 1 then
+pcall(function()
+script()
+end)
+end
+end
+end
+   })
 SpeedrunMapList:AddButton({ --Arctic button
 	Name = "Arctic",
 	Callback = function()
