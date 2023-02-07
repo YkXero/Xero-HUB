@@ -1,1 +1,3221 @@
---In progress
+--Local Lib/Window
+local Library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = Library:MakeWindow({Name = "SG v2", HidePremium = false, SaveConfig = false	, ConfigFolder = "OrionTest", IntroText = "Xero SG GUI v2", IntroIcon = "http://www.roblox.com/asset/?id=3019710362"})
+
+--Local Tabs
+local MapList = Window:MakeTab({
+	Name = "MapList",
+	Icon = "http://www.roblox.com/asset/?id=10893855041",
+	PremiumOnly = false
+})
+local VisualTab = Window:MakeTab({
+	Name = "Visuals",
+	Icon = "http://www.roblox.com/asset/?id=6523858394",
+	PremiumOnly = false
+})
+local OptimizeTab = Window:MakeTab({
+	Name = "Optimize",
+	Icon = "http://www.roblox.com/asset/?id=4728059490",
+	PremiumOnly = false
+})
+local SettingsTab = Window:MakeTab({
+	Name = "Settings",
+	Icon = "http://www.roblox.com/asset/?id=9753762469",
+	PremiumOnly = false
+})
+local InformationTab = Window:MakeTab({
+	Name = "Information",
+	Icon = "http://www.roblox.com/asset/?id=4871684504",
+	PremiumOnly = false
+})
+--Sections
+
+local SpeedrunMapList = MapList:AddSection({
+	Name = "Speedrun Map List"
+})
+local VisualSection = VisualTab:AddSection({
+	Name = "Visuals Section"
+})
+local SettingsSection = SettingsTab:AddSection({
+	Name = "Settings Section"
+})
+local OptimizeSection = OptimizeTab:AddSection({
+	Name = "Optimize Section"
+})
+--Paragraphs
+InformationTab:AddParagraph("How to use", "Use C to start, L to stop")
+
+--Loaded GUI notification and things
+Library:MakeNotification({ --Gui Loading notify
+	Name = "GUI Loaded!",
+	Content = "Thanks for using X&M SG GUI.",
+	Image = "rbxassetid://4483345998",
+	Time = 4
+})
+
+
+
+
+--MapSpeedrunSection
+
+SpeedrunMapList:AddButton({ --Activate map button done
+	Name = "Click here ong",
+	Callback = function()
+		_G.noti = true
+		Library:MakeNotification({ 
+			Name = "Clicked successfully",
+			Content = "Now you can pick any map you want",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
+			Time = 4
+		})
+		local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+		Mouse.KeyDown:connect(function(NameOfYourFunction)
+			local KeyToToggleScript = NameOfYourFunction:lower()
+			if KeyToToggleScript == "c" then
+				_G.cfg = 1
+			end
+			if KeyToToggleScript == "l" then
+				_G.cfg = 2
+			end
+		end)
+		local mt = getrawmetatable(game);
+		local old = mt.__namecall
+		setreadonly(mt,false)
+		mt.__namecall = newcclosure(function(remote,...)
+			args = {...}
+			method = tostring(getnamecallmethod())
+			if method == "FireServer" and tonumber(args[1]) and tostring(remote) ~= "SetSpectating"  then
+				if _G.cfg == 1 then
+					args = _G.args
+					return old(remote,unpack(args))
+				end
+			elseif _G.cfg == 2 then
+				return old(remote,...)
+			end
+			return old(remote,...)
+		end)
+		setreadonly(mt,true)
+	end    
+})
+SpeedrunMapList:AddButton({ --Arctic map button done
+	Name = "Arctic",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Arctic chosen",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.Arc1 = {
+			[1] = 1.5707963705062866,
+			[2] = 33.591625678724064,
+			[3] = -1
+		}
+		_G.Arc2 = {
+			[1] = 2.9990322589874268,
+			[2] = 81.38668471026197,
+			[3] = -1
+		}
+		_G.Arc21 = {
+			[1] = 7.860328197479248,
+			[2] = 86.28404463367261,
+			[3] = -1
+		}
+		_G.Arc3 = {
+			[1] = 0.6920644044876099,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Arc4 = {
+			[1] = -3.2158591747283936,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Arc5 = {
+			[1] = 4.56723690032959,
+			[2] = 47.795831551669544,
+			[3] = -1
+		}
+		_G.Arc6 = {
+			[1] = 1.5707963705062866,
+			[2] = 62.77131056010097,
+			[3] = -1
+		}
+		_G.Arc61 = {
+			[1] = -0.5883399844169617,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Arc62 = {
+			[1] = 4.680076599121094,
+			[2] = 67.37053813480946,
+			[3] = -1
+		}
+		_G.Arc7 = {
+			[1] = 4.707204818725586,
+			[2] = 93.59676351594248,
+			[3] = -1
+		}
+		_G.Arc8 = {
+			[1] = -2.1363003253936768,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Arc9 = {
+			[1] = 6.28188943862915,
+			[2] = 60.15532626575537,
+			[3] = -1
+		}
+		_G.Arc10= {
+			[1] = 2.016619920730591,
+			[2] = 24.709265325734712,
+			[3] = -1
+		}
+		_G.Arc101= {
+			[1] = 5.4252753257751465,
+			[2] = 49.709427931490914,
+			[3] = -1
+		}
+		_G.Arc11= {
+			[1] = 5.795888900756836,
+			[2] = 67.59760465705965,
+			[3] = -1
+		}
+
+		_G.Arc12= {
+			[1] = 0.7965562343597412,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Arc13 = {
+			[1] = -0.36512288451194763,
+			[2] = 90.10731292203066,
+			[3] = -1
+		}
+		_G.Arc14 = {
+			[1] = 2.702160120010376,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Arc15 = {
+			[1] = 0.1451520174741745,
+			[2] = 99.05124447181669,
+			[3] = -1
+		}
+		_G.Arc16 = {
+			[1] = 0.3110400438308716,
+			[2] = 48.46377725398249,
+			[3] = -1
+		}
+		_G.Arc161 = {
+			[1] = 3.473457098007202,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Arc17= {
+			[1] = 0.760796308517456,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Arc171 = {
+			[1] = -1.489203691482544,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Arc172 = {
+			[1] = -0.4589787721633911,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Arc18 = {
+			[1] = -2.0942206382751465,
+			[2] = 100,
+			[3] = -1
+		}
+		function posi(hole, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			if pos.X < (x + 10) and pos.X > (x - 10) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 10) and pos.Z > (z - 10) then
+						_G.args = hole
+					end
+				end
+			end
+		end
+
+		function posit(hole1, hole2, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(1.2)
+						_G.args = hole2
+					end
+				end
+			end
+		end
+
+		function posy(hole1, hole2, hole3, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(0.4)
+						_G.args = hole2
+						wait(4)
+						_G.args = hole3
+					end
+				end
+			end
+		end
+		while true do
+			for count = 1,10 do
+				posi(_G.Arc1, 881.404785, 122.648499, -3490.8728)
+				posit(_G.Arc2, _G.Arc21, 585.342, 110.357, -3548.8)
+				posi(_G.Arc3,   410.931824, 122.357483, -3490.46436)
+				posi(_G.Arc4, 364.564636, 143.357483, -3723.26733)
+				posi(_G.Arc5,  644.164429, 112.861359, -3848.30054)
+				posy(_G.Arc6, _G.Arc61, _G.Arc62, 530.078369, 122.357483, -3889.16211)
+				posi(_G.Arc7,   364.537292, 222.14856, -4093.10547)
+				posi(_G.Arc8,   624.117554, 209.910263, -4173.95117)
+				posi(_G.Arc9,   774.492554, 209.359497, -4292.99023)
+				posit(_G.Arc10, _G.Arc101,  798.992554, 218.941498, -4526.39648)
+				posi(_G.Arc11,   369.043152, 213.648544, -4329.58398)
+				posi(_G.Arc12,   528.871338, 208.859482, -4377.81055)
+				posi(_G.Arc13,   413.316589, 215.859482, -4606.66211)
+				posi(_G.Arc14,   446.593933, 207.44931, -4798.24023)
+				posi(_G.Arc15,   412.535339, 208.480576, -5125.06494)
+				posit(_G.Arc16, _G.Arc161, 668.945618, 237.949326, -5239.83838)
+				posy(_G.Arc17, _G.Arc171, _G.Arc172, 824.094116, 221.754013, -5271.62354)
+				posi(_G.Arc18,  830.418396, 237.859497, -5196.92871)
+			end
+		end
+	end
+})
+SpeedrunMapList:AddButton({ --Temple map button done
+	Name = "Temple",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Temple chosen",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.tem1 = {
+			[1] = 1.5707963705062866,
+			[2] = 67,
+			[3] = -1
+		}
+		_G.tem2 = {
+			[1] = 1.4499968900680542,
+			[2] = 45.34100163230588,
+			[3] = -1
+		}
+		_G.tem3 = {
+			[1] = 1.9233124256134033,
+			[2] = 68.71292169381472,
+			[3] = -1
+		}
+		_G.tem4 = {
+			[1] = 3.2528734588623047,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.tem5 = {
+			[1] = 3.5222816467285156,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.tem6 = {
+			[1] = 3.171740770339966,
+			[2] = 81.72103509739273,
+			[3] = -1
+		}
+		_G.tem7 = {
+			[1] = -1.4107964038848877,
+			[2] = 92.70459938405614,
+			[3] = -1
+		}
+		_G.tem8 = {
+			[1] = 3.1415927410125732,
+			[2] = 56.70913319921421,
+			[3] = -1
+		}
+		_G.tem9 = {
+			[1] = 1.4651713371276855,
+			[2] = 91.72603413659182,
+			[3] = -1
+		}
+		_G.tem10 = {
+			[1] = -1.3735699653625488,
+			[2] = 41.70448926328634,
+			[3] = -1
+		}
+		_G.tem11 = {
+			[1] = 6.0835394859313965,
+			[2] = 68.23933236936867,
+			[3] = -1
+		}
+		_G.tem12 = {
+			[1] = 2.947561025619507,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.tem121 = {
+			[1] = 1.5958330631256104,
+			[2] = 79.93549930699592,
+			[3] = -1
+		}
+		_G.tem13 = {
+			[1] = 2.1735479831695557,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.tem131 = {
+			[1] = -0.2745964527130127,
+			[2] = 76.08999438356801,
+			[3] = -1
+		}
+		_G.tem14 = {
+			[1] = -3.5201053619384766,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.tem141 = {
+			[1] = -0.37851250171661377,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.tem15 = {
+			[1] = -1.3816182613372803,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.tem151 = {
+			[1] = 5.827468770980835,
+			[2] = 40.879253176058654,
+			[3] = -1
+		}
+		_G.tem16 = {
+			[1] = 2.691293478012085,
+			[2] = 74.19507373455838,
+			[3] = -1
+		}
+		_G.tem17 = {
+			[1] = 5.04469108581543,
+			[2] = 43.151046161622304,
+			[3] = -1
+		}
+		_G.tem171 = {
+			[1] = 1.5740017890930176,
+			[2] = 88.89148286488047,
+			[3] = -1
+		}
+		_G.tem18 = {
+			[1] = 0.5707963705062866,
+			[2] = 100,
+			[3] = -1
+		}
+		function posi(hole, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			if pos.X < (x + 10) and pos.X > (x - 10) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 10) and pos.Z > (z - 10) then
+						_G.args = hole
+					end
+				end
+			end
+		end
+		function posit(hole1, hole2, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(0.4)
+						_G.args = hole2
+					end
+				end
+			end
+		end
+
+		while true do
+			for count = 1,10 do
+				posi(_G.tem1, -1511.526123046875, 358.73260498046875, -3688.4765625)
+				posi(_G.tem2, -1645.422607421875, 346.7325439453125, -3596.55419921875)
+				posi(_G.tem3, -1756.4207763671875, 326.7325439453125, -3605.402099609375)
+				posi(_G.tem4, -1963.8388671875, 317.4962158203125, -3307.51123046875)
+				posi(_G.tem5, -1968.2666015625, 312.4962158203125, -2940.45849609375)
+				posi(_G.tem6, -1863.336669921875, 254.4981689453125, -2465.14599609375)
+				posi(_G.tem7, -1964.0986328125, 250.4981689453125, -2540.3681640625)
+				posi(_G.tem8, -2040.7783203125, 240.4981689453125, -2493.89990234375)
+				posi(_G.tem9, -1992.8544921875, 242.4981689453125, -2526.9331054687)
+				posi(_G.tem10, -2197.2392578125, 254.4981689453125, -2439.2158203125)
+				posi(_G.tem11, -2373.52685546875, 63.490264892578125, -2561.4345703125)
+				posit(_G.tem12, _G.tem121, -2491.62060546875, 33.49610900878906, -2726.75927734375)
+				posit(_G.tem13, _G.tem131, -2604.86669921875, 70.49026489257812, -3050.48974609375)
+				posi(_G.tem14, -2591.64599609375, 26.724620819091797, -3440.51904296875)
+				posi(_G.tem141, -2519.5439453125, 26.726573944091797, -3335.66357421875)
+				posit(_G.tem15, _G.tem151, -2743.2333984375, 63.494171142578125, -3514.51708984375)
+				posi(_G.tem16, -2741.87451171875, 39.496116638183594, -4083.646484375)
+				posit(_G.tem17, _G.tem171, -3027.96630859375, 27.49415397644043, -3875.662109375)
+				posi(_G.tem18, -3327.96044921875, 49.496116638183594, -3822.91943359375)
+			end
+		end
+	end    
+})
+SpeedrunMapList:AddButton({ --Atlantis map button
+	Name = "Atlantis",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Atlantis chosen",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		game:GetService("Players").LocalPlayer.PlayerScripts.Modules.Functions.InkAnimation:Destroy()
+		_G.atl1 = {
+			[1] = 3.344092845916748,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.atl2 = {
+			[1] = 1.5563100576400757,
+			[2] = 81.91574081946293,
+			[3] = -1
+		}
+		_G.atl3 = {
+			[1] = 2.6094417572021484,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.atl4 = {
+			[1] = 0.3457440137863159,
+			[2] = 97.43019028673409,
+			[3] = -1
+		}
+		_G.atl5 = {
+			[1] = -1.8495254516601562,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.atl6 = {
+			[1] = -1.6212363243103027,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.atl7= {
+			[1] = 1.2649389505386353,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.atl8 = {
+			[1] = 1.5682042837142944,
+			[2] = 92.19048790091638,
+			[3] = -1
+		}
+		_G.atl9 = {
+			[1] = 3.1415927410125732,
+			[2] = 27.30524612290402,
+			[3] = -1
+		}
+		_G.atl91 = {
+			[1] = 5.31,
+			[2] = 78.50257914750142,
+			[3] = -1
+		}
+		_G.atl10 = {
+			[1] = -1.7548282146453857,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.atl101 = {
+			[1] = 2.2796175479888916,
+			[2] = 63.078560393359794,
+			[3] = -1
+		}
+		_G.atl11 = {
+			[1] = 1.6330065727233887,
+			[2] = 86.09320255151495,
+			[3] = -1
+		}
+		_G.atl12 = {
+			[1] = -1.0225880146026611,
+			[2] = 15.466032825399456,
+			[3] = -1
+		}
+		_G.atl121 = {
+			[1] = -1.587644338607788,
+			[2] = 68.62174245599739,
+			[3] = -1
+		}
+		_G.atl13 = {
+			[1] = -1.5707963705062866,
+			[2] = 26.416161832241542,
+			[3] = -1
+		}
+		_G.atl14 = {
+			[1] = -2.8445374965667725,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.atl15 = {
+			[1] = -1.205324411392212,
+			[2] = 79.55237830027366,
+			[3] = -1
+		}
+		_G.atl151 = {
+			[1] = 2.3975565433502197,
+			[2] = 24.013511384776905,
+			[3] = -1
+		}
+		_G.atl16 = {
+			[1] = 1.3906512260437012,
+			[2] = 98.04839442944262,
+			[3] = -1
+		}
+		_G.atl161 = {
+			[1] = 1.603192925453186,
+			[2] = 40.12075175459672,
+			[3] = -1
+		}
+		_G.atl17 = {
+			[1] = -1.3346532583236694,
+			[2] = 95.56835766014845,
+			[3] = -1
+		}
+		_G.atl18 = {
+			[1] = 1.5715707540512085,
+			[2] = 60.071541948020446,
+			[3] = -1
+		}
+		_G.atl181 = {
+			[1] = -0.010323885828256607,
+			[2] = 10.10756338540035,
+			[3] = -1
+		}
+		_G.atl182 = {
+			[1] = 0.7167333960533142,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.atl183 = {
+			[1] = 1.633001685142517,
+			[2] = 100,
+			[3] = -1
+		}
+		function posi(hole, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			if pos.X < (x + 10) and pos.X > (x - 10) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 10) and pos.Z > (z - 10) then
+						_G.args = hole
+					end
+				end
+			end
+		end
+		function posit(hole1, hole2, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(0.4)
+						_G.args = hole2
+					end
+				end
+			end
+		end
+		function posy(hole1, hole2, hole3, hole4, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(4.0)
+						_G.args = hole2
+						wait(0.85)
+						_G.args = hole3
+						wait(1)
+						_G.args = hole4
+					end
+				end
+			end
+		end
+		while true do
+			for count = 1,10 do
+				posi(_G.atl1, -161.471, 111.642, -175.303)
+				posi(_G.atl2, -370.896, 115.142, -117.861)
+				posi(_G.atl3, -552.133, 115.846, -92.0483)
+				posi(_G.atl4, -680.542, 113.142, -136.049)
+				posi(_G.atl5, -470.265, 98.9468, -283.551)
+				posi(_G.atl6, -120.721, 127.018, -517.211)
+				posi(_G.atl7, -266.332, 113.642, -566.509)
+				posi(_G.atl8, -573.899, 117.642, -603.603)
+				posit(_G.atl9, _G.atl91, -496.445, 107.845, -813.294)
+				posit(_G.atl10, _G.atl101, -249.113, 115.049, -836.716)
+				posi(_G.atl11, -511.977, 116.346, -984.937)
+				posit(_G.atl12, _G.atl121,  -621.921, 127.521, -1224.72)
+				posi(_G.atl13, -379.074, 118.154, -1126.8)
+				posi(_G.atl14, -186.667, 132.08, -1374.07)
+				posit(_G.atl15, _G.atl151, -488.846, 119.612, -1517.24)
+				posi(_G.atl16, -658.942, 132.203, -1687.35)
+				posi(_G.atl17, -437.763, 93.9913, -1752.43)
+				posy(_G.atl18, _G.atl181, _G.atl182, _G.atl183, -261.799, 134.344, -1931.67)
+			end
+		end
+	end    
+})
+SpeedrunMapList:AddButton({ --Grove map button done
+	Name = "Grove",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Grove chosen",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.Gro1 = {
+			[1] = 0,
+			[2] = 91.7,
+			[3] = -1
+		}
+		_G.Gro2 = {
+			[1] = 1.7643532752990723,
+			[2] = 65.53258668613825,
+			[3] = -1
+		}
+		_G.Gro3 = {
+			[1] = 0.9701713919639587,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Gro31 = {
+			[1] = 0.1076119914650917,
+			[2] = 35.73168718750749,
+			[3] = -1
+		}
+		_G.Gro4 = {
+			[1] = 0.8051204085350037,
+			[2] = 76.11337228793224,
+			[3] = -1
+		}
+
+		_G.Gro5 = {  
+			[1] = 0.27925267815589905,
+			[2] = 66.89785201262927,
+			[3] = -1
+		}
+		_G.Gro51 = {
+			[1] = 2.176208019256592,
+			[2] = 97.95756451971762,
+			[3] = -1
+		}
+		_G.Gro6 = {
+			[1] = 1.5707963705062866,
+			[2] = 87.05207703383732,
+			[3] = -1
+		}
+		_G.Gro7 = {
+			[1] = 0.7963937520980835,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Gro8 = {
+			[1] = 1.458044171333313,
+			[2] = 94.44206978988629,
+			[3] = -1
+		}
+		_G.Gro81 = {
+			[1] = -1.5691931247711182,
+			[2] = 72.01758294811626,
+			[3] = -1
+		}
+		_G.Gro9 = {
+			[1] = 1.3210397958755493,
+			[2] = 16.38314667153456,
+			[3] = -1
+		}
+		function posi(hole, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			if pos.X < (x + 10) and pos.X > (x - 10) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 10) and pos.Z > (z - 10) then
+						_G.args = hole
+					end
+				end
+			end
+		end
+		function posit(hole1, hole2, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(0.4)
+						_G.args = hole2
+					end
+				end
+			end
+		end
+		while true do
+			for count = 1,10 do
+				posi(_G.Gro1, -1130.28, 129.397, 70.9746)
+				posi(_G.Gro2, -1304.61584, 150.896561, -112.121147)
+				posit(_G.Gro3, _G.Gro31, -1590.23315, 151.101639, -11.9462948)
+				posi(_G.Gro4, -1824.41785, 176.686615, -75.957077)
+				posit(_G.Gro5, _G.Gro51, -1581.06, 225.898, -623.474)
+				posi(_G.Gro6, -1294.6, 224.816, -604.574)
+				posi(_G.Gro7, -1396.32, 227.487, -800.322)
+				posit(_G.Gro8, _G.Gro81, -1250.17639, 138.296936, -1044.46729)
+				posi(_G.Gro9, -1559.15308, 133.242249, -963.960449)
+			end
+		end 			
+	end
+})
+SpeedrunMapList:AddButton({ --Island map button done
+	Name = "Island",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Island chosen",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.Isl1 = {
+			[1] = 2.448869466781616,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Isl2 = {
+			[1] = 3.2936928272247314,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Isl3 = {
+			[1] = 83.46967315673828,
+			[2] = 68.48730318886895,
+			[3] = -1
+		}
+		_G.Isl4 = {
+			[1] = 1.5707963705062866,
+			[2] = 28.628572784364202,
+			[3] = -1
+		}
+		_G.Isl41 = {
+			[1] = -6.284891128540039,
+			[2] = 86.72946709607335,
+			[3] = -1
+		}
+		_G.Isl5 = {
+			[1] = 2.065005302429199,
+			[2] = 95.49640611559153,
+			[3] = -1
+		}
+		_G.Isl6 = {
+			[1] = 1.5707963705062866,
+			[2] = 96.94553891551642,
+			[3] = -1
+		}
+		_G.Isl7 = {
+			[1] = 85.17683410644531,
+			[2] = 75.80668463025775,
+			[3] = -1
+		}
+		_G.Isl8 = {
+			[1] = 4.71238899230957,
+			[2] = 85.35268199763128,
+			[3] = -1
+		}
+		_G.Isl9 = {
+			[1] = 3.1415927410125732,
+			[2] = 99.78035713412932,
+			[3] = -1
+		}
+		function posi(hole, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			if pos.X < (x + 10) and pos.X > (x - 10) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 10) and pos.Z > (z - 10) then
+						_G.args = hole
+					end
+				end
+			end
+		end
+		function posit(hole1, hole2, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(0.4)
+						_G.args = hole2
+					end
+				end
+			end
+		end
+		while true do
+			for count = 1,10 do
+				posi(_G.Isl1, 1644.38, 122.366, 1638.37)
+				posi(_G.Isl2, 1374.5450439453125, 125.86600494384766, 1614.4033203125)
+				posi(_G.Isl3, 1447.988037109375, 116.86941528320312, 2048.523193359375)
+				posit(_G.Isl4, _G.Isl41, 1215.65625, 115.36626434326172, 1940.2314453125)
+				posi(_G.Isl5, 1181.935791015625, 117.86626434326172, 1657.194091796875)
+				posi(_G.Isl6, 1032.243896484375, 111.30278015136719, 1513.024169921875)
+				posi(_G.Isl7, 756.2503051757812, 116.36627197265625, 1522.294677734375)
+				posi(_G.Isl8, 748.2385864257812, 123.85845947265625, 1824.607421875)
+				posi(_G.Isl9, 945.6177368164062, 120.03752136230469, 1993.220947265625)
+			end
+		end 			
+	end
+})
+SpeedrunMapList:AddButton({ --Cyber map button done
+	Name = "Cyber",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Cyber chosen",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.cyb1 = {
+			[1] = 6.279297351837158,
+			[2] = 58.90348829266325,
+			[3] = -1
+		}
+		_G.cyb2 = {
+			[1] = 3.5259926319122314,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.cyb21 = {
+			[1] = 1.8035989999771118,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.cyb3 = {
+			[1] = 0.009072000160813332,
+			[2] = 57.55261430101738,
+			[3] = -1
+		}
+		_G.cyb4 = {
+			[1] = -1.5707963705062866,
+			[2] = 95.21635887518211,
+			[3] = -1
+		}
+		_G.cyb5 = {
+			[1] = -0.5806440114974976,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.cyb6 = {
+			[1] = 1.8364766836166382,
+			[2] = 79.31436516503824,
+			[3] = -1
+		}
+		_G.cyb7 = {
+			[1] = 1.5707963705062866,
+			[2] = 98.20375748338724,
+			[3] = -1
+		}
+		_G.cyb71 = {
+			[1] = 1.5034042596817017,
+			[2] = 27.787364761353768,
+			[3] = -1
+		}
+
+		_G.cyb8 = {
+			[1] = -0.7637762427330017,
+			[2] = 76.31875344138182,
+			[3] = -1
+		}
+		_G.cyb81 = {
+			[1] = 0.023327969014644623,
+			[2] = 71.46250320544674,
+			[3] = -1
+		}
+		_G.cyb9 = {
+			[1] = 1.6096763610839844,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.cyb10 = {
+			[1] = 1.9392454624176025,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.cyb101 = {
+			[1] = -0.5448455810546875,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.cyb11 = {
+			[1] = -2.9097304344177246,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.cyb111 = {
+			[1] = 2.219724178314209,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.cyb12 = {
+			[1] = 3.875084638595581,
+			[2] = 56.268687187263694,
+			[3] = -1
+		}
+		_G.cyb121 = {
+			[1] = 1.5604286193847656,
+			[2] = 91.04411951937219,
+			[3] = -1
+		}
+		_G.cyb13 = {
+			[1] = 1.5707963705062866,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.cyb131 = {
+			[1] = 2.0607962608337402,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.cyb14 = {
+			[1] = 0.082999587059021,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.cyb15 = {
+			[1] = -1.3456461429595947,
+			[2] = 100,
+			[3] = -1
+		}
+
+		_G.cyb16 = {
+			[1] = 1.2744441032409668,
+			[2] = 22.227083885421365,
+			[3] = -1
+		}
+		_G.cyb161 = {
+			[1] = 1.6278204917907715,
+			[2] = 94.96250169455178,
+			[3] = -1
+		}
+		_G.cyb17 = {
+			[1] = 0.20649605989456177,
+			[2] = 77.14375090681848,
+			[3] = -1
+		}
+		_G.cyb171 = {
+			[1] = 2.6533455848693848,
+			[2] = 72.61250305092997,	
+			[3] = -1
+		}
+		_G.cyb18 = {
+			[1] = 4.782372951507568,
+			[2] = 100,
+			[3] = -1
+		}
+		function posi(hole, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			if pos.X < (x + 10) and pos.X > (x - 10) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 10) and pos.Z > (z - 10) then
+						_G.args = hole
+					end
+				end
+			end
+		end
+		function posit(hole1, hole2, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(1.2)
+						_G.args = hole2
+					end
+				end
+			end
+		end
+		while true do
+			for count = 1,10 do
+				posi(_G.cyb1, -256.297, 125.635, -2573.25)
+				posit(_G.cyb2, _G.cyb21, -560.34, 131.672, -2720.7)
+				posi(_G.cyb3, -549.287, 137.631, -2881.72)
+				posi(_G.cyb4, -523.645, 145.672, -3079.83)
+				posi(_G.cyb5, -291.408, 112.635, -3184.16)
+				posi(_G.cyb6, -456.43, 135.631, -3459.35)
+				posit(_G.cyb7, _G.cyb71, -529.004, 130.635, -3710.31)
+				posit(_G.cyb8, _G.cyb81,  -418.49, 147.635, -3738.08)
+				posi(_G.cyb9,  -455.949, 114.289, -4028.28)
+				posit(_G.cyb10, _G.cyb101, -650.328, 133.133, -4120.12)
+				posit(_G.cyb11, _G.cyb111,  -529.801, 128.633, -4407.79)
+				posit(_G.cyb12, _G.cyb121,  -202.617, 136.633, -4569.12)
+				posit(_G.cyb13, _G.cyb131,  -458.848, 125.633, -4761.33)
+				posi(_G.cyb14,  -580.567, 125.871, -4904.92)
+				posi(_G.cyb15,  -277.953, 119.598, -4938.14)
+				posit(_G.cyb16, _G.cyb161, -257.25, 124.371, -5139.6)
+				posit(_G.cyb17, _G.cyb171,  -637.383, 137.633, -5198.04)
+				posi(_G.cyb18, -696.442, 130.953, -5612.04)
+			end
+		end
+	end
+})
+SpeedrunMapList:AddButton({ --Candyland map button done
+	Name = "Candyland",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Candyland chosen",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.Can1 = {
+			[1] = -1.827338695526123,
+			[2] = 100,
+			[3] = 1
+		}
+		_G.Can2 = {
+			[1] = 1.6239309310913086,
+			[2] = 72.1769858083401,
+			[3] = 1
+		}
+		_G.Can3 = {
+			[1] = -0.40960001945495605,
+			[2] = 100,
+			[3] = 1
+		}
+		_G.Can4 = {
+			[1] = -2.226896286010742,
+			[2] = 100,
+			[3] = 1
+		}
+		_G.Can5 = {
+			[1] = -0.07580578327178955,
+			[2] = 100,
+			[3] = 1
+		}
+		_G.Can6 = {
+			[1] = 3.7783968448638916,
+			[2] = 100,
+			[3] = 1
+		}
+		_G.Can61 = {
+			[1] = 2.195042848587036,
+			[2] = 50.494650081586215,
+			[3] = 1
+		}
+		_G.Can7 = {
+			[1] = -1.4256445169448853,
+			[2] = 74.76656977660713,
+			[3] = 1
+		}
+		_G.Can8 = {
+			[1] = -1.3858963251113892,
+			[2] = 100,
+			[3] = 1
+		}
+		_G.Can9 = {
+			[1] = -0.11833600699901581,
+			[2] = 100,
+			[3] = 1
+		}
+		_G.Can91 = {
+			[1] = 1.5327681303024292,
+			[2] = 100,
+			[3] = 1
+		}
+		_G.Can10 = {
+			[1] = 6.28188943862915,
+			[2] = 96.99671175178722,
+			[3] = 1
+		}
+		_G.Can11 = {
+			[1] = 2.640625,
+			[2] = 100,
+			[3] = 1
+		}
+		_G.Can12 = {
+			[1] = 3.290633201599121,
+			[2] = 60.26619656137006,
+			[3] = 1
+		}
+		_G.Can121 = {
+			[1] = 4.5997700691223145,
+			[2] = 53.20119360982906,
+			[3] = 1
+		}
+		_G.Can13 = {
+			[1] = 2.5179343223571777,
+			[2] = 100,
+			[3] = 1
+		}
+		_G.Can14 = {
+			[1] = 1.7973401546478271,
+			[2] = 99.28869882609521,
+			[3] = 1
+		}
+		_G.Can15 = {
+			[1] = -0.9599310755729675,
+			[2] = 100,
+			[3] = 1
+		} 
+		_G.Can151 = {
+			[1] = 1.6418375968933105,
+			[2] = 88.4689958331357,
+			[3] = 1
+		}
+		_G.Can16 = {
+			[1] = 1.5202518701553345,
+			[2] = 100,
+			[3] = 1
+		}
+		_G.Can17 = {
+			[1] = 4.09678840637207,
+			[2] = 32.45852611135569,
+			[3] = 1
+		}
+		_G.Can171 = {
+			[1] = -1.9271962642669678,
+			[2] = 100,
+			[3] = 1
+		}
+		_G.Can18 = {
+			[1] = 3.1415927410125732,
+			[2] = 92.8378336468235,
+			[3] = 1
+		}
+		function posi(hole, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			if pos.X < (x + 10) and pos.X > (x - 10) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 10) and pos.Z > (z - 10) then
+						_G.args = hole
+					end
+				end
+			end
+		end
+		function posit(hole1, hole2, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(1.2)
+						_G.args = hole2
+					end
+				end
+			end
+		end
+		while true do
+			for count = 1,10 do
+				posi(_G.Can1, 1715.7684326171875, 109.64165496826172, 369.49237060546875)
+				posi(_G.Can2, 1602.0452880859375, 117.64521026611328, 349.103515625)
+				posi(_G.Can3, 1442.6346435546875, 109.34182739257812, 214.0968780517578)
+				posi(_G.Can4, 1585.8935546875, 118.42666625976562, 172.34629821777344)
+				posi(_G.Can5, 1757.534912109375, 112.54547882080078, 32.32377243041992)
+				posit(_G.Can6, _G.Can61, 1560.216796875, 117.8453598022461, 3.0724987983703613)
+				posi(_G.Can7, 1403.733642578125, 125.8453598022461, -93.15713500976562)
+				posi(_G.Can8, 1622.5594482421875, 120.33795166015625, -152.6690216064453)
+				posit(_G.Can9, _G.Can91, 1832.034912109375, 119.34171295166016, -284.8697814941406)
+				posi(_G.Can10, 1525.8343505859375, 117.14518737792969, -272.4611511230469)
+				posi(_G.Can11, 1408.9327392578125, 118.33793640136719, -455.21893310546875)
+				posit(_G.Can12, _G.Can121,  1583.0950927734375, 118.29722595214844, -629.8186645507812)
+				posi(_G.Can13, 1793.154052734375, 122.04595947265625, -446.08514404296875)
+				posi(_G.Can14, 1978.6558837890625, 150.04891967773438, -677.3695068359375)
+				posit(_G.Can15, _G.Can151, 1795.0169677734375, 118.1444091796875, -765.1054077148438)
+				posi(_G.Can16, 1615.165283203125, 120.04499053955078, -810.8411865234375)
+				posit(_G.Can17, _G.Can171, 1351.493408203125, 118.04888916015625, -1055.0469970703125)
+				posi(_G.Can18, 1433.0628662109375, 180.04891967773438, -1241.6666259765625)
+			end
+		end
+	end
+})
+SpeedrunMapList:AddButton({ --Dimension map button done
+	Name = "Dimension",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Dimension chosen",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.dim1 = {
+			[1] = -2.6099653244018555,
+			[2] = 48.4999988202692,
+			[3] = -1
+		}
+
+		_G.dim2 = {
+			[1] = 2.4750711917877197,
+			[2] = 43.00576179110734,
+			[3] = -1
+		}
+		_G.dim3 = {
+			[1] = 2.9815926551818848,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.dim4 = {
+			[1] = -2.118480682373047,
+			[2] = 98.6402021783542,
+			[3] = -1
+		}
+		_G.dim5 = {
+			[1] = 2.277254819869995,
+			[2] = 24.617661401300676,
+			[3] = -1
+		}
+		_G.dim51 = {
+			[1] = 3.0600404739379883,
+			[2] = 93.01883144875067,
+			[3] = -1
+		}
+		_G.dim6 = {
+			[1] = 2.6059510707855225,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.dim7 = {
+			[1] = 1.7163567543029785,
+			[2] = 98.57193678700231,
+			[3] = -1
+		}
+		_G.dim8 = {
+			[1] = -0.9318511486053467,
+			[2] = 98.57193678700231,
+			[3] = -1
+		}
+		_G.dim9 = {
+			[1] = 1.3194688558578491,
+			[2] = 49.832075175544716,
+			[3] = -1
+		}
+		_G.dim91 = {
+			[1] = 2.0938687324523926,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.dim92 = {
+			[1] = 5.684623718261719,
+			[2] = 56.65838195162142,
+			[3] = -1
+		}
+		_G.dim10 = {
+			[1] = 2.0936970710754395,
+			[2] = 14.8608806523633,
+			[3] = -1
+		}
+		_G.dim11 = {
+			[1] = 2.272942304611206,
+			[2] = 21.84419556726215,
+			[3] = -1
+		}
+		_G.dim111 = {
+			[1] = 3.8181583881378174,
+			[2] = 55.293121589224995,
+			[3] = -1
+		}
+		_G.dim12 = {
+			[1] = -1.2363911867141724,
+			[2] = 34.95071556974157,
+			[3] = -1
+		}
+
+		_G.dim121 = {
+			[1] = -3.586480140686035,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.dim13 = {
+			[1] = 1.880103588104248,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.dim14 = {
+			[1] = 0.9808750748634338,
+			[2] = 51.19733553794113,
+			[3] = -1
+		}
+		_G.dim141 = {
+			[1] = -1.9091250896453857,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.dim15 = {
+			[1] = 0.8808677196502686,
+			[2] = 23.892089415037113,
+			[3] = -1
+		}
+		_G.dim151 = {
+			[1] = -0.030202507972717285,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.dim16 = {
+			[1] = -0.7037167549133301,
+			[2] = 85.80673392263049,
+			[3] = -1
+		}
+		_G.dim161 = {
+			[1] = 2.716604471206665,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.dim17 = {
+			[1] = 2.438312292098999,
+			[2] = 14.733882546394778,
+			[3] = -1
+		}
+		_G.dim171 = {
+			[1] = 0.516344428062439,
+			[2] = 46.528098077302666,
+			[3] = -1
+		}
+		_G.dim18 = {
+			[1] = -0.8386306762695312,
+			[2] = 100,
+			[3] = -1
+		}
+		function posi(hole, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			if pos.X < (x + 10) and pos.X > (x - 10) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 10) and pos.Z > (z - 10) then
+						_G.args = hole
+					end
+				end
+			end
+		end
+		function posit(hole1, hole2, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(1.2)
+						_G.args = hole2
+					end
+				end
+			end
+		end
+		function posy(hole1, hole2, hole3, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(0.8)
+						_G.args = hole2
+						wait(3)
+						_G.args = hole3
+					end
+				end
+			end
+		end
+		while true do
+			for count = 1,10 do
+				posi(_G.dim1, 3946.982421875, 466.4982604980469, -586.3811645507812)
+				posi(_G.dim2, 3716.99267578125, 242.4981689453125, -263.7598876953125)
+				posi(_G.dim3, 3824.9208984375, 604.4969482421875, -500.3154602050781)
+				posi(_G.dim4, 3831.52783203125, 354.497314453125, -885.1392822265625)
+				posit(_G.dim5, _G.dim51, 4218.01708984375, 394.497314453125, -354.8326721191406)
+				posit(_G.dim6, _G.dim61, 3698.69677734375, 588.500732421875, -773.4449462890625)
+				posi(_G.dim7, 4227.115234375, 456.4963073730469, -822.5706787109375)
+				posi(_G.dim8, 3466.5029296875, 399.49822998046875, -276.9708251953125)
+				posy(_G.dim9, _G.dim91, _G.dim92, 4182.48779296875, 316.4962463378906, -587.6956176757812)
+				posi(_G.dim10, 3987.572265625, 327.5007019042969, -407.5904541015625)
+				posit(_G.dim11, _G.dim111, 4100.86328125, 448.496337890625, -1017.06298828125)
+				posit(_G.dim12, _G.dim121,  3658.67578125, 206.49813842773438, -487.140869140625)
+				posi(_G.dim13, 3984.27197265625, 580.4963989257812, -88.03520202636719)
+				posit(_G.dim14, _G.dim141, 3477.847900390625, 480.497314453125, -474.77545166015625)
+				posit(_G.dim15, _G.dim151, 3614.77294921875, 684.500732421875, -74.66443634033203)
+				posit(_G.dim16, _G.dim161, 4096.45556640625, 468.497314453125, -154.3766632080078)
+				posit(_G.dim17, _G.dim171, 3723.114501953125, 288.500732421875, -704.8194580078125)
+				posi(_G.dim18, 3663.76171875, 704.5012817382812, -409.15618896484375)
+			end
+		end
+	end
+})
+SpeedrunMapList:AddButton({ --Facility map button done
+	Name = "Facility",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Facility chosen",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.Fac1 = {
+			[1] = -2.1453604698181152,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Fac2 = {
+			[1] = 1.165791392326355,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Fac3 = {
+			[1] = 4.840692043304443,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Fac4 = {
+			[1] = 0.8100000619888306,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Fac41 = {
+			[1] = 5.434304237365723,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Fac5 = {
+			[1] = -0.059536006301641464,
+			[2] = 93.27472320031248,
+			[3] = -1
+		}
+		_G.Fac6 = {
+			[1] = 2.331592559814453,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Fac61 = {
+			[1] = 3.8798751831054688,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Fac7 = {
+			[1] = 0,
+			[2] = 61.43680063485438,
+			[3] = -1
+		}
+		_G.Fac71 = {
+			[1] = 1.4220563173294067,
+			[2] = 61.43680063485438,
+			[3] = -1
+		}
+		_G.Fac8 = {
+			[1] = 2.1667802333831787,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Fac9 = {
+			[1] = -1.8183320760726929,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Fac91 = {
+			[1] = 1.618748664855957,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Fac10 = {
+			[1] = 6.255969524383545,
+			[2] = 91.23874722024473,
+			[3] = -1
+		}
+		_G.Fac11 = {
+			[1] = -0.40449604392051697,
+			[2] = 100,
+			[3] = -1
+		}	
+		_G.Fac12 = {
+			[1] = 1.5707963705062866,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Fac121 = {
+			[1] = 2.0969748497009277,
+			[2] = 53.16070747132039,
+			[3] = -1
+		}
+		_G.Fac13 = {
+			[1] = 1.5863474607467651,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Fac14 = {
+			[1] = 3.1415927410125732,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Fac15= {
+			[1] = 2.989960193634033,
+			[2] = 73.97984884773736,
+			[3] = -1
+		}
+		_G.Fac151 = {
+			[1] = 3.1377062797546387,
+			[2] = 97.73879932449643,
+			[3] = -1
+		}
+		_G.Fac16 = {
+			[1] = 2.65159273147583,
+			[2] = 76.45138082496084,
+			[3] = -1
+		}
+		_G.Fac161 = {
+			[1] = 1.6173847913742065,
+			[2] = 52.47794904743532,
+			[3] = -1
+		}
+		_G.Fac17 = {
+			[1] = 3.1752889156341553,
+			[2] = 98.95636891899835,
+			[3] = -1
+		}
+		_G.Fac171 = {
+			[1] = 1.6369383335113525,
+			[2] = 42.84970608459093,
+			[3] = -1
+		}
+		_G.Fac18 = {
+			[1] = 0.11920356750488281,
+			[2] = 26.260826980360495,
+			[3] = -1
+		}
+		_G.Fac181 = {
+			[1] = -45.375816345214844,
+			[2] = 100,
+			[3] = -1
+		}
+		function posi(hole, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			if pos.X < (x + 10) and pos.X > (x - 10) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 10) and pos.Z > (z - 10) then
+						_G.args = hole
+					end
+				end
+			end
+		end
+		function posit(hole1, hole2, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(1.2)
+						_G.args = hole2
+					end
+				end
+			end
+		end
+		while true do
+			for count = 1,10 do
+				posi(_G.Fac1, 2891.84521484375, 147.5977325439453, 427.91229248046875)
+				posi(_G.Fac2, 2777.258544921875, 146.43270874023438, 436.93096923828125)
+				posi(_G.Fac3, 2838.05712890625, 126.59729766845703, 259.8721923828125)
+				posit(_G.Fac4, _G.Fac41, 2960.487548828125, 153.5972900390625, 125.10012817382812)
+				posi(_G.Fac5, 2894.482177734375, 122.09729766845703, -79.269287109375)
+				posit(_G.Fac6, _G.Fac61, 2671.894287109375, 148.5703887939453, 2.3769543170928955)
+				posit(_G.Fac7, _G.Fac71, 2717.8583984375, 122.0976791381836, -199.07955932617188)
+				posi(_G.Fac8, 2844.7333984375, 153.5196075439453, -285.1309814453125)
+				posit(_G.Fac9, _G.Fac91, 2798.791015625, 122.16905212402344, -428.40252685546875)
+				posi(_G.Fac10, 2860.0302734375, 144.42861938476562, -779.1942749023438)
+				posi(_G.Fac11, 2629.5810546875, 144.93267822265625, -743.70068359375)
+				posit(_G.Fac12, _G.Fac121,  2461.393798828125, 128.5738525390625, -687.5181884765625)
+				posi(_G.Fac13, 2648.351806640625, 159.26759338378906, -571.5585327148438)
+				posi(_G.Fac14, 2460.54248046875, 121.60122680664062, -539.66064453125)
+				posit(_G.Fac15, _G.Fac151, 2363.51416015625, 154.1002655029297, -416.6142578125)
+				posit(_G.Fac16, _G.Fac161, 2455.611572265625, 145.6002655029297, -63.81390380859375)
+				posit(_G.Fac17, _G.Fac171, 2528.198974609375, 119.6088638305664, -7.030900001525879)
+				posit(_G.Fac18, _G.Fac181, 2335.505859375, 146.8821258544922, 376.95306396484375)
+			end
+		end
+	end
+})
+SpeedrunMapList:AddButton({ --Forest map button done
+	Name = "Forest",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Forest chosen",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.For1 = {
+			[1] = 0.8329153656959534,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.For2 = {
+			[1] = 1.1675713062286377,
+			[2] = 45.681784279638855,
+			[3] = -1
+		}
+		_G.For3 = {
+			[1] = 1.5707963705062866,
+			[2] = 69.24415870085862,
+			[3] = -1
+		}
+		_G.For4 = {
+			[1] = -0.009072000160813332,
+			[2] = 68.94494551856259,
+			[3] = -1
+		}
+		_G.For5 = {
+			[1] = -1.5695003271102905,
+			[2] = 82.76495614858366,
+			[3] = -1
+		}
+		_G.For6 = {
+			[1] = -0.05522499606013298,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.For7 = {
+			[1] = -2.1051573753356934,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.For8 = {
+			[1] = 1.3637713193893433,
+			[2] = 83.86123988660526,
+			[3] = -1
+		}
+		_G.For9 = {
+			[1] = -1.5876963138580322,
+			[2] = 65.24776401931204,
+			[3] = -1
+		}
+		_G.For10= {
+			[1] = 4.574244022369385,
+			[2] = 76.48037840938165,
+			[3] = -1
+		}
+		_G.For11 = {
+			[1] = 0.7568999528884888,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.For111 = {
+			[1] = 2.666271209716797,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.For12 = {
+			[1] = 0.8463999629020691,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.For121 = {
+			[1] = -0.02595609426498413,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.For13 = {
+			[1] = 1.50081205368042,
+			[2] = 41.75887493916111,
+			[3] = -1
+		}
+		_G.For14 = {
+			[1] = 1.5656123161315918,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.For15 = {
+			[1] = 1.4702633619308472,
+			[2] = 78.89627391472783,
+			[3] = -1
+		}
+		_G.For16 = {
+			[1] = -1.791696310043335,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.For17 = {
+			[1] = -1.5707963705062866,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.For171 = {
+			[1] = -1.5746843814849854,
+			[2] = 54.745647935800015,
+			[3] = -1
+		}
+		_G.For18 = {
+			[1] = 6.110816955566406,
+			[2] = 86.80976705474531,
+			[3] = -1
+		}
+		function posi(hole, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			if pos.X < (x + 10) and pos.X > (x - 10) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 10) and pos.Z > (z - 10) then
+						_G.args = hole
+					end
+				end
+			end
+		end
+		function posit(hole1, hole2, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(1.2)
+						_G.args = hole2
+					end
+				end
+			end
+		end
+		while true do
+			for count = 1,10 do
+				posi(_G.For1, 859.0912475585938, 110.6266860961914, 437.7098083496094)
+				posi(_G.For2, 719.9047241210938, 108.84174346923828, 468.4925537109375)
+				posi(_G.For3, 543.3602294921875, 119.24174499511719, 454.7549743652344)
+				posi(_G.For4, 384.118896484375, 111.10504913330078, 447.68572998046875)
+				posi(_G.For5, 390.8069152832031, 111.3508071899414, 291.3198547363281)
+				posi(_G.For6, 518.60693359375, 116.3523941040039, 235.2035675048828)
+				posi(_G.For7, 559.75830078125, 110.3508071899414, 190.29002380371094)
+				posi(_G.For8, 529.33447265625, 111.60089111328125, -85.09024047851562)
+				posit(_G.For9, _G.For91, 282.1630554199219, 117.85082244873047, -105.00308227539062)
+				posi(_G.For10, 335.91729736328125, 111.33833312988281, -251.09417724609375)
+				posit(_G.For11, _G.For111, 580.6546020507812, 110.563232421875, -212.033203125)
+				posit(_G.For12, _G.For121,  669.565673828125, 111.0630111694336, -115.26995849609375)
+				posi(_G.For13, 748.652099609375, 113.94606018066406, -373.99871826171875)
+				posi(_G.For14, 780.550048828125, 108.78143310546875, -541.5485229492188)
+				posi(_G.For15, 224.8942413330078, 111.52728271484375, -523.0028076171875)
+				posi(_G.For16, 256.63372802734375, 116.979736328125, -624.837646484375)
+				posit(_G.For17, _G.For171, 485.0235900878906, 110.35421752929688, -670.37158203125)
+				posi(_G.For18, 312.4141540527344, 125.79853820800781, -304.15753173828125)
+			end
+		end
+	end
+})
+SpeedrunMapList:AddButton({ --Graveyard map button done
+	Name = "Graveyard",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Graveyard chosen",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.gra1 = {
+			[1] = 2.9277539253234863,
+			[2] = 88.70944570675334,
+			[3] = -1
+		}
+		_G.gra2 = {
+			[1] = -1.0667451620101929,
+			[2] = 53.58654407307279,
+			[3] = -1
+		}
+		_G.gra3 = {
+			[1] = -1.9388861656188965,
+			[2] = 84.64626154425576,
+			[3] = -1
+		}
+		_G.gra4 = {
+			[1] = -3.1016247272491455,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.gra5 = {
+			[1] = 1.3971318006515503,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.gra6 = {
+			[1] = -0.7335618734359741,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.gra7 = {
+			[1] = -1.695212721824646,
+			[2] = 76.8292048463505,
+			[3] = -1
+		}
+		_G.gra71 = {
+			[1] = -1.6291162967681885,
+			[2] = 69.63811020051389,
+			[3] = -1
+		}
+		_G.gra8 = {
+			[1] = 1.839402437210083,
+			[2] = 98.98151933210997,
+			[3] = -1
+		}
+		_G.gra9 = {
+			[1] = -2.9216811656951904,
+			[2] = 67.58048303160874,
+			[3] = -1
+		}
+		_G.gra10 = {
+			[1] = -1.7643532752990723,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.gra101 = {
+			[1] = -3.1173760890960693,
+			[2] = 73.72416542836308,
+			[3] = -1
+		}
+		_G.gra11 = {
+			[1] = 1.9551178216934204,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.gra12 = {
+			[1] = 3.378761053085327,
+			[2] = 91.31671908781134,
+			[3] = -1
+		}
+		_G.gra13 = {
+			[1] = -1.9220128059387207,
+			[2] = 88.28179192982688,
+			[3] = -1
+		}
+		_G.gra14 = {
+			[1] = -2.053903579711914,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.gra15 = {
+			[1] = 0.8147196769714355,
+			[2] = 53.41929713748168,
+			[3] = -1
+		}
+		_G.gra151 = {
+			[1] = 1.5707498788833618,
+			[2] = 85.02853503641069,
+			[3] = -1
+		}
+		_G.gra16 = {
+			[1] = 2.8825857639312744,
+			[2] = 95.0905163007532,
+			[3] = -1
+		}
+		_G.gra17 = {
+			[1] = -3.0909781455993652,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.gra18 = {
+			[1] = 0.039968039840459824,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.gra181 = {
+			[1] = -2.9876317977905273,
+			[2] = 100,
+			[3] = -1
+		}
+		function posi(hole, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			if pos.X < (x + 10) and pos.X > (x - 10) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 10) and pos.Z > (z - 10) then
+						_G.args = hole
+					end
+				end
+			end
+		end
+		function posit(hole1, hole2, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(1.2)
+						_G.args = hole2
+					end
+				end
+			end
+		end
+		while true do
+			for count = 1,10 do
+				posi(_G.gra1, -608.93115234375, 115.11112976074219, 687.479248046875)
+				posi(_G.gra2, -421.87890625, 123.10926055908203, 784.0113525390625)
+				posi(_G.gra3, -241.24908447265625, 120.04174041748047, 687.50244140625)
+				posi(_G.gra4, -173.2758331298828, 132.80035400390625, 956.4102172851562)
+				posi(_G.gra5, -382.8211975097656, 145.2958526611328, 1066.12744140625)
+				posi(_G.gra6, -679.8446044921875, 149.1126708984375, 1130.772216796875)
+				posit(_G.gra7, _G.gra71,  -712.7040405273438, 149.0455322265625, 1329.2852783203125)
+				posi(_G.gra8, -468.8710021972656, 150.91305541992188, 1314.13720703125)
+				posi(_G.gra9, -184.27052307128906, 150.414306640625, 1344.748291015625)
+				posit(_G.gra10, _G.gra101, -401.76995849609375, 126.70367431640625, 1539.012451171875)
+				posi(_G.gra11, -493.0003356933594, 119.6126708984375, 1600.555419921875)
+				posi(_G.gra12, -540.0601806640625, 120.38272094726562, 1716.033203125)
+				posi(_G.gra13, -645.4913940429688, 147.14991760253906, 2057.0703125)
+				posi(_G.gra14, -426.234130859375, 148.6495361328125, 2104.450927734375)
+				posit(_G.gra15, _G.gra151, -202.1708526611328, 133.6495361328125, 2289.11572265625)
+				posi(_G.gra16, -574.23828125, 120.1126708984375, 2349.820068359375)
+				posi(_G.gra17, -414.2225341796875, 116.1126708984375, 2502.42333984375)
+				posit(_G.gra18, _G.gra181, -483.55072021484375, 117.1126708984375, 2777.834716796875)
+			end
+		end
+	end
+})
+SpeedrunMapList:AddButton({ --Mineshaft map button done
+	Name = "Mineshaft",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Mineshaft chosen",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.min1 = {
+			[1] = 0,
+			[2] = 58.706278297091906,
+			[3] = -1
+		}
+		_G.min2 = {
+			[1] = -2.400717258453369,
+			[2] = 80.84400362623462,
+			[3] = -1
+		}
+		_G.min3 = {
+			[1] = 1.5707963705062866,
+			[2] = 45.05365646101533,
+			[3] = -1
+		}
+		_G.min4 = {
+			[1] = 0,
+			[2] = 12.833464935895151,
+			[3] = -1
+		}
+		_G.min41 = {  
+			[1] = -1.0553452968597412,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.min5 = {
+			[1] = -2.1159818172454834,
+			[2] = 74.63750238323382,
+			[3] = -1
+		}
+		_G.min51 = {
+			[1] = 1.1715418100357056,
+			[2] = 23.416667597161407,
+			[3] = -1
+		}
+		_G.min6 = {
+			[1] = -0.9592723250389099,
+			[2] = 96.08716337310196,
+			[3] = -1
+		}
+		_G.min7 = {
+			[1] = -2.362896203994751,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.min71 = {
+			[1] = 4.711092472076416,
+			[2] = 87.30313843849201,
+			[3] = -1
+		}
+		_G.min8 = {
+			[1] = 1.5733884572982788,
+			[2] = 71.17506758039863,
+			[3] = -1
+		}
+		_G.min9 = {
+			[1] = 0,
+			[2] = 24.57472025394175,
+			[3] = -1
+		}
+		_G.min91 = {
+			[1] = 1.5750250816345215,
+			[2] = 85.67020974202816,
+			[3] = -1
+		}
+		_G.min92 = {
+			[1] = 1.6925790309906006,
+			[2] = 100,
+			[3] = -1
+		}
+		function posi(hole, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			if pos.X < (x + 10) and pos.X > (x - 10) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 10) and pos.Z > (z - 10) then
+						_G.args = hole
+					end
+				end
+			end
+		end
+		function posit(hole1, hole2, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(0.4)
+						_G.args = hole2
+					end
+				end
+			end
+		end
+		function posy(hole1, hole2, hole3, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(0.8)
+						_G.args = hole2
+						wait(3)
+						_G.args = hole3
+					end
+				end
+			end
+		end
+		while true do
+			for count = 1,10 do
+				posi(_G.min1, 1733.4061279296875, 147.6221466064453, -1844.7039794921875)
+				posi(_G.min2, 1516.437255859375, 141.29757690429688, -2045.3809814453125)
+				posi(_G.min3, 1509.293701171875, 139.297607421875, -2270.55859375)
+				posit(_G.min4, _G.min41, 1606.1865234375, 115.09762573242188, -2254.73486328125)
+				posit(_G.min5, _G.min51, 1461.474365234375, 121.13775634765625, -2448.32470703125)
+				posi(_G.min6, 1335.644287109375, 122.04833984375, -2804.347900390625)
+				posit(_G.min7, _G.min71, 1327.5435791015625, 135.20802307128906, -2930.585693359375)
+				posi(_G.min8, 1943.1807861328125, 161.1211700439453, -2933.218505859375)
+				posy(_G.min9, _G.min91, _G.min92, 1736.693603515625, 135.12515258789062, -3170.6181640625)
+			end
+		end 			
+	end
+})
+SpeedrunMapList:AddButton({ --Oasis map button done
+	Name = "Oasis",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Oasis chosen",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.Oas1 = {
+			[1] = 1.9595962762832642,
+			[2] = 62.33546451237443,
+			[3] = -1
+		}
+		_G.Oas2 = {
+			[1] = 5.504286766052246,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Oas3 = {
+			[1] = -1.5682042837142944,
+			[2] = 82.29636314293573,
+			[3] = -1
+		}
+		_G.Oas4 = {
+			[1] = -1.9723966121673584,
+			[2] = 88.94683390399885,
+			[3] = -1
+		}
+		_G.Oas5 = {
+			[1] = -0.6728244423866272,
+			[2] = 78.232343731782,
+			[3] = -1
+		}
+		_G.Oas6 = {
+			[1] = 1.621410846710205,
+			[2] = 88.74204430700752,
+			[3] = -1
+		}
+		_G.Oas7 = {
+			[1] = -0.0480002760887146,
+			[2] = 78.298,
+			[3] = -1
+		}
+		_G.Oas8 = {
+			[1] = -2.2490313053131104,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Oas81 = {
+			[1] = 0.5788406729698181,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Oas9 = {
+			[1] = 1.692620038986206,
+			[2] = 23.31775733292744,
+			[3] = -1
+		}
+		_G.Oas91 = {
+			[1] = 0.22425170242786407,
+			[2] = 42.39751261024621,
+			[3] = -1
+		}
+		_G.Oas92 = {
+			[1] = -1.5396041870117188,
+			[2] = 74.1927732960967,
+			[3] = -1
+		}
+		_G.Oas10 = {
+			[1] = -1.6621514558792114,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Oas101 = {
+			[1] = 0.04896235466003418,
+			[2] = 74.40679644734253,
+			[3] = -1
+		}
+		_G.Oas11 = {
+			[1] = 3.1415927410125732,
+			[2] = 20.484258904545317,
+			[3] = -1
+		}
+
+		_G.Oas111 = {
+			[1] = 1.5604724884033203,
+			[2] = 89.13349078749332,
+			[3] = -1
+		}
+		_G.Oas12 = {
+			[1] = 0,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Oas121 = {
+			[1] = 1.5474251508712769,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Oas13 = {
+			[1] = 0,
+			[2] = 89.48786671637302,
+			[3] = -1
+		}
+		_G.Oas131 = {
+			[1] = 4.753905296325684,
+			[2] = 58.46333352627611,
+			[3] = -1
+		}
+		_G.Oas14 = {
+			[1] = -1.5837565660476685,
+			[2] = 83.61644138805718,
+			[3] = -1
+		}
+		_G.Oas141 = {
+			[1] = 0.5429791808128357,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Oas15 = {
+			[1] = -1.5707963705062866,
+			[2] = 68.26311405058817,
+			[3] = -1
+		}
+		_G.Oas151 = {
+			[1] = -0.038152337074279785,
+			[2] = 89.08336146076329,
+			[3] = -1
+		}
+		_G.Oas16 = {
+			[1] = -2.9679324626922607,
+			[2] = 69.72885093377448,
+			[3] = -1
+		}
+		_G.Oas161 = {
+			[1] = -4.637179851531982,
+			[2] = 34.622260673133276,
+			[3] = -1
+		}
+		_G.Oas17 = {
+			[1] = 0.636521577835083,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Oas18 = {
+			[1] = 0.6316346526145935,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Oas181 = {
+			[1] = 3.8353471755981445,
+			[2] = 54.848111659858674,
+			[3] = -1
+		}
+		function posi(hole, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			if pos.X < (x + 10) and pos.X > (x - 10) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 10) and pos.Z > (z - 10) then
+						_G.args = hole
+					end
+				end
+			end
+		end
+		function posit(hole1, hole2, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(1.2)
+						_G.args = hole2
+					end
+				end
+			end
+		end
+		function posy(hole1, hole2, hole3, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(0.8)
+						_G.args = hole2
+						wait(3)
+						_G.args = hole3
+					end
+				end
+			end
+		end
+		while true do
+			for count = 1,10 do
+				posi(_G.Oas1, 380.96600341796875, 108.83892059326172, -1104.3704833984375)
+				posi(_G.Oas2, 457.370361328125, 108.84322357177734, -1130.1014404296875)
+				posi(_G.Oas3, 575.0065307617188, 109.03277587890625, -1140.5955810546875)
+				posi(_G.Oas4, 725.6448364257812, 108.83892059326172, -1182.9693603515625)
+				posi(_G.Oas5, 835.316162109375, 128.83935546875, -1297.0789794921875)
+				posi(_G.Oas6, 727.4781494140625, 131.83935546875, -1299.925048828125)
+				posi(_G.Oas7,  393.5661315917969, 127.7393569946289, -1341.20361328125)
+				posit(_G.Oas8, _G.Oas81, 336.5126647949219, 123.83936309814453, -1600.54296875)
+				posy(_G.Oas9, _G.Oas91, _G.Oas92, 569.8600463867188, 123.83898162841797, -1516.0379638671875)
+				posit(_G.Oas10, _G.Oas101, 635.1854248046875, 128.8427734375, -1482.187744140625)
+				posit(_G.Oas11, _G.Oas111, 848.2203369140625, 122.3427734375, -1801.991943359375)
+				posit(_G.Oas12, _G.Oas121, 589.91162109375, 127.3427734375, -1742.343505859375)
+				posit(_G.Oas13, _G.Oas131, 343.41796875, 116.8427734375, -1873.7227783203125)
+				posit(_G.Oas14, _G.Oas141, 505.121826171875, 36.988182067871094, -2181.1142578125)
+				posit(_G.Oas15, _G.Oas151, 739.46240234375, 28.98818588256836, -2224.02734375)
+				posit(_G.Oas16, _G.Oas161, 818.5121459960938, 131.98818969726562, -2190.83203125)
+				posi(_G.Oas17, 510.77752685546875, 210.84278869628906, -2443.33740234375)
+				posit(_G.Oas18, _G.Oas181, 849.9838256835938, 254.17088317871094, -2675.3095703125)
+			end
+		end
+	end
+})
+SpeedrunMapList:AddButton({ --Redwood map button done
+	Name = "Redwood",
+	Callback = function()
+		if _G.noti ~= true then
+			Library:MakeNotification({ 
+				Name = "Warning",
+				Content = "You forgot to click activate map button!",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.noti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Redwood chosen",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.Red1 = {
+			[1] = -2.699326276779175,
+			[2] = 39.592605083240436,
+			[3] = -1
+		}	
+		_G.Red2 = {
+			[1] = -0.05009094625711441,
+			[2] = 50.24165278785417,
+			[3] = -1
+		}
+		_G.Red3 = {
+			[1] = -2.2771310806274414,
+			[2] = 53.58654407307279,
+			[3] = -1
+		}
+		_G.Red4 = {
+			[1] = -0.07853981852531433,
+			[2] = 51.19733553794113,
+			[3] = -1
+		}
+		_G.Red5 = {
+			[1] = 2.2336723804473877,
+			[2] = 61.43680063485438,
+			[3] = -1
+		}
+		_G.Red6 = {
+			[1] = -2.879793167114258,
+			[2] = 20.471263383169344,
+			[3] = -1
+		}
+		_G.Red61 = {
+			[1] = -3.5229971408843994,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Red7 = {
+			[1] = 2.49896240234375,
+			[2] = 75.77205513417645,
+			[3] = -1
+		}
+		_G.Red8 = {
+			[1] = 1.5707963705062866,
+			[2] = 17.065778512647043,
+			[3] = -1
+		}
+		_G.Red81 = {
+			[1] = 2.912156105041504,
+			[2] = 82.88660835640805,
+			[3] = -1
+		}
+		_G.Red9 = {
+			[1] = -2.3678882122039795,
+			[2] = 81.91574081946293,
+			[3] = -1
+		}
+		_G.Red10 = {
+			[1] = 1.1780972480773926,
+			[2] = 19.840486475268435,
+			[3] = -1
+		}
+		_G.Red11 = {
+			[1] = 0.06178465485572815,
+			[2] = 100,
+			[3] = -1
+		}   
+		_G.Red12 = {
+			[1] = -0.7853981852531433,
+			[2] = 17.065778512647043,
+			[3] = -1
+		}
+		_G.Red121 = {
+			[1] = -1.9953982830047607,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Red122 = {
+			[1] = 0.1362018585205078,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Red13 = {
+			[1] = -0.4363323152065277,
+			[2] = 12.62867612974042,
+			[3] = -1
+		}
+		_G.Red131 = {
+			[1] = -0.952140212059021,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Red14= {
+			[1] = 1.3960888385772705,
+			[2] = 39.592605083240436,
+			[3] = -1
+		}
+		_G.Red15 = {
+			[1] = 0.7190756797790527,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Red16 = {
+			[1] = 2.1938788890838623,
+			[2] = 100,
+			[3] = -1
+		}
+		_G.Red17 = {
+			[1] = 1.1301417350769043,
+			[2] = 55.7163043052429,
+			[3] = -1
+		}
+		_G.Red18 = {
+			[1] = -1.1724752187728882,
+			[2] = 100,
+			[3] = -1
+		}
+		function posi(hole, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			if pos.X < (x + 10) and pos.X > (x - 10) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 10) and pos.Z > (z - 10) then
+						_G.args = hole
+					end
+				end
+			end
+		end
+		function posit(hole1, hole2, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(1.2)
+						_G.args = hole2
+					end
+				end
+			end
+		end
+		function posy(hole1, hole2, hole3, x, y, z)
+			local pos = game:GetService("Workspace").GolfBallsHighlighted:WaitForChild("BallVisual").Anchor.Primary.Position
+			wait(0.001)
+			if pos.X < (x + 5) and pos.X > (x - 5) then
+				if pos.Y < (y + 2) and pos.Y > (y - 2) then
+					if pos.Z < (z + 5) and pos.Z > (z - 5) then
+						_G.args = hole1
+						wait(0.8)
+						_G.args = hole2
+						wait(3)
+						_G.args = hole3
+					end
+				end
+			end
+		end
+		while true do
+			for count = 1,10 do
+				posi(_G.Red1, 2357.048095703125, 336.49822998046875, 938.0512084960938)
+				posi(_G.Red2, 2569.466796875, 332.500732421875, 913.796142578125)
+				posi(_G.Red3, 2552.027099609375, 318.49822998046875, 1061.55517578125)
+				posi(_G.Red4, 2725.650634765625, 328.500732421875, 997.517822265625)
+				posi(_G.Red5, 3002.384521484375, 324.4981994628906, 1046.47900390625)
+				posit(_G.Red6, _G.Red61, 3115.128173828125, 300.7794494628906, 1031.78369140625)
+				posi(_G.Red7, 2905.14794921875, 303.8458557128906, 1173.0474853515625)
+				posit(_G.Red8, _G.Red81, 2931.75732421875, 283.5137939453125, 1392.1724853515625)
+				posi(_G.Red9, 2712.82763671875, 293.500732421875, 1309.5516357421875)
+				posi(_G.Red10, 2873.421142578125, 275.5137939453125, 1544.906982421875)
+				posi(_G.Red11, 2478.330810546875, 290.1717834472656, 1638.8564453125)
+				posy(_G.Red12, _G.Red121, _G.Red122, 2569.31396484375, 290.5118713378906, 1740.5828857421875)
+				posit(_G.Red13, _G.Red131, 2745.20263671875, 269.1402282714844, 2000.0946044921875)
+				posi(_G.Red14, 2433.692138671875, 302.500732421875, 1950.73876953125)
+				posi(_G.Red15, 2584.279541015625, 284.500732421875, 2195.9228515625)
+				posi(_G.Red16, 2911.97900390625, 280.5003967285156, 2313.907470703125)
+				posi(_G.Red17, 2772.99462890625, 295.516357421875, 2389.765380859375)
+				posi(_G.Red18, 2363.072509765625, 288.4478454589844, 2397.642333984375)
+			end
+		end
+	end
+})
+
+--Visuals Section
+
+VisualSection:AddButton({  --Dark Gamemode Button
+	Name = "Dark Gamemode",
+	Callback = function()
+		Library:MakeNotification({
+			Name = "Clicked successfully",
+			Content = "Dark Gamemode Successfully added",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
+			Time = 4
+		})	
+		_G.DarkFognoti = true
+		_G.Fog = true
+		_G.disfog = false
+		if _G.Fog == true then
+			while wait(.1) do
+				game:GetService("Lighting").FogEnd = 20
+				game:GetService("Lighting").FogColor = Color3.new(0, 0, 0)	
+				if _G.disfog == true then break					
+				end		
+			end
+		end			
+	end
+})
+VisualSection:AddButton({  --Dark Gamemode Button
+	Name = "Dark Gamemode",
+	Callback = function()
+		Library:MakeNotification({
+			Name = "Clicked successfully",
+			Content = "Dark Gamemode Successfully added",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
+			Time = 4
+		})	
+		_G.DarkFognoti = true
+		_G.Fog = true
+		_G.disfog = false
+		if _G.Fog == true then
+			while wait(.1) do
+				game:GetService("Lighting").FogEnd = 20
+				game:GetService("Lighting").FogColor = Color3.new(0, 0, 0)	
+				if _G.disfog == true then break					
+				end		
+			end
+		end			
+	end
+})
+VisualSection:AddButton({ --Remove DarkFog button
+	Name = "Remove Fog",
+	Callback = function()
+		if _G.DarkFognoti ~= true then
+			Library:MakeNotification({ 
+				Name = "Error",
+				Content = "There isn't any dark fog at the moment",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		elseif _G.DarkFognoti == true then
+			Library:MakeNotification({ 
+				Name = "Map chosen",
+				Content = "Dark fog removed successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		end
+		_G.sky10 = false
+		_G.fog = false
+		_G.disfog = true
+		while wait(0.1) do
+			if _G.disfog == true then
+				game:GetService("Lighting").FogEnd = 10000
+				if _G.Fog == true then break		
+				end
+			end
+		end
+	end
+})
+VisualSection:AddDropdown({ --DropDown Skyboxes
+	Name = "SkyBoxes",
+	Options = {"OriginalSky", "GalaxySky", "BreakingBad", "Dog", "GreenSky", "THEONEPIECE", "RUSH", "Speed", "Rickroll", "DarkSky"},
+	Callback = function(Id)
+		if Id == "OriginalSky" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Original sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.sk1 = true
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = false
+			_G.sk9 = false
+			_G.sk10 = false
+			_G.cuss = false
+			while wait(0.4) do
+				if _G.sk1 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=133184290"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=133184311"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=133184318"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=133184299"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=133184333"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=133184341"
+				end			
+			end
+		end
+		if Id == "GalaxySky" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Galaxy sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = true
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = false
+			_G.sk9 = false
+			_G.sk10 = false
+			_G.cuss = false
+			while wait(0.4) do
+				if _G.sk2 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").MoonTextureId = "rbxassetid://1075087760"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "rbxassetid://2670643994"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "rbxassetid://2670643365"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "rbxassetid://2670643214"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "rbxassetid://2670643070"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "rbxassetid://2670644173"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "rbxassetid://2670644331"
+				end		
+			end
+		end
+		if Id == "GreenSky" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Green sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = true
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = false
+			_G.sk9 = false
+			_G.sk10 = false
+			_G.cuss = false
+			while wait(0.4) do
+				if _G.sk3 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=5222776243"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=5222776243"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=5222776243"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=5222776243"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=5222776243"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=5222776243"
+				end
+			end
+		end
+		if Id == "BreakingBad" then	
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "BreakingBad sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = true
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = false
+			_G.sk9 = false
+			_G.sk10 = false
+			_G.cuss = false
+			while wait(0.4) do
+				if _G.sk4 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10209912640"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=10209912640"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=10209912640"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=10209912640"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=10209912640"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=10209912640"
+				end
+			end
+		end
+		if Id == "Dog" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Dog sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = true
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = false
+			_G.sk9 = false
+			_G.sk10 = false
+			_G.cuss = false
+			while wait(0.4) do
+				if _G.sk5 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=9835676490"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=9835676490"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=9835676490"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=9835676490"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=9835676490"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=9835676490"
+				end		
+			end	
+		end
+		if Id == "THEONEPIECE" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "THEONEPIECE sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = true
+			_G.sk7 = false
+			_G.sk8 = false
+			_G.sk9 = false
+			_G.sk10 = false
+			_G.cuss = false
+			while wait(0.4) do
+				if _G.sk6 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10465994035"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=10465994035"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=10465994035"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=10465994035"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=10465994035"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=10465994035"
+				end
+			end
+		end
+		if Id == "RUSH" then			
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "RUSH sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = true
+			_G.sk8 = false
+			_G.sk9 = false
+			_G.sk10 = false
+			_G.cuss = false
+			while wait(0.4) do
+				if _G.sk7 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10716387808"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=10716387808"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=10716387808"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=10716387808"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=10716387808"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=10716387808"	
+				end		
+			end	
+		end
+		if Id == "Speed" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Speed sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = true
+			_G.sk9 = false
+			_G.sk10 = false
+			_G.cuss = false
+			while wait(0.4) do
+				if _G.sk8 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=10383043357"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=10383043357"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=10383043357"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=10383043357"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=10383043357"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=10383043357"
+				end
+			end
+		end		
+		if Id == "Rickroll" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Rickroll sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = false
+			_G.sk9 = true
+			_G.sk10 = false
+			_G.cuss = false
+			while wait(0.4) do
+				if _G.sk9 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=6403436054"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=6403436054"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=6403436054"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=6403436054"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=6403436054"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=6403436054"
+				end
+			end
+		end		
+		if Id == "DarkSky" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Dark sky selected successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			_G.DarkFognoti = true
+			_G.sk1 = false
+			_G.sk2 = false
+			_G.sk3 = false
+			_G.sk4 = false
+			_G.sk5 = false
+			_G.sk6 = false
+			_G.sk7 = false
+			_G.sk8 = false
+			_G.sk9 = false
+			_G.sk10 = true
+			_G.cuss = false
+			while wait(0.4) do
+				if _G.sk10 == true then
+					game:GetService("Lighting"):WaitForChild("Sky").MoonTextureId = "rbxasset://sky/moon.jpg"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = "http://www.roblox.com/asset/?id=48020371"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = "http://www.roblox.com/asset/?id=48020144"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = "http://www.roblox.com/asset/?id=48020234"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = "http://www.roblox.com/asset/?id=48020211"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = "http://www.roblox.com/asset/?id=48020254"
+					game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = "http://www.roblox.com/asset/?id=48020383"
+					game:GetService("Lighting").FogEnd = 50
+				end
+			end
+		end		
+	end	
+})
+VisualSection:AddTextbox({ --CustomSkybox
+	Name = "Custom Skybox (rbxassetid | roblox.com/asset link)",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(cus)
+		_G.sk1 = false
+		_G.sk2 = false
+		_G.sk3 = false
+		_G.sk4 = false
+		_G.sk5 = false
+		_G.sk6 = false
+		_G.sk7 = false
+		_G.sk8 = false
+		_G.cuss = true
+		for count = 1, 1000000 do
+			if 	_G.cuss == true then
+				game:GetService("Lighting"):WaitForChild("Sky").SkyboxBk = cus
+				game:GetService("Lighting"):WaitForChild("Sky").SkyboxDn = cus
+				game:GetService("Lighting"):WaitForChild("Sky").SkyboxFt = cus
+				game:GetService("Lighting"):WaitForChild("Sky").SkyboxLf = cus
+				game:GetService("Lighting"):WaitForChild("Sky").SkyboxRt = cus
+				game:GetService("Lighting"):WaitForChild("Sky").SkyboxUp = cus
+				wait(0.4)
+			end
+		end
+	end
+})	
+
+--
+
+OptimizeSection:AddDropdown({ --Optimize Maps
+	Name = "OptimizeMaps",
+	Options = {"Arctic", "Atlantis", "Candyland", "Dimension", "Facility", "Forest", "Graveyard", "Grove", "Island", "Mineshaft", "Oasis", "Redwood", "LobbyExtra"},
+	Callback = function(Map)
+		if Map == "Arctic" then	
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Arctic successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Arctic.Extra:Destroy()
+		end		
+		if Map == "Atlantis" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Atlantis successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Atlantis.Extra:Destroy()
+		end
+		if Map == "Candyland" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Candyland successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Candyland.Extra:Destroy()
+		end	
+		if Map == "Dimension" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Dimension successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Dimension.Extra:Destroy()
+		end
+		if Map == "Facility" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Facility successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Facility.Extra:Destroy()
+		end
+		if Map == "Forest" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Forest successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Forest.Extra:Destroy()
+		end
+		if Map == "Graveyard" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Graveyard successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Graveyard.Extra:Destroy()
+		end
+		if Map == "Grove" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Grove successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Grove.Extra:Destroy()
+		end
+		if Map == "Island" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Island successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Island.Extra:Destroy()
+		end
+		if Map == "Mineshaft" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Mineshaft successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Mineshaft.Extra:Destroy()
+		end
+		if Map == "Oasis" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Oasis successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Oasis.Extra:Destroy()
+		end
+		if Map == "Redwood" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Redwood successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Redwood.Extra:Destroy()	
+		end
+		if Map == "Cyber" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Redwood successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Cyber.Extra:Destroy()
+		end
+		if Map == "LobbyExtra" then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Optimized Lobby successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+			game:GetService("Workspace").Extra:Destroy()
+		end
+	end
+})
+OptimizeSection:AddButton({ --Optimize Lighthing
+	Name = "Optimize Lighthing",
+	Callback = function()	
+		_G.OPTLNoti = true
+		_G.OPTLighthing = true
+		Library:MakeNotification({
+			Name = "Clicked successfully",
+			Content = "Optimized Lighthings successfully",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
+			Time = 4
+		})    
+
+		while wait(.1) do
+			if _G.OPTLighthing == true then
+				for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do
+					v:Destroy()
+					game:GetService("Lighting").FogEnd = 10000
+					if _G.OPTLighting == false then break												
+					end
+				end    
+			end
+		end
+	end
+})
+OptimizeSection:AddButton({ --Break optimize Lighthing
+	Name = "Stop Optimizating Lighthing",
+	Callback = function()
+		if _G.OPTLNoti == true then
+			Library:MakeNotification({
+				Name = "Clicked successfully",
+				Content = "Breaked Lighthing Optimization successfully",
+				Image = "http://www.roblox.com/asset/?id=5959696880",
+				Time = 4
+			})
+		elseif _G.OPTLNoti ~= true then
+			Library:MakeNotification({
+				Name = "Error",
+				Content = "Cant stop optimazing if theres nothing optimazing.",
+				Image = "http://www.roblox.com/asset/?id=4458805208",
+				Time = 4
+			})
+		end
+		_G.OPTLNoti = false
+		while wait(.1) do
+			_G.OPTLighthing = false			
+			if _G.OPTLighting == true then break				
+			end		
+		end
+	end
+})
+Library:Init()
