@@ -2654,28 +2654,6 @@ VisualSection:AddButton({  --Dark Gamemode Button
 		end			
 	end
 })
-VisualSection:AddButton({  --Dark Gamemode Button
-	Name = "Dark Gamemode",
-	Callback = function()
-		Library:MakeNotification({
-			Name = "Clicked successfully",
-			Content = "Dark Gamemode Successfully added",
-			Image = "http://www.roblox.com/asset/?id=5959696880",
-			Time = 4
-		})	
-		_G.DarkFognoti = true
-		_G.Fog = true
-		_G.disfog = false
-		if _G.Fog == true then
-			while wait(.1) do
-				game:GetService("Lighting").FogEnd = 20
-				game:GetService("Lighting").FogColor = Color3.new(0, 0, 0)	
-				if _G.disfog == true then break					
-				end		
-			end
-		end			
-	end
-})
 VisualSection:AddButton({ --Remove DarkFog button
 	Name = "Remove Fog",
 	Callback = function()
@@ -3034,7 +3012,7 @@ VisualSection:AddTextbox({ --CustomSkybox
 	end
 })	
 
---
+--Optimize Section
 
 OptimizeSection:AddDropdown({ --Optimize Maps
 	Name = "OptimizeMaps",
@@ -3218,4 +3196,23 @@ OptimizeSection:AddButton({ --Break optimize Lighthing
 		end
 	end
 })
+
+--Settings Section
+SettingsSection:AddSlider({ --Changes FOV
+	Name = "Fov Changer",
+	Default = 60,
+	Min = 30,
+	Max = 120,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 0.5,
+	ValueName = "FOV",
+	Callback = function(Value)
+		local args = {
+			[1] = "Settings FOV",
+			[2] = Value
+		}
+		game:GetService("ReplicatedStorage").Remotes.Data.ChangeSetting:FireServer(unpack(args))
+	end    
+})	
+
 Library:Init()
