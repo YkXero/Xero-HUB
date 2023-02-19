@@ -6,7 +6,7 @@ local Window = Library:MakeWindow({Name = "Xero IR GUI", HidePremium = false, Sa
 --Tabs
 
 local MiscTab = Window:MakeTab({
-	Name = "Misc",
+	Name = "General",
 	Icon = "http://www.roblox.com/asset/?id=10893855041",
 	PremiumOnly = false
 })
