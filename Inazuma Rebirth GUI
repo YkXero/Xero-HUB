@@ -1,7 +1,7 @@
 --Lib/Window
 
 local Library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = Library:MakeWindow({Name = "Xero IR GUI", HidePremium = false, SaveConfig = false	, ConfigFolder = "OrionTest", IntroText = "IE GUI", IntroIcon = "http://www.roblox.com/asset/?id=3019710362"})
+local Window = Library:MakeWindow({Name = "Xero IR GUI", HidePremium = false, SaveConfig = false	, ConfigFolder = "OrionTest", IntroText = "IR GUI", IntroIcon = "http://www.roblox.com/asset/?id=3019710362"})
 
 --Tabs
 
