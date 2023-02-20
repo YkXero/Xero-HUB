@@ -44,6 +44,29 @@ General:AddButton({ --Tp al balon infinito
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2.663, 273.213, -422.100)
 	end
 })
+General:AddButton({ --Gk mode infinito
+	Name = "GK mode infinito",
+	Callback = function()
+		game:GetService("Workspace").BlueSpawns.GKMODEEND:Destroy()
+		game:GetService("Workspace").BlueSpawns.GKMODEND:Destroy()
+		game:GetService("Workspace").RedSpawns.GKMODEEEND:Destroy()
+		game:GetService("Workspace").RedSpawns.GKMODEEND:Destroy()
+		
+	end
+})
+General:AddButton({ --Gk RDive
+	Name = "GK Rdive infinito (e) solo en partida",
+	Callback = function()
+		local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+
+		Mouse.KeyDown:connect(function(NameOfYourFunction)
+			local KeyToToggleScript = NameOfYourFunction:lower()
+			if KeyToToggleScript == "e" then            
+				game:GetService("Players").LocalPlayer.Character.Gk.RLow:FireServer()
+			end
+		end)
+	end
+})
 General:AddDropdown({ --Bloqueo
 	Name = "Bloqueo",
 	Default = "Desactivado",
@@ -206,7 +229,16 @@ veryepic.Visible = false
 	end)
 	end
 })
-
+General:AddButton({ --Parar hiss 100%
+	Name = "Parar hiss 100% (hacer cuando tires la hiss)",
+	Callback = function()
+		while true do
+			print("a")
+			game:GetService("Players"):WaitForChild("LocalPlayer"):WaitForChild("PlayerGui"):WaitForChild("GKHissaPower"):WaitForChild("TextButton"):WaitForChild("TextButton"):WaitForChild("local"):WaitForChild("RemoteEvent"):FireServer()
+			wait()
+		end
+	end
+})
 
 --AutoFarm
 
