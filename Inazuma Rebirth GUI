@@ -16,9 +16,9 @@ local AutoFarmTab = Window:MakeTab({
 	PremiumOnly = false
 })
 local TeleportsTab = Window:MakeTab({
-		Name = "Teleports",
-		Icon = "http://www.roblox.com/asset/?id=10893855041",
-		PremiumOnly = false
+	Name = "Teleports",
+	Icon = "http://www.roblox.com/asset/?id=10893855041",
+	PremiumOnly = false
 })
 
 --Sections
@@ -35,27 +35,18 @@ local Teleports = TeleportsTab:AddSection({
 
 --General Section
 
-
-General:AddButton({ --Tp al balon infinito
-	Name = "Tp al balon y porteria (Equipo",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace").Ball.Position)
-		task.wait(.4)
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2.663, 273.213, -422.100)
-	end
-})
 General:AddButton({ --Gk mode infinito
-	Name = "GK mode infinito",
+	Name = "GK infinite range",
 	Callback = function()
 		game:GetService("Workspace").BlueSpawns.GKMODEEND:Destroy()
 		game:GetService("Workspace").BlueSpawns.GKMODEND:Destroy()
 		game:GetService("Workspace").RedSpawns.GKMODEEEND:Destroy()
 		game:GetService("Workspace").RedSpawns.GKMODEEND:Destroy()
-		
+
 	end
 })
 General:AddButton({ --Gk RDive
-	Name = "GK Rdive infinito (e) solo en partida",
+	Name = "Infinite GK Rdive (E)",
 	Callback = function()
 		local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
 
@@ -68,11 +59,11 @@ General:AddButton({ --Gk RDive
 	end
 })
 General:AddDropdown({ --Bloqueo
-	Name = "Bloqueo",
+	Name = "Infinite Block",
 	Default = "Desactivado",
-	Options = {"Activo", "Desactivado"},
+	Options = {"Active", "Disabled"},
 	Callback = function(Bloqueo)
-		if Bloqueo == "Activo" then
+		if Bloqueo == "Active" then
 			getgenv().BlockAct = true
 			if getgenv().BlockAct == true then
 				while true do
@@ -83,7 +74,7 @@ General:AddDropdown({ --Bloqueo
 				end
 			end
 		end
-		if Bloqueo == "Desactivado" then
+		if Bloqueo == "Disabled" then
 			getgenv().BlockAct = false
 		end
 	end  
@@ -92,151 +83,163 @@ General:AddDropdown({ --Bloqueo
 General:AddDropdown({ --Walkspeed
 	Name = "Walkspeed",
 	Default = "Desactivado",
-	Options = {"Activo", "Desactivado"},
+	Options = {"Active", "Disabled"},
 	Callback = function(speed)
 		if speed == "Activo" then
 			getgenv().WalkSpeed = true 
 			while WalkSpeed == true do
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 2
 				wait()
-				end
+			end
 		end
-		if speed == "Desactivado" then
-		getgenv().WalkSpeed = false
+		if speed == "Disabled" then
+			getgenv().WalkSpeed = false
 		end
 	end  
-	
+
 })
 General:AddButton({ --Volar
-	Name = "Volar (z)",
+	Name = "Fly (z)",
 	Callback = function()
 
-local flycar = Instance.new("ScreenGui")
-local veryepic = Instance.new("Frame")
-local title = Instance.new("TextLabel")
-local close = Instance.new("TextButton")
-local fly = Instance.new("TextButton")
+		local flycar = Instance.new("ScreenGui")
+		local veryepic = Instance.new("Frame")
+		local title = Instance.new("TextLabel")
+		local close = Instance.new("TextButton")
+		local fly = Instance.new("TextButton")
 
 
-flycar.Name = "flycar"
-flycar.Parent = game.CoreGui
+		flycar.Name = "flycar"
+		flycar.Parent = game.CoreGui
 
-veryepic.Name = "veryepic"
-veryepic.Parent = flycar
-veryepic.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
-veryepic.Position = UDim2.new(0.038906455, 0, 0.619164586, 0)
-veryepic.Size = UDim2.new(0, 243, 0, 263)
-veryepic.Active = true
-veryepic.Draggable = true
+		veryepic.Name = "veryepic"
+		veryepic.Parent = flycar
+		veryepic.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+		veryepic.Position = UDim2.new(0.038906455, 0, 0.619164586, 0)
+		veryepic.Size = UDim2.new(0, 243, 0, 263)
+		veryepic.Active = true
+		veryepic.Draggable = true
 
 
 
-fly.Name = "fly"
-fly.Parent = veryepic
-fly.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
-fly.Position = UDim2.new(0.0864197537, 0, 0.266159713, 0)
-fly.Size = UDim2.new(0, 200, 0, 50)
-fly.Font = Enum.Font.SourceSans
-fly.Text = "Presiona aqui pe"
-fly.TextColor3 = Color3.fromRGB(0, 0, 0)
-fly.TextScaled = true
-fly.TextSize = 14.000
-fly.TextWrapped = true
-fly.MouseButton1Down:connect(function()
-local mouse = game.Players.LocalPlayer:GetMouse()
-repeat wait() until mouse
-local plr = game.Players.LocalPlayer
-local torso = plr.Character.Torso
-local flying = true
-local deb = true
-local ctrl = {f = 0, b = 0, l = 0, r = 0}
-local lastctrl = {f = 0, b = 0, l = 0, r = 0}
-local maxspeed = 500
-local speed = 0
- 
-function Fly()
-local bg = Instance.new("BodyGyro", torso)
-bg.P = 9e4
-bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
-bg.cframe = torso.CFrame
-local bv = Instance.new("BodyVelocity", torso)
-bv.velocity = Vector3.new(0,0.1,0)
-bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
-repeat wait()
-plr.Character.Humanoid.PlatformStand = false
-if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
-speed = speed+125.0+(speed/maxspeed)
-if speed > maxspeed then
-speed = maxspeed
-end
-elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
-speed = speed-250
-if speed < 0 then
-speed = 0
-end
-end
-if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
-bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
-lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
-elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
-bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
-else
-bv.velocity = Vector3.new(0,0.1,0)
-end
-bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
-until not flying
-ctrl = {f = 0, b = 0, l = 0, r = 0}
-lastctrl = {f = 0, b = 0, l = 0, r = 0}
-speed = 0
-bg:Destroy()
-bv:Destroy()
-plr.Character.Humanoid.PlatformStand = false
-end
-mouse.KeyDown:connect(function(key)
-if key:lower() == "z" then
-if flying then flying = false
-else
-flying = true
-Fly()
-end
-elseif key:lower() == "w" then
-ctrl.f = 1
-elseif key:lower() == "s" then
-ctrl.b = -1
-elseif key:lower() == "a" then
-ctrl.l = -1
-elseif key:lower() == "d" then
-ctrl.r = 1
-end
-end)
-mouse.KeyUp:connect(function(key)
-if key:lower() == "w" then
-ctrl.f = 0
-elseif key:lower() == "s" then
-ctrl.b = 0
-elseif key:lower() == "a" then
-ctrl.l = 0
-elseif key:lower() == "d" then
-ctrl.r = 0
-end
-wait(5)
-hint:Destroy()
-end)
-Fly()
-end)
-fly.MouseButton1Down:connect(function()
-veryepic.Visible = false
-	end)
+		fly.Name = "fly"
+		fly.Parent = veryepic
+		fly.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+		fly.Position = UDim2.new(0.0864197537, 0, 0.266159713, 0)
+		fly.Size = UDim2.new(0, 200, 0, 50)
+		fly.Font = Enum.Font.SourceSans
+		fly.Text = "Presiona aqui pe"
+		fly.TextColor3 = Color3.fromRGB(0, 0, 0)
+		fly.TextScaled = true
+		fly.TextSize = 14.000
+		fly.TextWrapped = true
+		fly.MouseButton1Down:connect(function()
+			local mouse = game.Players.LocalPlayer:GetMouse()
+			repeat wait() until mouse
+			local plr = game.Players.LocalPlayer
+			local torso = plr.Character.Torso
+			local flying = true
+			local deb = true
+			local ctrl = {f = 0, b = 0, l = 0, r = 0}
+			local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+			local maxspeed = 500
+			local speed = 0
+
+			function Fly()
+				local bg = Instance.new("BodyGyro", torso)
+				bg.P = 9e4
+				bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+				bg.cframe = torso.CFrame
+				local bv = Instance.new("BodyVelocity", torso)
+				bv.velocity = Vector3.new(0,0.1,0)
+				bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+				repeat wait()
+					plr.Character.Humanoid.PlatformStand = false
+					if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+						speed = speed+125.0+(speed/maxspeed)
+						if speed > maxspeed then
+							speed = maxspeed
+						end
+					elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+						speed = speed-250
+						if speed < 0 then
+							speed = 0
+						end
+					end
+					if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+						bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+						lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+					elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+						bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+					else
+						bv.velocity = Vector3.new(0,0.1,0)
+					end
+					bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
+				until not flying
+				ctrl = {f = 0, b = 0, l = 0, r = 0}
+				lastctrl = {f = 0, b = 0, l = 0, r = 0}
+				speed = 0
+				bg:Destroy()
+				bv:Destroy()
+				plr.Character.Humanoid.PlatformStand = false
+			end
+			mouse.KeyDown:connect(function(key)
+				if key:lower() == "z" then
+					if flying then flying = false
+					else
+						flying = true
+						Fly()
+					end
+				elseif key:lower() == "w" then
+					ctrl.f = 1
+				elseif key:lower() == "s" then
+					ctrl.b = -1
+				elseif key:lower() == "a" then
+					ctrl.l = -1
+				elseif key:lower() == "d" then
+					ctrl.r = 1
+				end
+			end)
+			mouse.KeyUp:connect(function(key)
+				if key:lower() == "w" then
+					ctrl.f = 0
+				elseif key:lower() == "s" then
+					ctrl.b = 0
+				elseif key:lower() == "a" then
+					ctrl.l = 0
+				elseif key:lower() == "d" then
+					ctrl.r = 0
+				end
+				wait(5)
+				hint:Destroy()
+			end)
+			Fly()
+		end)
+		fly.MouseButton1Down:connect(function()
+			veryepic.Visible = false
+		end)
 	end
 })
-General:AddButton({ --Parar hiss 100%
-	Name = "Parar hiss 100% (hacer cuando tires la hiss)",
+General:AddButton({ --Fix Camera Bug
+	Name = "Fix Camera Bug (Handles Autofarm)",
 	Callback = function()
-		while true do
-			print("a")
-			game:GetService("Players"):WaitForChild("LocalPlayer"):WaitForChild("PlayerGui"):WaitForChild("GKHissaPower"):WaitForChild("TextButton"):WaitForChild("TextButton"):WaitForChild("local"):WaitForChild("RemoteEvent"):FireServer()
-			wait()
-		end
+		game.Players.LocalPlayer.Character.Humanoid.Name = 1
+		local l = game.Players.LocalPlayer.Character["1"]:Clone()
+		l.Parent = game.Players.LocalPlayer.Character
+		l.Name = "Humanoid"
+		wait()
+		game.Players.LocalPlayer.Character["1"]:Destroy()
+		game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+		game.Players.LocalPlayer.Character.Animate.Disabled = true
+		wait()
+		game.Players.LocalPlayer.Character.Animate.Disabled = false
+		game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
+		wait()
+		local prt = Instance.new("Model", workspace);
+		Instance.new("Part", prt).Name="Torso";
+		Instance.new("Part", prt).Name="Head";
+		Instance.new("Humanoid", prt).Name="Humanoid";
+		game.Players.LocalPlayer.Character=prt
 	end
 })
 
@@ -244,9 +247,9 @@ General:AddButton({ --Parar hiss 100%
 
 AutoFarm:AddDropdown({ --Dinero y exp
 	Name = "MoneyEXP",
-	Options = {"Hacer", "Parar"},
+	Options = {"Active", "Stop"},
 	Callback = function(FarmMoneyEXP)
-		if FarmMoneyEXP == "Hacer" then
+		if FarmMoneyEXP == "Active" then
 			_G.FarmMoneyEXP = true
 			if _G.FarmMoneyEXP == true then
 				while true do
@@ -304,18 +307,16 @@ AutoFarm:AddDropdown({ --Dinero y exp
 					end
 				end
 			end
-
 		end    
-		if FarmMoneyEXP == "Parar" then
+		if FarmMoneyEXP == "Stop" then
 			_G.FarmMoneyEXP = false
 		end
 end})
-
 AutoFarm:AddDropdown({ --Speed
 	Name = "Speed",
-	Options = {"Empezar", "Haciendolo"},
+	Options = {"Start", "Running"},
 	Callback = function(FarmSpeed)
-		if FarmSpeed == "Empezar" then
+		if FarmSpeed == "Start" then
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-251, 239, 424)
 			task.wait(.1)
 			fireproximityprompt(game:GetService("Workspace").SpeedQuest.ProximityPrompt)
@@ -331,7 +332,7 @@ AutoFarm:AddDropdown({ --Speed
 			mouse1click()
 			task.wait(.1)
 		end    
-		if FarmSpeed == "Haciendolo" then
+		if FarmSpeed == "Running" then
 			local teleport_table = {
 				location1 = Vector3.new(-276, 240, 514), 
 				location2 = Vector3.new(-276, 240, 514)  
@@ -352,7 +353,7 @@ AutoFarm:AddDropdown({ --Speed
 			bypass_teleport(teleport_table.location1)
 			bypass_teleport(teleport_table.location1)
 			wait(1)
-			
+
 			local teleport_table = {
 				location2 = Vector3.new(-277, 240, 370), 
 				location1 = Vector3.new(-277, 240, 370)  
@@ -360,7 +361,7 @@ AutoFarm:AddDropdown({ --Speed
 			bypass_teleport(teleport_table.location1)
 			bypass_teleport(teleport_table.location1)	
 			wait(1)
-			
+
 			local teleport_table = {
 				location1 = Vector3.new(-276, 240, 514), 
 				location2 = Vector3.new(-276, 240, 514)  
@@ -374,31 +375,30 @@ AutoFarm:AddDropdown({ --Speed
 			}
 			bypass_teleport(teleport_table.location1)
 			bypass_teleport(teleport_table.location1)
-end
+		end
 end})
-
 AutoFarm:AddDropdown({ --Dribble
 	Name = "Dribble",
-	Options = {"Hacer", "Parar"},
+	Options = {"Start", "Stop"},
 	Callback = function(FarmDribble)
-		if FarmDribble == "Hacer" then
+		if FarmDribble == "Start" then
 			_G.FarmDribble = true
 			if _G.FarmDribble == true then
 				while true do
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-874, 257, -250)
-				task.wait(.3)
-				fireproximityprompt(game:GetService("Workspace").DribbleQuest.ProximityPrompt)
-				wait(1)
-				game:GetService("Players").binladder911_PRO.PlayerGui.DribbleQuest.Frame.agree.Size = UDim2.new(44466666666, 4400 , 445555554444, 100)
-				task.wait(.3)
-				mouse1click()
-				task.wait(.1)
-				mouse1click()
-				task.wait(.1)
-				mouse1click()
-				task.wait(.1)
-				mouse1click()
-				task.wait(.7) 
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-874, 257, -250)
+					task.wait(.3)
+					fireproximityprompt(game:GetService("Workspace").DribbleQuest.ProximityPrompt)
+					wait(1)
+					game:GetService("Players").binladder911_PRO.PlayerGui.DribbleQuest.Frame.agree.Size = UDim2.new(44466666666, 4400 , 445555554444, 100)
+					task.wait(.3)
+					mouse1click()
+					task.wait(.1)
+					mouse1click()
+					task.wait(.1)
+					mouse1click()
+					task.wait(.1)
+					mouse1click()
+					task.wait(.7) 
 					local teleport_table = {
 						location1 = Vector3.new(-1875, 31, 116), 
 						location2 = Vector3.new(-1875, 31, 116)  
@@ -426,59 +426,127 @@ AutoFarm:AddDropdown({ --Dribble
 					wait(1.5)
 					if _G.DribbleFarm == false then break
 					end
-					end
-					end
+				end
+			end
 		end
-		if FarmDribble == "Parar" then
-		_G.DribbleFarm = false
+		if FarmDribble == "Stop" then
+			_G.DribbleFarm = false
 		end
 end})
-
-
 AutoFarm:AddDropdown({ --Stamina
 	Name = "Stamina",
-	Options = {"Hacer", "Parar"},
+	Options = {"Start", "Stop"},
 	Callback = function(FarmStamina)
-		if FarmStamina == "Hacer" then
+		if FarmStamina == "Start" then
 			_G.FarmStamina = true
 			if _G.FarmStamina == true then
-			while true do
-			game.Players.LocalPlayer.Character.Tackle.Disabled = true
-			game:GetService("StarterPlayer").StarterCharacterScripts.Tackle.Disabled = true
-			task.wait()
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-260, 240, 106)
-			task.wait(.1)
-			fireproximityprompt(game:GetService("Workspace").SquatBuyer.ProximityPrompt)
-			task.wait(.4)
-			game:GetService("Players").LocalPlayer.PlayerGui.SquatBuy.Frame.TextButton.Size = UDim2.new(44466666666, 4400 , 445555554444, 100)
-			task.wait(.2)
-			mouse1click()
-			task.wait(.1)
-			mouse1click()
-			task.wait(.1)
-			mouse1click()
-			task.wait(.1)
-			mouse1click()
-			task.wait(.1)
-			local input = loadstring(game:HttpGet('https://pastebin.com/raw/dYzQv3d8'))()
-			input.press(Enum.KeyCode.One)
-			wait(2)
-			if _G.FarmStamina == false then break	
+				while true do
+					game.Players.LocalPlayer.Character.Tackle.Disabled = true
+					game:GetService("StarterPlayer").StarterCharacterScripts.Tackle.Disabled = true
+					task.wait()
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-260, 240, 106)
+					task.wait(.1)
+					fireproximityprompt(game:GetService("Workspace").SquatBuyer.ProximityPrompt)
+					task.wait(.4)
+					game:GetService("Players").LocalPlayer.PlayerGui.SquatBuy.Frame.TextButton.Size = UDim2.new(44466666666, 4400 , 445555554444, 100)
+					task.wait(.2)
+					mouse1click()
+					task.wait(.1)
+					mouse1click()
+					task.wait(.1)
+					mouse1click()
+					task.wait(.1)
+					mouse1click()
+					task.wait(.1)
+					local input = loadstring(game:HttpGet('https://pastebin.com/raw/dYzQv3d8'))()
+					input.press(Enum.KeyCode.One)
+					wait(2)
+					if _G.FarmStamina == false then break	
 					end
 				end
 			end
 		end    
-		if FarmStamina == "Parar" then
-		game.Players.LocalPlayer.Character.Tackle.Enabled = true
-		game:GetService("StarterPlayer").StarterCharacterScripts.Tackle.Enabled = true
-		_G.FarmStamina = false
+		if FarmStamina == "Stop" then
+			game.Players.LocalPlayer.Character.Tackle.Enabled = true
+			game:GetService("StarterPlayer").StarterCharacterScripts.Tackle.Enabled = true
+			_G.FarmStamina = false
 		end
 end})
+AutoFarm:AddTextbox({ --Handles
+	Name = "Handles",
+	Default = "Insert ur username here",
+	TextDisappear = false,
+	Callback = function(Name)
+		while true do
+			game:GetService("Players"):WaitForChild(Name):WaitForChild("PlayerGui"):WaitForChild("GetHandlesQuestStuff"):WaitForChild("whereblack"):WaitForChild("Green"):FireServer()
+			task.wait()
+		end
+	end	  
+})
+AutoFarm:AddDropdown({ --Automatches Farm
+	Name = "Automatches Farm (Red FW)",
+	Options = {"Join 4v4", "Start 4v4", "Stop 4v4", "Join 7v7", "Start 7v7"},
+	Callback = function(FarmAutoMatches)
+		if FarmAutoMatches == "Join 4v4" then
+			game:GetService("TeleportService"):Teleport(9586935578, LocalPlayer)
+		end	
+		if FarmAutoMatches == "Start 4v4" then
+			_G.Farm4v4 = true
+			if _G.Farm4v4 == true then
+				while true do
+					local input = loadstring(game:HttpGet('https://pastebin.com/raw/dYzQv3d8'))()	
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2, 273, -131)	
+					task.wait(.1)
+					input.press(Enum.KeyCode.Q)
+					task.wait(.1)
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0, 273, 166)	
+					task.wait(.15)
+					mouse1press()
+					task.wait(.2)
+					mouse1release()
+					wait(9.3)
+					if _G.Farm4v4 == false then break
+					end	
+				end
+			end    
+		end
+		if FarmAutoMatches == "Stop 4v4" then
+			_G.Farm4v4 = false
+		end
+		if FarmAutoMatches == "Join 7v7" then
+			game:GetService("TeleportService"):Teleport(10896820425, LocalPlayer)
+		end
+		if FarmAutoMatches == "Start 7v7" then
+			_G.Farm7v7 = true
+			if _G.Farm7v7 == true then
+				while true do
+					local input = loadstring(game:HttpGet('https://pastebin.com/raw/dYzQv3d8'))()	
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1303, 310, -129)	
+					task.wait(.1)
+					input.press(Enum.KeyCode.Q)
+					task.wait(.1)
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1301, 310, 193)	
+					task.wait(.15)
+					mouse1press()
+					task.wait(.2)
+					mouse1release()
+					wait(9.3)
+					if _G.Farm7v7 == false then break
+					end	
+				end
+			end    
+		end
+		if FarmAutoMatches == "Stop 4v4" then
+			_G.Farm7v7 = false
+		end
+end})
+
+
 
 --Teleports
 
 Teleports:AddButton({ --Teleport power
-	Name = "Power Trainer",
+	Name = "Power",
 	Callback = function()
 		local teleport_table = {
 			location1 = Vector3.new(483, 707, 30), 
@@ -500,11 +568,11 @@ Teleports:AddButton({ --Teleport power
 		bypass_teleport(teleport_table.location1)	
 		task.wait(.7)
 		fireproximityprompt(game:GetService("Workspace").PowerQuest.ProximityPrompt)
-		
+
 	end
 })
 Teleports:AddButton({ --Teleport handles
-	Name = "Power Handles",
+	Name = "Handles",
 	Callback = function()
 		local teleport_table = {
 			location1 = Vector3.new(48, 240, -290), 
@@ -551,7 +619,7 @@ Teleports:AddButton({ --Teleport Prestige
 		bypass_teleport(teleport_table.location1)	
 		task.wait(.7)
 		fireproximityprompt(game:GetService("Workspace").PrestigeChat.ProximityPrompt)
-		
+
 	end
 })
 Teleports:AddButton({ --Teleport Limit Breaker
@@ -629,3 +697,4 @@ Teleports:AddButton({ --Hiss
 		fireproximityprompt(game:GetService("Workspace").GetHissa.ProximityPrompt)
 	end
 })
+
