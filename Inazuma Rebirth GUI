@@ -389,7 +389,7 @@ AutoFarm:AddDropdown({ --Dribble
 					task.wait(.3)
 					fireproximityprompt(game:GetService("Workspace").DribbleQuest.ProximityPrompt)
 					wait(1)
-					game:GetService("Players").binladder911_PRO.PlayerGui.DribbleQuest.Frame.agree.Size = UDim2.new(44466666666, 4400 , 445555554444, 100)
+					game:GetService("Players").LocalPlayer.PlayerGui.DribbleQuest.Frame.agree.Size = UDim2.new(44466666666, 4400 , 445555554444, 100)
 					task.wait(.3)
 					mouse1click()
 					task.wait(.1)
