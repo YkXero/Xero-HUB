@@ -82,7 +82,7 @@ General:AddDropdown({ --Bloqueo
 })
 General:AddDropdown({ --Walkspeed
 	Name = "Walkspeed",
-	Default = "Desactivado",
+	Default = "Disabled",
 	Options = {"Active", "Disabled"},
 	Callback = function(speed)
 		if speed == "Active" then
