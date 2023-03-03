@@ -85,7 +85,7 @@ General:AddDropdown({ --Walkspeed
 	Default = "Desactivado",
 	Options = {"Active", "Disabled"},
 	Callback = function(speed)
-		if speed == "Activo" then
+		if speed == "Active" then
 			getgenv().WalkSpeed = true 
 			while WalkSpeed == true do
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 2
