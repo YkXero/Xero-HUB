@@ -58,6 +58,21 @@ Library:MakeNotification({ --Gui Loading notify
 
 --MapSpeedrunSection
 
+
+SpeedrunMapList:AddDropdown({ --Mobile On/Off
+	Name = "Mobile On/Off",
+	Options = {"On", "Off"},
+	Callback = function(Toggle)
+
+if Toggle == "On" then
+_G.cfg = 1
+end
+if Toggle == "On" then
+_G.cfg = 2
+end
+end
+})
+
 SpeedrunMapList:AddButton({ --Activate map button done
 	Name = "Click here ong",
 	Callback = function()
