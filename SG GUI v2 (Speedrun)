@@ -505,7 +505,6 @@ SpeedrunMapList:AddButton({ --Atlantis map button
 				Time = 4
 			})
 		end
-		game:GetService("Players").LocalPlayer.PlayerScripts.Modules.Functions.InkAnimation:Destroy()
 		_G.atl1 = {
 			[1] = 3.344092845916748,
 			[2] = 100,
