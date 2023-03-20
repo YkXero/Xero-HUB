@@ -971,9 +971,9 @@ SpeedrunMapList:AddButton({ --Cyber map button done
 			[3] = -1
 		}
 		_G.cyb5 = {
-			[1] = -0.5806440114974976,
-			[2] = 100,
-			[3] = -1
+   			[1] = 0.4397759437561035,
+    			[2] = 83.70236566041928,
+  			[3] = -1
 		}
 		_G.cyb6 = {
 			[1] = 1.8364766836166382,
@@ -1779,6 +1779,11 @@ SpeedrunMapList:AddButton({ --Forest map button done
 			[2] = 100,
 			[3] = -1
 		}
+		_G.For71 = {
+  		 [1] = 0.034109052270650864,
+   		 [2] = 100,
+    		 [3] = -1
+		}
 		_G.For8 = {
 			[1] = 1.3637713193893433,
 			[2] = 83.86123988660526,
@@ -1880,7 +1885,7 @@ SpeedrunMapList:AddButton({ --Forest map button done
 				posi(_G.For4, 384.118896484375, 111.10504913330078, 447.68572998046875)
 				posi(_G.For5, 390.8069152832031, 111.3508071899414, 291.3198547363281)
 				posi(_G.For6, 518.60693359375, 116.3523941040039, 235.2035675048828)
-				posi(_G.For7, 559.75830078125, 110.3508071899414, 190.29002380371094)
+				posit(_G.For7, _G.For71, 559.75830078125, 110.3508071899414, 190.29002380371094)
 				posi(_G.For8, 529.33447265625, 111.60089111328125, -85.09024047851562)
 				posit(_G.For9, _G.For91, 282.1630554199219, 117.85082244873047, -105.00308227539062)
 				posi(_G.For10, 335.91729736328125, 111.33833312988281, -251.09417724609375)
@@ -2645,7 +2650,7 @@ VisualSection:AddButton({  --Remove ink Button
 			Image = "http://www.roblox.com/asset/?id=5959696880",
 			Time = 4
 		})	
-		game:GetService("Players").LocalPlayer.PlayerScripts.Modules.Functions.InkAnimation
+		game:GetService("Players").LocalPlayer.PlayerScripts.Modules.Functions.InkAnimation:Destroy()
 	end
 })
 
