@@ -2636,6 +2636,19 @@ SpeedrunMapList:AddButton({ --Redwood map button done
 
 --Visuals Section
 
+VisualSection:AddButton({  --Remove ink Button
+	Name = "Remove Ink",
+	Callback = function()
+		Library:MakeNotification({
+			Name = "Clicked successfully",
+			Content = "Ink removed successfully",
+			Image = "http://www.roblox.com/asset/?id=5959696880",
+			Time = 4
+		})	
+		game:GetService("Players").LocalPlayer.PlayerScripts.Modules.Functions.InkAnimation
+	end
+})
+
 VisualSection:AddButton({  --Dark Gamemode Button
 	Name = "Dark Gamemode",
 	Callback = function()
