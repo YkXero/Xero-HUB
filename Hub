@@ -1,0 +1,10 @@
+local PlaceId = game.PlaceId
+local games = {
+    [4468711919] = "https://raw.githubusercontent.com/YkXero/Xero-HUB/main/SG%20GUI%20v2%20(Speedrun)",
+    [9586878618] = "https://raw.githubusercontent.com/YkXero/Xero-HUB/main/Inazuma%20Rebirth%20GUI."
+}
+
+if games[PlaceId] then
+    return loadstring(game:HttpGet(games[PlaceId]))()
+end
+warn(("This game is not supported yet."):format(PlaceId))
