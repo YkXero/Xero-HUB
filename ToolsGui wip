@@ -1,0 +1,101 @@
+--Lib/Window
+local Lib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = Lib:MakeWindow({Name = "XeroTools", IntroEnabled = false, HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+--Tabs
+local PrincipalTab = Window:MakeTab({
+	Name = "Tools",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local TCommandsTab = Window:MakeTab({
+	Name = "Easily AC Caught Cmds",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local BpCommandsTab = Window:MakeTab({
+	Name = "Bypass AC Cmds",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local MiscTab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--Sections
+local Tools = PrincipalTab:AddSection({
+	Name = "Tools"
+})
+local TCommands = TCommandsTab:AddSection({
+	Name = "TCommands"
+})
+local BPCommands = BpCommandsTab:AddSection({
+	Name = "BPCommands"
+})
+local Misc = MiscTab:AddSection({
+	Name = "Misc"
+})
+
+--Tools Section
+Tools:AddDropdown({
+	Name = "Tools",
+	Options = {"Dex", "SimpleSpy", "InfiniteYield"},
+	Callback = function(Tool)
+		if Tool == "Dex" then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua"))()	
+		end  
+		if Tool == "SimpleSpy" then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))()
+		end  
+		if Tool == "InfiniteYield" then
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+		end 
+	end 
+})
+
+--Trash Section
+TCommands:AddDropdown({
+	Name = "Commands",
+	Options = {"WalkSpeed", "JumpPower", "EFly"},
+	Callback = function(Cmd)
+		if Cmd == "WalkSpeed" then
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+		end  
+		if Cmd == "JumpPower" then
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = 130
+		end
+		if Cmd == "EFly" then
+		loadstring(game:HttpGet("https://pastebin.com/raw/KtLKcbxr"))()
+		end
+	end 
+})
+
+--BP Section
+BPCommands:AddDropdown({
+	Name = "Commands",
+	Options = {"BPWalkSpeed", "BPFly"},
+	Callback = function(Cmd)
+		if Cmd == "BPWalkSpeed" then
+		loadstring(game:HttpGet("https://pastebin.com/raw/K6GFVqm6"))()
+		end  
+		if Cmd == "BPFly" then
+		loadstring(game:HttpGet("https://pastebin.com/raw/NVX9V7ve"))()
+		end
+	end 
+})
+
+--Misc Section
+Misc:AddDropdown({
+	Name = "Commands",
+	Options = {"Rejoin", "Reset"},
+	Callback = function(Cmd)
+		if Cmd == "Rejoin" then
+		loadstring(game:HttpGet("https://pastebin.com/raw/QEjeNJFB"))()
+		end  
+		if Cmd == "Reset" then
+		loadstring(game:HttpGet("https://pastebin.com/raw/987ecd1E"))()
+		end
+	end 
+})
