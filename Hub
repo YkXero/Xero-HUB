@@ -1,8 +1,48 @@
+-----------------------------------Locals-----------------------------------
+
+local placeId = game.PlaceId 
+local Asset = game:GetService("MarketplaceService"):GetProductInfo(placeId)
+
+-----------------------------------Webhook-----------------------------------
+
+local webhookcheck =
+   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl" or
+   SONA_LOADED and "Sona" or
+   "Kid with shit exploit"
+
+local url = "https://discord.com/api/webhooks/1090380292080025722/lJYNg4SNr85IhZC-K0itiGgBSsJz2kS9nu2mrDskVNGxcjyn18aljZvPW0sbA2-2RHrn"
+local data = {
+   ["content"] = "",
+   ["embeds"] = {
+       {
+           ["title"] = "**Someone executed the hub.**",
+           ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with "..webhookcheck.." in " ..Asset.Name.. ".",
+           ["type"] = "rich",
+           ["color"] = tonumber(0x7269da),
+           
+           }
+       }
+   }
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+
+-----------------------------------Games-----------------------------------
+
 local PlaceId = game.PlaceId
 local games = {
     [4468711919] = "https://raw.githubusercontent.com/YkXero/Xero-HUB/main/SG%20GUI%20v2%20(Speedrun)",
     [9586878618] = "https://raw.githubusercontent.com/YkXero/Xero-HUB/main/Inazuma%20Rebirth%20GUI."
 }
+
+
 
 if games[PlaceId] then
     return loadstring(game:HttpGet(games[PlaceId]))()
