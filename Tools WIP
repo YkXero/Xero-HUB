@@ -98,7 +98,7 @@ Misc:AddDropdown({
 		game:GetService("Players").LocalPlayer.Character.Head:Destroy()
 		game:GetService("StarterGui"):SetCore("ResetButtonCallback", true)
 		end
-		if Cmd = "Sandbox" then
+		if Cmd == "Sandbox" then
 		loadstring(game:HttpGet("https://pastebin.com/raw/KPBtqfpf"))()
 		end
 	end 
