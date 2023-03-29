@@ -89,7 +89,7 @@ BPCommands:AddDropdown({
 --Misc Section
 Misc:AddDropdown({
 	Name = "Commands",
-	Options = {"Rejoin", "Reset", "Sandbox},
+	Options = {"Rejoin", "Reset", "Sandbox"},
 	Callback = function(Cmd)
 		if Cmd == "Rejoin" then
 		loadstring(game:HttpGet("https://pastebin.com/raw/QEjeNJFB"))()
