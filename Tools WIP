@@ -89,7 +89,7 @@ BPCommands:AddDropdown({
 --Misc Section
 Misc:AddDropdown({
 	Name = "Commands",
-	Options = {"Rejoin", "Reset"},
+	Options = {"Rejoin", "Reset", "Sandbox},
 	Callback = function(Cmd)
 		if Cmd == "Rejoin" then
 		loadstring(game:HttpGet("https://pastebin.com/raw/QEjeNJFB"))()
@@ -97,6 +97,9 @@ Misc:AddDropdown({
 		if Cmd == "Reset" then
 		game:GetService("Players").LocalPlayer.Character.Head:Destroy()
 		game:GetService("StarterGui"):SetCore("ResetButtonCallback", true)
+		end
+		if Cmd = "Sandbox" then
+		loadstring(game:HttpGet("https://pastebin.com/raw/KPBtqfpf"))()
 		end
 	end 
 })
