@@ -95,7 +95,8 @@ Misc:AddDropdown({
 		loadstring(game:HttpGet("https://pastebin.com/raw/QEjeNJFB"))()
 		end  
 		if Cmd == "Reset" then
-		loadstring(game:HttpGet("https://pastebin.com/raw/987ecd1E"))()
+		game:GetService("Players").LocalPlayer.Character.Head:Destroy()
+		game:GetService("StarterGui"):SetCore("ResetButtonCallback", true)
 		end
 	end 
 })
